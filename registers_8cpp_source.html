@@ -71,11 +71,11 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;registers.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="registers_8h.html">registers.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>mixal {</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;uint8_t Register2::operator[](<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="structmixal_1_1_register2.html#aad0c0384d1bfecf927ef8432f7d87210">    7</a></span>&#160;uint8_t <a class="code" href="structmixal_1_1_register2.html#aad0c0384d1bfecf927ef8432f7d87210">Register2::operator[]</a>(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span> (index == 1) {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordflow">return</span> byte1;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    }</div>
@@ -85,29 +85,29 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid index for a two bytes register: &quot;</span> + std::to_string(index));</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;uint16_t Register2::bytes12()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structmixal_1_1_register2.html#a45e5c37a23474d9e2a7c38c28ac18c6d">   17</a></span>&#160;uint16_t <a class="code" href="structmixal_1_1_register2.html#a45e5c37a23474d9e2a7c38c28ac18c6d">Register2::bytes12</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    int16_t high = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(byte1));</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    int16_t low = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(byte2));</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> high * 64 + low;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;int16_t Register2::value()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    int16_t val = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(bytes12());</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">   23</a></span>&#160;int16_t <a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">Register2::value</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    int16_t val = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(<a class="code" href="structmixal_1_1_register2.html#a45e5c37a23474d9e2a7c38c28ac18c6d">bytes12</a>());</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> negative ? -val : val;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> Register2::set(int16_t value) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (value &gt; 0) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">   28</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">Register2::set</a>(int16_t value) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> &gt; 0) {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        negative = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &lt; 0) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> &lt; 0) {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        negative = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        value = -value;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> = -<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    byte1 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(value / (1 &lt;&lt; 6));</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    byte2 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(value % (1 &lt;&lt; 6));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    byte1 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> / (1 &lt;&lt; 6));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    byte2 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> % (1 &lt;&lt; 6));</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> Register2::set(<span class="keywordtype">int</span> index, int8_t val) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structmixal_1_1_register2.html#ae5d0c8c6cc9250f32b0110dbcb821c8e">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">Register2::set</a>(<span class="keywordtype">int</span> index, int8_t val) {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (index == 1) {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        byte1 = val;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index == 2) {</div>
@@ -117,7 +117,7 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> Register2::set(<span class="keywordtype">bool</span> negative, uint8_t byte1, uint8_t byte2) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structmixal_1_1_register2.html#ad3afcb74a5d37f4e531768477b4e09ab">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">Register2::set</a>(<span class="keywordtype">bool</span> negative, uint8_t byte1, uint8_t byte2) {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    this-&gt;negative = negative;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    this-&gt;byte1 = byte1;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    this-&gt;byte2 = byte2;</div>
@@ -125,6 +125,11 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};  <span class="comment">// namespace mixal</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructmixal_1_1_register2_html_af6f71bb35b12183b27e67b802aeabc1b"><div class="ttname"><a href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">mixal::Register2::set</a></div><div class="ttdeci">void set(int16_t value)</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00028">registers.cpp:28</a></div></div>
+<div class="ttc" id="astructmixal_1_1_register2_html_aad0c0384d1bfecf927ef8432f7d87210"><div class="ttname"><a href="structmixal_1_1_register2.html#aad0c0384d1bfecf927ef8432f7d87210">mixal::Register2::operator[]</a></div><div class="ttdeci">uint8_t operator[](int index) const</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00007">registers.cpp:7</a></div></div>
+<div class="ttc" id="astructmixal_1_1_register2_html_a45e5c37a23474d9e2a7c38c28ac18c6d"><div class="ttname"><a href="structmixal_1_1_register2.html#a45e5c37a23474d9e2a7c38c28ac18c6d">mixal::Register2::bytes12</a></div><div class="ttdeci">uint16_t bytes12() const</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00017">registers.cpp:17</a></div></div>
+<div class="ttc" id="astructmixal_1_1_register2_html_a377d94ea727118abf129d7f8f86f647b"><div class="ttname"><a href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">mixal::Register2::value</a></div><div class="ttdeci">int16_t value() const</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00023">registers.cpp:23</a></div></div>
+<div class="ttc" id="aregisters_8h_html"><div class="ttname"><a href="registers_8h.html">registers.h</a></div><div class="ttdoc">The definition of registers.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
