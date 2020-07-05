@@ -70,46 +70,51 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;expression.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="expression_8h.html">expression.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span>mixal {</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;Atomic&amp; Atomic::operator=(<span class="keyword">const</span> Atomic&amp; atomic) {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    type = atomic.type;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    negative = atomic.negative;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">if</span> (type == AtomicType::INTEGER) {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        integer = atomic.integer;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        symbol = atomic.symbol;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;std::ostream&amp; operator&lt;&lt;(std::ostream&amp; out, <span class="keyword">const</span> Atomic&amp; atomic) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">switch</span> (atomic.type) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">case</span> AtomicType::INTEGER: out &lt;&lt; atomic.integer; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">case</span> AtomicType::SYMBOL: out &lt;&lt; atomic.symbol; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">case</span> AtomicType::ASTERISK: out &lt;&lt; atomic.symbol; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">bool</span> Atomic::isLocalSymbol(<span class="keyword">const</span> std::string&amp; symbol) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> symbol.size() == 2 &amp;&amp;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;           (<span class="charliteral">&#39;0&#39;</span> &lt;= symbol[0] &amp;&amp; symbol[0] &lt;= <span class="charliteral">&#39;9&#39;</span>) &amp;&amp;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;           (symbol[1] == <span class="charliteral">&#39;H&#39;</span> || symbol[1] == <span class="charliteral">&#39;F&#39;</span> || symbol[1] == <span class="charliteral">&#39;B&#39;</span>);</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="structmixal_1_1_atomic.html#a3198dd9d4cc4f7cc37a5b8c6046b5ef0">    6</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="structmixal_1_1_atomic.html#a3198dd9d4cc4f7cc37a5b8c6046b5ef0">Atomic::operator==</a>(<span class="keyword">const</span> <a class="code" href="structmixal_1_1_atomic.html">Atomic</a>&amp; atomic) {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structmixal_1_1_atomic.html#ab11fb3cb7d6f27a37f1e74a440181d1d">type</a> != atomic.<a class="code" href="structmixal_1_1_atomic.html#ab11fb3cb7d6f27a37f1e74a440181d1d">type</a> || <a class="code" href="structmixal_1_1_atomic.html#a03af48bc0a24c2298032460755a9c07d">negative</a> != atomic.<a class="code" href="structmixal_1_1_atomic.html#a03af48bc0a24c2298032460755a9c07d">negative</a>) {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    }</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structmixal_1_1_atomic.html#ab11fb3cb7d6f27a37f1e74a440181d1d">type</a> == AtomicType::INTEGER ? <a class="code" href="structmixal_1_1_atomic.html#a21a833637459b0a25b30fcb1400cc550">integer</a> == atomic.<a class="code" href="structmixal_1_1_atomic.html#a21a833637459b0a25b30fcb1400cc550">integer</a> : <a class="code" href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">symbol</a> == atomic.<a class="code" href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">symbol</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="structmixal_1_1_atomic.html#aba2daf34d9deb1171134704a7270c834">   13</a></span>&#160;std::ostream&amp; operator&lt;&lt;(std::ostream&amp; out, <span class="keyword">const</span> <a class="code" href="structmixal_1_1_atomic.html">Atomic</a>&amp; atomic) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">switch</span> (atomic.<a class="code" href="structmixal_1_1_atomic.html#ab11fb3cb7d6f27a37f1e74a440181d1d">type</a>) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">case</span> AtomicType::INTEGER: out &lt;&lt; atomic.<a class="code" href="structmixal_1_1_atomic.html#a21a833637459b0a25b30fcb1400cc550">integer</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">case</span> AtomicType::SYMBOL: out &lt;&lt; atomic.<a class="code" href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">symbol</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">case</span> AtomicType::ASTERISK: out &lt;&lt; atomic.<a class="code" href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">symbol</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structmixal_1_1_atomic.html#a9bf584e51cd49d351fd7787499e539b2">   22</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="structmixal_1_1_atomic.html#a5ae6f866d34a45676277e6737d314b47">Atomic::isLocalSymbol</a>(<span class="keyword">const</span> std::string&amp; symbol) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">symbol</a>.size() == 2 &amp;&amp;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;           (<span class="charliteral">&#39;0&#39;</span> &lt;= <a class="code" href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">symbol</a>[0] &amp;&amp; <a class="code" href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">symbol</a>[0] &lt;= <span class="charliteral">&#39;9&#39;</span>) &amp;&amp;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;           (<a class="code" href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">symbol</a>[1] == <span class="charliteral">&#39;H&#39;</span> || <a class="code" href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">symbol</a>[1] == <span class="charliteral">&#39;F&#39;</span> || <a class="code" href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">symbol</a>[1] == <span class="charliteral">&#39;B&#39;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structmixal_1_1_atomic.html#a5ae6f866d34a45676277e6737d314b47">   28</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="structmixal_1_1_atomic.html#a5ae6f866d34a45676277e6737d314b47">Atomic::isLocalSymbol</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="structmixal_1_1_atomic.html#ab11fb3cb7d6f27a37f1e74a440181d1d">type</a> == AtomicType::SYMBOL &amp;&amp; <a class="code" href="structmixal_1_1_atomic.html#a5ae6f866d34a45676277e6737d314b47">Atomic::isLocalSymbol</a>(<a class="code" href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">symbol</a>);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">bool</span> Atomic::isLocalSymbol()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> type == AtomicType::SYMBOL &amp;&amp; Atomic::isLocalSymbol(symbol);</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structmixal_1_1_atomic.html#a989a43042bde81f0c534e506373639d6">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="structmixal_1_1_atomic.html#a989a43042bde81f0c534e506373639d6">Atomic::replaceSymbol</a>(<span class="keyword">const</span> std::string&amp; symbol) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    this-&gt;symbol = <a class="code" href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">symbol</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> Atomic::replaceSymbol(<span class="keyword">const</span> std::string&amp; symbol) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    this-&gt;symbol = symbol;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};  <span class="comment">// namespace mixal</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};  <span class="comment">// namespace mixal</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aexpression_8h_html"><div class="ttname"><a href="expression_8h.html">expression.h</a></div><div class="ttdoc">To parse the expressions.</div></div>
+<div class="ttc" id="astructmixal_1_1_atomic_html_a03af48bc0a24c2298032460755a9c07d"><div class="ttname"><a href="structmixal_1_1_atomic.html#a03af48bc0a24c2298032460755a9c07d">mixal::Atomic::negative</a></div><div class="ttdeci">bool negative</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00027">expression.h:27</a></div></div>
+<div class="ttc" id="astructmixal_1_1_atomic_html_a21a833637459b0a25b30fcb1400cc550"><div class="ttname"><a href="structmixal_1_1_atomic.html#a21a833637459b0a25b30fcb1400cc550">mixal::Atomic::integer</a></div><div class="ttdeci">int32_t integer</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00028">expression.h:28</a></div></div>
+<div class="ttc" id="astructmixal_1_1_atomic_html_ab11fb3cb7d6f27a37f1e74a440181d1d"><div class="ttname"><a href="structmixal_1_1_atomic.html#ab11fb3cb7d6f27a37f1e74a440181d1d">mixal::Atomic::type</a></div><div class="ttdeci">AtomicType type</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00026">expression.h:26</a></div></div>
+<div class="ttc" id="astructmixal_1_1_atomic_html_a989a43042bde81f0c534e506373639d6"><div class="ttname"><a href="structmixal_1_1_atomic.html#a989a43042bde81f0c534e506373639d6">mixal::Atomic::replaceSymbol</a></div><div class="ttdeci">void replaceSymbol(const std::string &amp;symbol)</div><div class="ttdef"><b>Definition:</b> <a href="atomic_8cpp_source.html#l00032">atomic.cpp:32</a></div></div>
+<div class="ttc" id="astructmixal_1_1_atomic_html_a089de9a302dc64f1422b3b9ed6ae6526"><div class="ttname"><a href="structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526">mixal::Atomic::symbol</a></div><div class="ttdeci">std::string symbol</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00029">expression.h:29</a></div></div>
+<div class="ttc" id="astructmixal_1_1_atomic_html_a5ae6f866d34a45676277e6737d314b47"><div class="ttname"><a href="structmixal_1_1_atomic.html#a5ae6f866d34a45676277e6737d314b47">mixal::Atomic::isLocalSymbol</a></div><div class="ttdeci">bool isLocalSymbol() const</div><div class="ttdef"><b>Definition:</b> <a href="atomic_8cpp_source.html#l00028">atomic.cpp:28</a></div></div>
+<div class="ttc" id="astructmixal_1_1_atomic_html"><div class="ttname"><a href="structmixal_1_1_atomic.html">mixal::Atomic</a></div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00025">expression.h:25</a></div></div>
+<div class="ttc" id="astructmixal_1_1_atomic_html_a3198dd9d4cc4f7cc37a5b8c6046b5ef0"><div class="ttname"><a href="structmixal_1_1_atomic.html#a3198dd9d4cc4f7cc37a5b8c6046b5ef0">mixal::Atomic::operator==</a></div><div class="ttdeci">bool operator==(const Atomic &amp;atomic)</div><div class="ttdef"><b>Definition:</b> <a href="atomic_8cpp_source.html#l00006">atomic.cpp:6</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
