@@ -73,21 +73,21 @@ $(function() {
 <div class="title">mixal::AtomicValue Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="expression_8h_source.html">expression.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a34ec59264ddc26d9340bcaed868cc665"><td class="memItemLeft" align="right" valign="top"><a id="a34ec59264ddc26d9340bcaed868cc665"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AtomicValue</b> (int32_t _value)</td></tr>
+<tr class="memitem:a902a8e9f104997ae8fbb5a1d2becae0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_atomic_value.html#a902a8e9f104997ae8fbb5a1d2becae0a">AtomicValue</a> ()</td></tr>
+<tr class="separator:a902a8e9f104997ae8fbb5a1d2becae0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34ec59264ddc26d9340bcaed868cc665"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_atomic_value.html#a34ec59264ddc26d9340bcaed868cc665">AtomicValue</a> (int32_t _value)</td></tr>
 <tr class="separator:a34ec59264ddc26d9340bcaed868cc665"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a906e637065e760faa240b7b8f40e2b03"><td class="memItemLeft" align="right" valign="top"><a id="a906e637065e760faa240b7b8f40e2b03"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AtomicValue</b> (bool _negative, int32_t _value)</td></tr>
+<tr class="memitem:a906e637065e760faa240b7b8f40e2b03"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_atomic_value.html#a906e637065e760faa240b7b8f40e2b03">AtomicValue</a> (bool _negative, int32_t _value)</td></tr>
 <tr class="separator:a906e637065e760faa240b7b8f40e2b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35e7c5f53f1631bcd85b181be6363af1"><td class="memItemLeft" align="right" valign="top"><a id="a35e7c5f53f1631bcd85b181be6363af1"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>AtomicValue</b> (const <a class="el" href="structmixal_1_1_atomic_value.html">AtomicValue</a> &amp;atomicValue)</td></tr>
+<tr class="memitem:a35e7c5f53f1631bcd85b181be6363af1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_atomic_value.html#a35e7c5f53f1631bcd85b181be6363af1">AtomicValue</a> (const <a class="el" href="structmixal_1_1_atomic_value.html">AtomicValue</a> &amp;atomicValue)</td></tr>
 <tr class="separator:a35e7c5f53f1631bcd85b181be6363af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97979656645d3a2018adffef98203122"><td class="memItemLeft" align="right" valign="top"><a id="a97979656645d3a2018adffef98203122"></a>
-<a class="el" href="structmixal_1_1_atomic_value.html">AtomicValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="structmixal_1_1_atomic_value.html">AtomicValue</a> &amp;atomicValue)</td></tr>
-<tr class="separator:a97979656645d3a2018adffef98203122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7732f8f54e43356e7e499e72f0247ed2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmixal_1_1_atomic_value.html">AtomicValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_atomic_value.html#a7732f8f54e43356e7e499e72f0247ed2">operator=</a> (const <a class="el" href="structmixal_1_1_atomic_value.html">AtomicValue</a> &amp;atomicValue)</td></tr>
+<tr class="separator:a7732f8f54e43356e7e499e72f0247ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -99,10 +99,152 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr
 <tr class="separator:ae2cc06e48528b191a226ec94572ca54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00078">78</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="textblock"><p>The evaluated value of an atomic.</p>
+<p>Note that the sign is only used to distinguish <code>+0</code> and <code>-0</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00073">73</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a902a8e9f104997ae8fbb5a1d2becae0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a902a8e9f104997ae8fbb5a1d2becae0a">&#9670;&nbsp;</a></span>AtomicValue() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mixal::AtomicValue::AtomicValue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize with <code>+0</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="atomic_8cpp_source.html#l00054">54</a> of file <a class="el" href="atomic_8cpp_source.html">atomic.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;: negative(), value() {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a34ec59264ddc26d9340bcaed868cc665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ec59264ddc26d9340bcaed868cc665">&#9670;&nbsp;</a></span>AtomicValue() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mixal::AtomicValue::AtomicValue </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>_value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize with an integer value. </p>
+
+<p class="definition">Definition at line <a class="el" href="atomic_8cpp_source.html#l00056">56</a> of file <a class="el" href="atomic_8cpp_source.html">atomic.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                       : negative(), value(_value) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    negative = _value &lt; 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a906e637065e760faa240b7b8f40e2b03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a906e637065e760faa240b7b8f40e2b03">&#9670;&nbsp;</a></span>AtomicValue() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mixal::AtomicValue::AtomicValue </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_negative</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize with an integer value and the sign. </p>
+
+<p class="definition">Definition at line <a class="el" href="atomic_8cpp_source.html#l00060">60</a> of file <a class="el" href="atomic_8cpp_source.html">atomic.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                       :</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    negative(_negative), value(_value) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a35e7c5f53f1631bcd85b181be6363af1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35e7c5f53f1631bcd85b181be6363af1">&#9670;&nbsp;</a></span>AtomicValue() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mixal::AtomicValue::AtomicValue </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmixal_1_1_atomic_value.html">AtomicValue</a> &amp;&#160;</td>
+          <td class="paramname"><em>atomicValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize with another atomic value. </p>
+
+<p class="definition">Definition at line <a class="el" href="atomic_8cpp_source.html#l00064">64</a> of file <a class="el" href="atomic_8cpp_source.html">atomic.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                       :</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    negative(atomicValue.negative), value(atomicValue.value) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7732f8f54e43356e7e499e72f0247ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7732f8f54e43356e7e499e72f0247ed2">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmixal_1_1_atomic_value.html">AtomicValue</a> &amp; mixal::AtomicValue::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmixal_1_1_atomic_value.html">AtomicValue</a> &amp;&#160;</td>
+          <td class="paramname"><em>atomicValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The copy assign operation. </p>
+
+<p class="definition">Definition at line <a class="el" href="atomic_8cpp_source.html#l00068">68</a> of file <a class="el" href="atomic_8cpp_source.html">atomic.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    negative = atomicValue.negative;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    value = atomicValue.value;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>include/<a class="el" href="expression_8h_source.html">expression.h</a></li>
+<li>src/<a class="el" href="atomic_8cpp_source.html">atomic.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
