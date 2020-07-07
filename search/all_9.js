@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['negative_42',['negative',['../structmixal_1_1_atomic.html#a03af48bc0a24c2298032460755a9c07d',1,'mixal::Atomic']]]
+  ['mixal_51',['MIXAL',['../index.html',1,'']]],
+  ['machine_52',['Machine',['../classmixal_1_1_machine.html',1,'mixal']]],
+  ['memory_2eh_53',['memory.h',['../memory_8h.html',1,'']]]
 ];

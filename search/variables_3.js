@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['symbol_133',['symbol',['../structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526',1,'mixal::Atomic']]]
+  ['symbol_165',['symbol',['../structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526',1,'mixal::Atomic']]]
 ];

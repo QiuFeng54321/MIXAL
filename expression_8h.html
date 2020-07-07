@@ -100,21 +100,20 @@ Enumerations</h2></td></tr>
 <b>mixal::AtomicType::ASTERISK</b>
  }</td></tr>
 <tr class="separator:aa13232db539ed5ddffea54a7f61a9d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad3ed9e582931de131d911172843381d"><td class="memItemLeft" align="right" valign="top"><a id="aad3ed9e582931de131d911172843381d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Operation</b> { <br />
-&#160;&#160;<b>ADD</b>, 
-<b>SUBTRACT</b>, 
-<b>MULTIPLY</b>, 
-<b>FLOOR_DIV</b>, 
+<tr class="memitem:aad3ed9e582931de131d911172843381d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="expression_8h.html#aad3ed9e582931de131d911172843381d">mixal::Operation</a> { <br />
+&#160;&#160;<b>mixal::Operation::ADD</b>, 
+<b>mixal::Operation::SUBTRACT</b>, 
+<b>mixal::Operation::MULTIPLY</b>, 
+<b>mixal::Operation::FLOOR_DIV</b>, 
 <br />
-&#160;&#160;<b>FIELD</b>
+&#160;&#160;<b>mixal::Operation::FIELD</b>
 <br />
  }</td></tr>
 <tr class="separator:aad3ed9e582931de131d911172843381d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8645e3341ae73666ae05a2de230621b8"><td class="memItemLeft" align="right" valign="top"><a id="a8645e3341ae73666ae05a2de230621b8"></a>
-std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>mixal::operator&lt;&lt;</b> (std::ostream &amp;out, Operation operation)</td></tr>
+<tr class="memitem:a8645e3341ae73666ae05a2de230621b8"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="expression_8h.html#a8645e3341ae73666ae05a2de230621b8">mixal::operator&lt;&lt;</a> (std::ostream &amp;out, Operation operation)</td></tr>
 <tr class="separator:a8645e3341ae73666ae05a2de230621b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -150,6 +149,85 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>mixal::
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    ASTERISK,  </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="aad3ed9e582931de131d911172843381d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad3ed9e582931de131d911172843381d">&#9670;&nbsp;</a></span>Operation</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="expression_8h.html#aad3ed9e582931de131d911172843381d">mixal::Operation</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Types of operations in expressions. </p>
+
+<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00092">92</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                     {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    ADD,            </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    SUBTRACT,       </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    MULTIPLY,       </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    FLOOR_DIV,      </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// FLOAT_DIV,   /**&lt; `//` */</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    FIELD,          </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a8645e3341ae73666ae05a2de230621b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8645e3341ae73666ae05a2de230621b8">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; mixal::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="expression_8h.html#aad3ed9e582931de131d911172843381d">Operation</a>&#160;</td>
+          <td class="paramname"><em>operation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Output the symbol of the operation. </p>
+
+<p class="definition">Definition at line <a class="el" href="expression_8cpp_source.html#l00335">335</a> of file <a class="el" href="expression_8cpp_source.html">expression.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                                                             {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="keywordflow">switch</span> (operation) {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordflow">case</span> Operation::ADD: out &lt;&lt; <span class="charliteral">&#39;+&#39;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">case</span> Operation::SUBTRACT: out &lt;&lt; <span class="charliteral">&#39;-&#39;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">case</span> Operation::MULTIPLY: out &lt;&lt; <span class="charliteral">&#39;*&#39;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">case</span> Operation::FLOOR_DIV: out &lt;&lt; <span class="charliteral">&#39;/&#39;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keywordflow">case</span> Operation::FIELD: out &lt;&lt; <span class="charliteral">&#39;:&#39;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="expression_8cpp_source.html#l00335">mixal::operator&lt;&lt;()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="expression_8cpp_source.html#l00335">mixal::operator&lt;&lt;()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

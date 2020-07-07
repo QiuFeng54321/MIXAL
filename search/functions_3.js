@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['expressionerror_104',['ExpressionError',['../classmixal_1_1_expression_error.html#ace21e7971ff0f2df595975270ecb42cb',1,'mixal::ExpressionError']]]
+  ['depends_122',['depends',['../classmixal_1_1_expression.html#a038ee7115bfdabceb041c0eec3d089e7',1,'mixal::Expression']]]
 ];
