@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['symbol_165',['symbol',['../structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526',1,'mixal::Atomic']]]
+  ['index_182',['index',['../classmixal_1_1_parsed_result.html#a1f2cff68b66f246a4ca229354a40bf74',1,'mixal::ParsedResult']]],
+  ['integer_183',['integer',['../structmixal_1_1_atomic.html#a21a833637459b0a25b30fcb1400cc550',1,'mixal::Atomic']]]
 ];

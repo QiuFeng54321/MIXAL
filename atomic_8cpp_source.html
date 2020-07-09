@@ -132,24 +132,20 @@ $(function() {
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    negative = _value &lt; 0;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structmixal_1_1_atomic_value.html#a906e637065e760faa240b7b8f40e2b03">   64</a></span>&#160;<a class="code" href="structmixal_1_1_atomic_value.html#a902a8e9f104997ae8fbb5a1d2becae0a">AtomicValue::AtomicValue</a>(<span class="keywordtype">bool</span> _negative, int32_t _value) :</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    negative(_negative), value(_value) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structmixal_1_1_atomic_value.html#a35e7c5f53f1631bcd85b181be6363af1">   64</a></span>&#160;<a class="code" href="structmixal_1_1_atomic_value.html#a902a8e9f104997ae8fbb5a1d2becae0a">AtomicValue::AtomicValue</a>(<span class="keyword">const</span> <a class="code" href="structmixal_1_1_atomic_value.html">AtomicValue</a>&amp; atomicValue) :</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    negative(atomicValue.negative), value(atomicValue.value) {</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structmixal_1_1_atomic_value.html#a35e7c5f53f1631bcd85b181be6363af1">   68</a></span>&#160;<a class="code" href="structmixal_1_1_atomic_value.html#a902a8e9f104997ae8fbb5a1d2becae0a">AtomicValue::AtomicValue</a>(<span class="keyword">const</span> <a class="code" href="structmixal_1_1_atomic_value.html">AtomicValue</a>&amp; atomicValue) :</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    negative(atomicValue.negative), value(atomicValue.value) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="structmixal_1_1_atomic_value.html#a7732f8f54e43356e7e499e72f0247ed2">   72</a></span>&#160;<a class="code" href="structmixal_1_1_atomic_value.html">AtomicValue</a>&amp; <a class="code" href="structmixal_1_1_atomic_value.html#a7732f8f54e43356e7e499e72f0247ed2">AtomicValue::operator=</a>(<span class="keyword">const</span> <a class="code" href="structmixal_1_1_atomic_value.html">AtomicValue</a>&amp; atomicValue) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    negative = atomicValue.negative;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    value = atomicValue.value;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};  <span class="comment">// namespace mixal</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structmixal_1_1_atomic_value.html#a7732f8f54e43356e7e499e72f0247ed2">   68</a></span>&#160;<a class="code" href="structmixal_1_1_atomic_value.html">AtomicValue</a>&amp; <a class="code" href="structmixal_1_1_atomic_value.html#a7732f8f54e43356e7e499e72f0247ed2">AtomicValue::operator=</a>(<span class="keyword">const</span> <a class="code" href="structmixal_1_1_atomic_value.html">AtomicValue</a>&amp; atomicValue) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    negative = atomicValue.negative;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    value = atomicValue.value;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};  <span class="comment">// namespace mixal</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aexpression_8h_html"><div class="ttname"><a href="expression_8h.html">expression.h</a></div><div class="ttdoc">To parse the expressions.</div></div>
-<div class="ttc" id="astructmixal_1_1_atomic_value_html_a7732f8f54e43356e7e499e72f0247ed2"><div class="ttname"><a href="structmixal_1_1_atomic_value.html#a7732f8f54e43356e7e499e72f0247ed2">mixal::AtomicValue::operator=</a></div><div class="ttdeci">AtomicValue &amp; operator=(const AtomicValue &amp;atomicValue)</div><div class="ttdef"><b>Definition:</b> <a href="atomic_8cpp_source.html#l00072">atomic.cpp:72</a></div></div>
+<div class="ttc" id="astructmixal_1_1_atomic_value_html_a7732f8f54e43356e7e499e72f0247ed2"><div class="ttname"><a href="structmixal_1_1_atomic_value.html#a7732f8f54e43356e7e499e72f0247ed2">mixal::AtomicValue::operator=</a></div><div class="ttdeci">AtomicValue &amp; operator=(const AtomicValue &amp;atomicValue)</div><div class="ttdef"><b>Definition:</b> <a href="atomic_8cpp_source.html#l00068">atomic.cpp:68</a></div></div>
 <div class="ttc" id="astructmixal_1_1_atomic_html_a3adbdf015d0bd7637fa16613f9b3af0b"><div class="ttname"><a href="structmixal_1_1_atomic.html#a3adbdf015d0bd7637fa16613f9b3af0b">mixal::Atomic::operator!=</a></div><div class="ttdeci">bool operator!=(const Atomic &amp;atomic)</div><div class="ttdef"><b>Definition:</b> <a href="atomic_8cpp_source.html#l00031">atomic.cpp:31</a></div></div>
 <div class="ttc" id="astructmixal_1_1_atomic_html_a03af48bc0a24c2298032460755a9c07d"><div class="ttname"><a href="structmixal_1_1_atomic.html#a03af48bc0a24c2298032460755a9c07d">mixal::Atomic::negative</a></div><div class="ttdeci">bool negative</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00027">expression.h:27</a></div></div>
 <div class="ttc" id="astructmixal_1_1_atomic_html_a93243ec27b3ccad6a4d026fa381490ce"><div class="ttname"><a href="structmixal_1_1_atomic.html#a93243ec27b3ccad6a4d026fa381490ce">mixal::Atomic::Atomic</a></div><div class="ttdeci">Atomic(AtomicType _type=AtomicType::INTEGER, bool _negative=false)</div><div class="ttdef"><b>Definition:</b> <a href="atomic_8cpp_source.html#l00006">atomic.cpp:6</a></div></div>

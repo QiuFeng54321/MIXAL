@@ -82,8 +82,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a902a8e9f104997ae8fbb5a1d2becae0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34ec59264ddc26d9340bcaed868cc665"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_atomic_value.html#a34ec59264ddc26d9340bcaed868cc665">AtomicValue</a> (int32_t _value)</td></tr>
 <tr class="separator:a34ec59264ddc26d9340bcaed868cc665"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a906e637065e760faa240b7b8f40e2b03"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_atomic_value.html#a906e637065e760faa240b7b8f40e2b03">AtomicValue</a> (bool _negative, int32_t _value)</td></tr>
-<tr class="separator:a906e637065e760faa240b7b8f40e2b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35e7c5f53f1631bcd85b181be6363af1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_atomic_value.html#a35e7c5f53f1631bcd85b181be6363af1">AtomicValue</a> (const <a class="el" href="structmixal_1_1_atomic_value.html">AtomicValue</a> &amp;atomicValue)</td></tr>
 <tr class="separator:a35e7c5f53f1631bcd85b181be6363af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7732f8f54e43356e7e499e72f0247ed2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmixal_1_1_atomic_value.html">AtomicValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_atomic_value.html#a7732f8f54e43356e7e499e72f0247ed2">operator=</a> (const <a class="el" href="structmixal_1_1_atomic_value.html">AtomicValue</a> &amp;atomicValue)</td></tr>
@@ -105,7 +103,7 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr
 <p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00075">75</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a902a8e9f104997ae8fbb5a1d2becae0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a902a8e9f104997ae8fbb5a1d2becae0a">&#9670;&nbsp;</a></span>AtomicValue() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a902a8e9f104997ae8fbb5a1d2becae0a">&#9670;&nbsp;</a></span>AtomicValue() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -126,7 +124,7 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr
 </div>
 </div>
 <a id="a34ec59264ddc26d9340bcaed868cc665"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34ec59264ddc26d9340bcaed868cc665">&#9670;&nbsp;</a></span>AtomicValue() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ec59264ddc26d9340bcaed868cc665">&#9670;&nbsp;</a></span>AtomicValue() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,42 +155,8 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a906e637065e760faa240b7b8f40e2b03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a906e637065e760faa240b7b8f40e2b03">&#9670;&nbsp;</a></span>AtomicValue() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">mixal::AtomicValue::AtomicValue </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>_negative</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>_value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Initialize with an integer value and the sign. </p>
-
-<p class="definition">Definition at line <a class="el" href="atomic_8cpp_source.html#l00064">64</a> of file <a class="el" href="atomic_8cpp_source.html">atomic.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                       :</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    negative(_negative), value(_value) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="a35e7c5f53f1631bcd85b181be6363af1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35e7c5f53f1631bcd85b181be6363af1">&#9670;&nbsp;</a></span>AtomicValue() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a35e7c5f53f1631bcd85b181be6363af1">&#9670;&nbsp;</a></span>AtomicValue() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,10 +172,10 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr
 </div><div class="memdoc">
 <p>Initialize with another atomic value. </p>
 
-<p class="definition">Definition at line <a class="el" href="atomic_8cpp_source.html#l00068">68</a> of file <a class="el" href="atomic_8cpp_source.html">atomic.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                       :</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    negative(atomicValue.negative), value(atomicValue.value) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="atomic_8cpp_source.html#l00064">64</a> of file <a class="el" href="atomic_8cpp_source.html">atomic.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                                       :</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    negative(atomicValue.negative), value(atomicValue.value) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -233,12 +197,12 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr
 </div><div class="memdoc">
 <p>The copy assign operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="atomic_8cpp_source.html#l00072">72</a> of file <a class="el" href="atomic_8cpp_source.html">atomic.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                                                  {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    negative = atomicValue.negative;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    value = atomicValue.value;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="atomic_8cpp_source.html#l00068">68</a> of file <a class="el" href="atomic_8cpp_source.html">atomic.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                                  {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    negative = atomicValue.negative;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    value = atomicValue.value;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

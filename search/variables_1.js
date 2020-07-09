@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['integer_163',['integer',['../structmixal_1_1_atomic.html#a21a833637459b0a25b30fcb1400cc550',1,'mixal::Atomic']]]
+  ['char_5fcodes_178',['CHAR_CODES',['../memory_8h.html#adaeb7aa8e58d1ab6ba110bc9da8a4ffa',1,'mixal']]],
+  ['char_5fcodes_5fnum_179',['CHAR_CODES_NUM',['../memory_8h.html#a116950adcfe8befda56ff9aaaf40159d',1,'mixal']]],
+  ['comment_180',['comment',['../classmixal_1_1_parsed_result.html#a1185c930c4a9ab8c461a1912fd906f8c',1,'mixal::ParsedResult']]]
 ];
