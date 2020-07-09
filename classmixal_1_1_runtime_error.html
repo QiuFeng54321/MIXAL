@@ -72,8 +72,6 @@ $(function() {
 <div class="title">mixal::RuntimeError Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="errors_8h_source.html">errors.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for mixal::RuntimeError:</div>
 <div class="dyncontent">
@@ -83,124 +81,23 @@ Inheritance diagram for mixal::RuntimeError:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a693450fc5bc57cd97b820413a98e5378"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_runtime_error.html#a693450fc5bc57cd97b820413a98e5378">RuntimeError</a> (int <a class="el" href="classmixal_1_1_runtime_error.html#a14430710b69a8afe7eb2e02e94843f2a">line</a>, const std::string &amp;message)</td></tr>
+<tr class="memitem:a693450fc5bc57cd97b820413a98e5378"><td class="memItemLeft" align="right" valign="top"><a id="a693450fc5bc57cd97b820413a98e5378"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>RuntimeError</b> (int line, const std::string &amp;message)</td></tr>
 <tr class="separator:a693450fc5bc57cd97b820413a98e5378"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14430710b69a8afe7eb2e02e94843f2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_runtime_error.html#a14430710b69a8afe7eb2e02e94843f2a">line</a> () const</td></tr>
+<tr class="memitem:a14430710b69a8afe7eb2e02e94843f2a"><td class="memItemLeft" align="right" valign="top"><a id="a14430710b69a8afe7eb2e02e94843f2a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>line</b> () const</td></tr>
 <tr class="separator:a14430710b69a8afe7eb2e02e94843f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a468222fd5899f3402f6680fc8f98059b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_runtime_error.html#a468222fd5899f3402f6680fc8f98059b">what</a> () const noexcept override</td></tr>
+<tr class="memitem:a468222fd5899f3402f6680fc8f98059b"><td class="memItemLeft" align="right" valign="top"><a id="a468222fd5899f3402f6680fc8f98059b"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><b>what</b> () const noexcept override</td></tr>
 <tr class="separator:a468222fd5899f3402f6680fc8f98059b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Errors encountered while executing the codes. </p>
-
-<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00051">51</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a693450fc5bc57cd97b820413a98e5378"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a693450fc5bc57cd97b820413a98e5378">&#9670;&nbsp;</a></span>RuntimeError()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">mixal::RuntimeError::RuntimeError </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>line</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>message</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Initialize error with line number and message. </p>
-
-<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00054">54</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;: _line(<a class="code" href="classmixal_1_1_runtime_error.html#a14430710b69a8afe7eb2e02e94843f2a">line</a>), _message(message) {}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a14430710b69a8afe7eb2e02e94843f2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14430710b69a8afe7eb2e02e94843f2a">&#9670;&nbsp;</a></span>line()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int mixal::RuntimeError::line </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>The location of memory that is executing. </p>
-
-<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00057">57</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{ <span class="keywordflow">return</span> _line; }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a468222fd5899f3402f6680fc8f98059b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a468222fd5899f3402f6680fc8f98059b">&#9670;&nbsp;</a></span>what()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* mixal::RuntimeError::what </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>The error information. </p>
-
-<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00060">60</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                               {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> _message.c_str();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00037">37</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="errors_8h_source.html">errors.h</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassmixal_1_1_runtime_error_html_a14430710b69a8afe7eb2e02e94843f2a"><div class="ttname"><a href="classmixal_1_1_runtime_error.html#a14430710b69a8afe7eb2e02e94843f2a">mixal::RuntimeError::line</a></div><div class="ttdeci">int line() const</div><div class="ttdef"><b>Definition:</b> <a href="errors_8h_source.html#l00057">errors.h:57</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

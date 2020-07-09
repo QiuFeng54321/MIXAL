@@ -107,8 +107,8 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> Machine::executeDIV(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    int32_t valueA = abs(rA.<a class="code" href="structmixal_1_1_computer_word.html#aa3cda0a7e9ba193793b0177245d4f7bd">value</a>());</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    int32_t valueX = abs(rX.<a class="code" href="structmixal_1_1_computer_word.html#aa3cda0a7e9ba193793b0177245d4f7bd">value</a>());</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    int32_t valueA = std::abs(rA.<a class="code" href="structmixal_1_1_computer_word.html#aa3cda0a7e9ba193793b0177245d4f7bd">value</a>());</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    int32_t valueX = std::abs(rX.<a class="code" href="structmixal_1_1_computer_word.html#aa3cda0a7e9ba193793b0177245d4f7bd">value</a>());</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    int64_t dividend = (<span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(valueA) &lt;&lt; 30) + <span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(valueX);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (rA.negative) {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        dividend = -dividend;</div>
@@ -118,10 +118,10 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    copyToRegister5(instruction, memory[address], &amp;word);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    int32_t divisor = word.value();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (divisor == 0) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">throw</span> RuntimeError(_lineOffset, <span class="stringliteral">&quot;Divisor cannot be 0&quot;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">throw</span> RuntimeError(_lineOffset, <span class="stringliteral">&quot;Divisor is 0&quot;</span>);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    int64_t quotient = dividend / divisor;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (abs(quotient) &gt;= (1 &lt;&lt; 30)) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span> (std::abs(quotient) &gt;= (1 &lt;&lt; 30)) {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        overflow = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        quotient %= (1 &lt;&lt; 30);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>

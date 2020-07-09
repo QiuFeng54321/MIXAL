@@ -69,55 +69,52 @@ $(function() {
 <div class="title">registers.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="registers_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INCLUDE_REGISTERS_H_</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INCLUDE_REGISTERS_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define INCLUDE_REGISTERS_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="memory_8h.html">memory.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;memory.h&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>mixal {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="registers_8h.html#a5c61853cf64404f5f85b4f1a9597038b">   15</a></span>&#160;<span class="keyword">using</span> <a class="code" href="structmixal_1_1_computer_word.html">Register5</a> = <a class="code" href="structmixal_1_1_computer_word.html">ComputerWord</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structmixal_1_1_register2.html">   23</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmixal_1_1_register2.html">Register2</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">bool</span> negative;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    uint8_t byte1;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    uint8_t byte2;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structmixal_1_1_register2.html#a954d8728dff8779c4f9e71857d5cbced">   29</a></span>&#160;    <a class="code" href="structmixal_1_1_register2.html#a954d8728dff8779c4f9e71857d5cbced">Register2</a>() : negative(), byte1(), byte2() {}</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structmixal_1_1_register2.html#a70881e32e3c1ae1d086507ce26cdc2bc">   34</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structmixal_1_1_register2.html#a70881e32e3c1ae1d086507ce26cdc2bc">Register2</a>(int16_t <a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a>) : negative(), byte1(), byte2() { <a class="code" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">set</a>(<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a>); }</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structmixal_1_1_register2.html#aeec14ef28f8be2173a228fc83aa97655">   36</a></span>&#160;    <a class="code" href="structmixal_1_1_register2.html#aeec14ef28f8be2173a228fc83aa97655">Register2</a>(<span class="keywordtype">bool</span> _negative, uint8_t _byte1, uint8_t _byte2) : negative(_negative), byte1(_byte1), byte2(_byte2) {}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structmixal_1_1_register2.html#aede49eca1e015455d0750151172424d8">   39</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="structmixal_1_1_register2.html#aede49eca1e015455d0750151172424d8">reset</a>() {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        negative = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        byte1 = byte2 = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>mixal {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">enum class</span> Registers {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    A,  <span class="comment">// Accumulator</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    X,  <span class="comment">// Extension</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    I1, I2, I3, I4, I5, I6,  <span class="comment">// Index registers</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    J,  <span class="comment">// Jump address</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">using</span> Register5 = ComputerWord;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structmixal_1_1_register2.html">   18</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structmixal_1_1_register2.html">Register2</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> negative;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    uint8_t byte1;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    uint8_t byte2;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="structmixal_1_1_register2.html">Register2</a>() : negative(), byte1(), byte2() {}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structmixal_1_1_register2.html">Register2</a>(int16_t value) : negative(), byte1(), byte2() { set(value); }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="structmixal_1_1_register2.html">Register2</a>(<span class="keywordtype">bool</span> _negative, uint8_t _byte1, uint8_t _byte2) : negative(_negative), byte1(_byte1), byte2(_byte2) {}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> reset() {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        negative = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        byte1 = byte2 = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    uint8_t operator[](<span class="keywordtype">int</span> index) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    uint16_t bytes12() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    int16_t value() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> set(int16_t value);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> set(<span class="keywordtype">int</span> index, int8_t val);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> set(<span class="keywordtype">bool</span> negative, uint8_t byte1, uint8_t byte2);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};  <span class="comment">// namespace mixal</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    uint8_t <a class="code" href="structmixal_1_1_register2.html#aad0c0384d1bfecf927ef8432f7d87210">operator[]</a>(<span class="keywordtype">int</span> index) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    uint16_t <a class="code" href="structmixal_1_1_register2.html#a45e5c37a23474d9e2a7c38c28ac18c6d">bytes12</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    int16_t <a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">set</a>(int16_t <a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">set</a>(<span class="keywordtype">int</span> index, int8_t val);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">set</a>(<span class="keywordtype">bool</span> negative, uint8_t byte1, uint8_t byte2);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};  <span class="comment">// namespace mixal</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif  // INCLUDE_REGISTERS_H_</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif  // INCLUDE_REGISTERS_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructmixal_1_1_register2_html_aeec14ef28f8be2173a228fc83aa97655"><div class="ttname"><a href="structmixal_1_1_register2.html#aeec14ef28f8be2173a228fc83aa97655">mixal::Register2::Register2</a></div><div class="ttdeci">Register2(bool _negative, uint8_t _byte1, uint8_t _byte2)</div><div class="ttdef"><b>Definition:</b> <a href="registers_8h_source.html#l00036">registers.h:36</a></div></div>
-<div class="ttc" id="astructmixal_1_1_computer_word_html"><div class="ttname"><a href="structmixal_1_1_computer_word.html">mixal::ComputerWord</a></div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00025">memory.h:25</a></div></div>
-<div class="ttc" id="astructmixal_1_1_register2_html_af6f71bb35b12183b27e67b802aeabc1b"><div class="ttname"><a href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">mixal::Register2::set</a></div><div class="ttdeci">void set(int16_t value)</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00028">registers.cpp:28</a></div></div>
-<div class="ttc" id="astructmixal_1_1_register2_html_aad0c0384d1bfecf927ef8432f7d87210"><div class="ttname"><a href="structmixal_1_1_register2.html#aad0c0384d1bfecf927ef8432f7d87210">mixal::Register2::operator[]</a></div><div class="ttdeci">uint8_t operator[](int index) const</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00007">registers.cpp:7</a></div></div>
-<div class="ttc" id="astructmixal_1_1_register2_html_a954d8728dff8779c4f9e71857d5cbced"><div class="ttname"><a href="structmixal_1_1_register2.html#a954d8728dff8779c4f9e71857d5cbced">mixal::Register2::Register2</a></div><div class="ttdeci">Register2()</div><div class="ttdef"><b>Definition:</b> <a href="registers_8h_source.html#l00029">registers.h:29</a></div></div>
-<div class="ttc" id="astructmixal_1_1_register2_html_a45e5c37a23474d9e2a7c38c28ac18c6d"><div class="ttname"><a href="structmixal_1_1_register2.html#a45e5c37a23474d9e2a7c38c28ac18c6d">mixal::Register2::bytes12</a></div><div class="ttdeci">uint16_t bytes12() const</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00017">registers.cpp:17</a></div></div>
-<div class="ttc" id="astructmixal_1_1_register2_html_a377d94ea727118abf129d7f8f86f647b"><div class="ttname"><a href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">mixal::Register2::value</a></div><div class="ttdeci">int16_t value() const</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00023">registers.cpp:23</a></div></div>
-<div class="ttc" id="astructmixal_1_1_register2_html"><div class="ttname"><a href="structmixal_1_1_register2.html">mixal::Register2</a></div><div class="ttdef"><b>Definition:</b> <a href="registers_8h_source.html#l00023">registers.h:23</a></div></div>
-<div class="ttc" id="astructmixal_1_1_register2_html_aede49eca1e015455d0750151172424d8"><div class="ttname"><a href="structmixal_1_1_register2.html#aede49eca1e015455d0750151172424d8">mixal::Register2::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition:</b> <a href="registers_8h_source.html#l00039">registers.h:39</a></div></div>
-<div class="ttc" id="astructmixal_1_1_register2_html_a70881e32e3c1ae1d086507ce26cdc2bc"><div class="ttname"><a href="structmixal_1_1_register2.html#a70881e32e3c1ae1d086507ce26cdc2bc">mixal::Register2::Register2</a></div><div class="ttdeci">Register2(int16_t value)</div><div class="ttdef"><b>Definition:</b> <a href="registers_8h_source.html#l00034">registers.h:34</a></div></div>
-<div class="ttc" id="amemory_8h_html"><div class="ttname"><a href="memory_8h.html">memory.h</a></div><div class="ttdoc">The definition of a computer word.</div></div>
+<div class="ttc" id="astructmixal_1_1_register2_html"><div class="ttname"><a href="structmixal_1_1_register2.html">mixal::Register2</a></div><div class="ttdef"><b>Definition:</b> <a href="registers_8h_source.html#l00018">registers.h:18</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
