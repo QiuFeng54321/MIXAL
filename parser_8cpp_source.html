@@ -227,225 +227,228 @@ $(function() {
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                state = ParseState::COMMENT;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#ae46addc1389c323e7e4baf7a9bdb1e51">parsedType</a> = ParsedType::EMPTY;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                commentStart = i;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isalnum(ch)) {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                <span class="comment">// A valid character in location.</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                state = ParseState::LOC;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                locationStart = i;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing location: &quot;</span> + std::string(1, ch));</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">case</span> ParseState::LOC:</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                state = ParseState::BEFORE_OP;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#a153340af89c5b7ab88f1d2616d9775a0">rawLocation</a> = line.substr(locationStart, i - locationStart);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!isalnum(ch)) {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing location: &quot;</span> + std::string(1, ch));</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;            }</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">case</span> ParseState::BEFORE_OP:</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keywordflow">if</span> (locationStart != INIT_INDEX) {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;No operation found after location&quot;</span>);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                }</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                state = ParseState::END;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#ae46addc1389c323e7e4baf7a9bdb1e51">parsedType</a> = ParsedType::EMPTY;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isalnum(ch)) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                state = ParseState::OP;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                operationStart = i;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while finding operation: &quot;</span> + std::string(1, ch));</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <span class="keywordflow">case</span> ParseState::OP:</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span> || ch == END_CHAR) {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#a7d54bf07cad4ef4a897a56d0c644f306">operation</a> = line.substr(operationStart, i - operationStart);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                int32_t operation = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Instructions::getInstructionCode(result.<a class="code" href="classmixal_1_1_parsed_result.html#a7d54bf07cad4ef4a897a56d0c644f306">operation</a>));</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    <span class="keywordflow">if</span> (Instructions::hasArguments(<span class="keyword">static_cast&lt;</span>Instructions::Code<span class="keyword">&gt;</span>(operation))) {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        state = ParseState::BEFORE_ADDRESS;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                        state = ParseState::BEFORE_COMMENT;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    state = ParseState::END;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                }</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                <span class="keywordflow">if</span> (operation == Instructions::INVALID) {</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unknown operation: &quot;</span> + result.<a class="code" href="classmixal_1_1_parsed_result.html#a7d54bf07cad4ef4a897a56d0c644f306">operation</a>);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (operation &lt;= Instructions::LAST) {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    result.<a class="code" href="classmixal_1_1_parsed_result.html#ab85a4e86360a6db816b15c6427f57d3a">word</a>.<a class="code" href="structmixal_1_1_computer_word.html#a23763f2457d54137dfe9ba9d620d92b9">setOperation</a>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(operation));</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    defaultField = Instructions::getDefaultField(result.<a class="code" href="classmixal_1_1_parsed_result.html#a7d54bf07cad4ef4a897a56d0c644f306">operation</a>);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                    result.<a class="code" href="classmixal_1_1_parsed_result.html#ae46addc1389c323e7e4baf7a9bdb1e51">parsedType</a> = ParsedType::PSEUDO;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    result.<a class="code" href="classmixal_1_1_parsed_result.html#ab85a4e86360a6db816b15c6427f57d3a">word</a>.<a class="code" href="structmixal_1_1_computer_word.html#a23763f2457d54137dfe9ba9d620d92b9">setOperation</a>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(operation - Instructions::PSEUDO));</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                    <span class="keywordflow">if</span> (operation == Instructions::ALF) {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                        <span class="comment">// The &quot;address&quot; in ALF starts exactly two characters after the operation.</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                        result.<a class="code" href="classmixal_1_1_parsed_result.html#aec712ad93d88b4230691e509ec6be473">rawAddress</a> = <span class="stringliteral">&quot;     &quot;</span>;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                        ++i;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> shift = 0; shift &lt; 5 &amp;&amp; i &lt; static_cast&lt;int&gt;(line.size()); ++shift) {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                            result.<a class="code" href="classmixal_1_1_parsed_result.html#aec712ad93d88b4230691e509ec6be473">rawAddress</a>[shift] = line[++i];</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                        }</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                        int32_t charsValue = <a class="code" href="structmixal_1_1_computer_word.html">ComputerWord</a>(result.<a class="code" href="classmixal_1_1_parsed_result.html#aec712ad93d88b4230691e509ec6be473">rawAddress</a>).<a class="code" href="structmixal_1_1_computer_word.html#aa3cda0a7e9ba193793b0177245d4f7bd">value</a>();</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                        result.<a class="code" href="classmixal_1_1_parsed_result.html#a8c6a40c133c0f4c7dcd3f1bb58eed949">address</a> = <a class="code" href="classmixal_1_1_expression.html#ab746ee4027b058ab611652db7c4c10dd">Expression::getConstExpression</a>(<a class="code" href="structmixal_1_1_atomic_value.html">AtomicValue</a>(charsValue));</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                        <span class="keywordflow">if</span> (i &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(line.size())) {</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                            state = ParseState::BEFORE_COMMENT;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                            state = ParseState::END;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                        }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    }</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                }</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!isalnum(ch)) {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing operation: &quot;</span> + std::string(1, ch));</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            }</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">case</span> ParseState::BEFORE_ADDRESS:</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                state = ParseState::END;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classmixal_1_1_expression.html#a63c384503ba1baa08e032bfcc20c476e">Expression::isValidFirst</a>(ch)) {</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                state = ParseState::ADDRESS;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                addressStart = i;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while finding address: &quot;</span> + std::string(1, ch));</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            }</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordflow">case</span> ParseState::ADDRESS:</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span> || ch == <span class="charliteral">&#39;,&#39;</span> || ch == <span class="charliteral">&#39;(&#39;</span> || ch == END_CHAR) {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    state = ParseState::BEFORE_COMMENT;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;,&#39;</span>) {</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    state = ParseState::BEFORE_INDEX;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;(&#39;</span>) {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                    state = ParseState::FIELD_OPEN;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    state = ParseState::END;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                }</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#aec712ad93d88b4230691e509ec6be473">rawAddress</a> = line.substr(addressStart, i - addressStart);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                    result.<a class="code" href="classmixal_1_1_parsed_result.html#a8c6a40c133c0f4c7dcd3f1bb58eed949">address</a>.<a class="code" href="classmixal_1_1_expression.html#af6c7444ad740893fd776a762cd250591">parse</a>(result.<a class="code" href="classmixal_1_1_parsed_result.html#aec712ad93d88b4230691e509ec6be473">rawAddress</a>, lineSymbol);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="classmixal_1_1_expression_error.html">ExpressionError</a>&amp; e) {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(addressStart + e.<a class="code" href="classmixal_1_1_expression_error.html#aac1e23f98753b27d45d734af06eef960">index</a>(), e.<a class="code" href="classmixal_1_1_expression_error.html#a9a9e596d44159a2a14300794097fbda8">what</a>());</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                }</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                result.evaluateAddress(emptyDict);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="classmixal_1_1_expression.html#a6802d71c466cfe0421f9ec79f17c1050">Expression::isValidChar</a>(ch)) {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing address: &quot;</span> + std::string(1, ch));</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <span class="keywordflow">case</span> ParseState::BEFORE_INDEX:</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classmixal_1_1_expression.html#a63c384503ba1baa08e032bfcc20c476e">Expression::isValidFirst</a>(ch)) {</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                state = ParseState::INDEX;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                indexStart = i;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;No index found after comma&quot;</span>);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while finding index: &quot;</span> + std::string(1, ch));</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;            }</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordflow">case</span> ParseState::INDEX:</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span> || ch == <span class="charliteral">&#39;(&#39;</span> || ch == END_CHAR) {</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                    state = ParseState::BEFORE_COMMENT;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;(&#39;</span>) {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                    state = ParseState::FIELD_OPEN;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    state = ParseState::END;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#a8b523e82acd8f527e60d65f2e57e314b">rawIndex</a> = line.substr(indexStart, i - indexStart);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    result.<a class="code" href="classmixal_1_1_parsed_result.html#a1f2cff68b66f246a4ca229354a40bf74">index</a>.<a class="code" href="classmixal_1_1_expression.html#af6c7444ad740893fd776a762cd250591">parse</a>(result.<a class="code" href="classmixal_1_1_parsed_result.html#a8b523e82acd8f527e60d65f2e57e314b">rawIndex</a>, lineSymbol);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="classmixal_1_1_expression_error.html">ExpressionError</a>&amp; e) {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(addressStart + e.<a class="code" href="classmixal_1_1_expression_error.html#aac1e23f98753b27d45d734af06eef960">index</a>(), e.<a class="code" href="classmixal_1_1_expression_error.html#a9a9e596d44159a2a14300794097fbda8">what</a>());</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                }</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                result.evaluateIndex(emptyDict);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="classmixal_1_1_expression.html#a6802d71c466cfe0421f9ec79f17c1050">Expression::isValidChar</a>(ch)) {</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing index: &quot;</span> + std::string(1, ch));</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">case</span> ParseState::FIELD_OPEN:</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classmixal_1_1_expression.html#a63c384503ba1baa08e032bfcc20c476e">Expression::isValidFirst</a>(ch)) {</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                state = ParseState::FIELD;</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                fieldStart = i;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered &quot;</span></div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                                    <span class="stringliteral">&quot;while parsing modification: &quot;</span> + std::string(1, ch));</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            }</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">case</span> ParseState::FIELD:</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;)&#39;</span>) {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                state = ParseState::FIELD_CLOSE;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#ae0b5ba090214783a80d5a6d574ca9b44">rawField</a> = line.substr(fieldStart, i - fieldStart);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                    result.<a class="code" href="classmixal_1_1_parsed_result.html#a323910590bfeaea484d802c6165a621c">field</a>.<a class="code" href="classmixal_1_1_expression.html#af6c7444ad740893fd776a762cd250591">parse</a>(result.<a class="code" href="classmixal_1_1_parsed_result.html#ae0b5ba090214783a80d5a6d574ca9b44">rawField</a>, lineSymbol);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="classmixal_1_1_expression_error.html">ExpressionError</a>&amp; e) {</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(addressStart + e.<a class="code" href="classmixal_1_1_expression_error.html#aac1e23f98753b27d45d734af06eef960">index</a>(), e.<a class="code" href="classmixal_1_1_expression_error.html#a9a9e596d44159a2a14300794097fbda8">what</a>());</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                }</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                result.evaluateField(emptyDict);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="classmixal_1_1_expression.html#a6802d71c466cfe0421f9ec79f17c1050">Expression::isValidChar</a>(ch)) {</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing index: &quot;</span> + std::string(1, ch));</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            }</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">case</span> ParseState::FIELD_CLOSE:</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span> || ch == END_CHAR) {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                    state = ParseState::BEFORE_COMMENT;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                    state = ParseState::END;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                }</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing field: &quot;</span> + std::string(1, ch));</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            }</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">case</span> ParseState::BEFORE_COMMENT:</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                state = ParseState::END;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch != <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                state = ParseState::COMMENT;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                commentStart = i;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            }</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordflow">case</span> ParseState::COMMENT:</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                state = ParseState::END;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#a1185c930c4a9ab8c461a1912fd906f8c">comment</a> = line.substr(commentStart, i - commentStart);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            }</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        <span class="keywordflow">case</span> ParseState::END:</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            assert(<span class="keyword">false</span>);  <span class="comment">// This line can not be reached.</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        }</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    }</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">if</span> (result.<a class="code" href="classmixal_1_1_parsed_result.html#ae0b5ba090214783a80d5a6d574ca9b44">rawField</a>.empty()) {</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">if</span> (result.<a class="code" href="classmixal_1_1_parsed_result.html#ab85a4e86360a6db816b15c6427f57d3a">word</a>.<a class="code" href="structmixal_1_1_computer_word.html#a37f138b3872786205a255ae325851ea8">operation</a>() == Instructions::MOVE) {</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            <span class="comment">// The default field value for MOVE is 1, but it is not mandatory.</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            defaultField = 1;</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (result.<a class="code" href="classmixal_1_1_parsed_result.html#ab85a4e86360a6db816b15c6427f57d3a">word</a>.<a class="code" href="structmixal_1_1_computer_word.html#a37f138b3872786205a255ae325851ea8">operation</a>() == Instructions::NOP) {</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <span class="comment">// The whole word is `+0`, but it is not mandatory.</span></div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            defaultField = 0;</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        }</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    }</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordflow">if</span> (defaultField &gt;= 0) {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        result.<a class="code" href="classmixal_1_1_parsed_result.html#ab85a4e86360a6db816b15c6427f57d3a">word</a>.<a class="code" href="structmixal_1_1_computer_word.html#a47c3f28f2ac02403577a487be40b6ad6">setField</a>(defaultField);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                state = ParseState::END;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#ae46addc1389c323e7e4baf7a9bdb1e51">parsedType</a> = ParsedType::EMPTY;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isalnum(ch)) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                <span class="comment">// A valid character in location.</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                state = ParseState::LOC;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                locationStart = i;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing location: &quot;</span> + std::string(1, ch));</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">case</span> ParseState::LOC:</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                state = ParseState::BEFORE_OP;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#a153340af89c5b7ab88f1d2616d9775a0">rawLocation</a> = line.substr(locationStart, i - locationStart);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!isalnum(ch)) {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing location: &quot;</span> + std::string(1, ch));</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">case</span> ParseState::BEFORE_OP:</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <span class="keywordflow">if</span> (locationStart != INIT_INDEX) {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;No operation found after location&quot;</span>);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                state = ParseState::END;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#ae46addc1389c323e7e4baf7a9bdb1e51">parsedType</a> = ParsedType::EMPTY;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isalnum(ch)) {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                state = ParseState::OP;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                operationStart = i;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while finding operation: &quot;</span> + std::string(1, ch));</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">case</span> ParseState::OP:</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span> || ch == END_CHAR) {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#a7d54bf07cad4ef4a897a56d0c644f306">operation</a> = line.substr(operationStart, i - operationStart);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                int32_t operation = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Instructions::getInstructionCode(result.<a class="code" href="classmixal_1_1_parsed_result.html#a7d54bf07cad4ef4a897a56d0c644f306">operation</a>));</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    <span class="keywordflow">if</span> (Instructions::hasArguments(<span class="keyword">static_cast&lt;</span>Instructions::Code<span class="keyword">&gt;</span>(operation))) {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                        state = ParseState::BEFORE_ADDRESS;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                        state = ParseState::BEFORE_COMMENT;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    state = ParseState::END;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <span class="keywordflow">if</span> (operation == Instructions::INVALID) {</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unknown operation: &quot;</span> + result.<a class="code" href="classmixal_1_1_parsed_result.html#a7d54bf07cad4ef4a897a56d0c644f306">operation</a>);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (operation &lt;= Instructions::LAST) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                    result.<a class="code" href="classmixal_1_1_parsed_result.html#ab85a4e86360a6db816b15c6427f57d3a">word</a>.<a class="code" href="structmixal_1_1_computer_word.html#a23763f2457d54137dfe9ba9d620d92b9">setOperation</a>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(operation));</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    defaultField = Instructions::getDefaultField(result.<a class="code" href="classmixal_1_1_parsed_result.html#a7d54bf07cad4ef4a897a56d0c644f306">operation</a>);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    result.<a class="code" href="classmixal_1_1_parsed_result.html#ae46addc1389c323e7e4baf7a9bdb1e51">parsedType</a> = ParsedType::PSEUDO;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                    result.<a class="code" href="classmixal_1_1_parsed_result.html#ab85a4e86360a6db816b15c6427f57d3a">word</a>.<a class="code" href="structmixal_1_1_computer_word.html#a23763f2457d54137dfe9ba9d620d92b9">setOperation</a>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(operation - Instructions::PSEUDO));</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                    <span class="keywordflow">if</span> (operation == Instructions::ALF) {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        <span class="comment">// The &quot;address&quot; in ALF starts exactly two characters after the operation.</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                        result.<a class="code" href="classmixal_1_1_parsed_result.html#aec712ad93d88b4230691e509ec6be473">rawAddress</a> = <span class="stringliteral">&quot;     &quot;</span>;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                        ++i;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> shift = 0; shift &lt; 5 &amp;&amp; i &lt; static_cast&lt;int&gt;(line.size()); ++shift) {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                            result.<a class="code" href="classmixal_1_1_parsed_result.html#aec712ad93d88b4230691e509ec6be473">rawAddress</a>[shift] = line[++i];</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                        }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                        int32_t charsValue = <a class="code" href="structmixal_1_1_computer_word.html">ComputerWord</a>(result.<a class="code" href="classmixal_1_1_parsed_result.html#aec712ad93d88b4230691e509ec6be473">rawAddress</a>).<a class="code" href="structmixal_1_1_computer_word.html#aa3cda0a7e9ba193793b0177245d4f7bd">value</a>();</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                        result.<a class="code" href="classmixal_1_1_parsed_result.html#a8c6a40c133c0f4c7dcd3f1bb58eed949">address</a> = <a class="code" href="classmixal_1_1_expression.html#ab746ee4027b058ab611652db7c4c10dd">Expression::getConstExpression</a>(<a class="code" href="structmixal_1_1_atomic_value.html">AtomicValue</a>(charsValue));</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                        <span class="keywordflow">if</span> (i &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(line.size())) {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                            state = ParseState::BEFORE_COMMENT;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                            state = ParseState::END;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                        }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                }</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!isalnum(ch)) {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing operation: &quot;</span> + std::string(1, ch));</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">case</span> ParseState::BEFORE_ADDRESS:</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                state = ParseState::END;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classmixal_1_1_expression.html#a63c384503ba1baa08e032bfcc20c476e">Expression::isValidFirst</a>(ch)) {</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                state = ParseState::ADDRESS;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                addressStart = i;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while finding address: &quot;</span> + std::string(1, ch));</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">case</span> ParseState::ADDRESS:</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span> || ch == <span class="charliteral">&#39;,&#39;</span> || ch == <span class="charliteral">&#39;(&#39;</span> || ch == END_CHAR) {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                    state = ParseState::BEFORE_COMMENT;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;,&#39;</span>) {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    state = ParseState::BEFORE_INDEX;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;(&#39;</span>) {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                    state = ParseState::FIELD_OPEN;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                    state = ParseState::END;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#aec712ad93d88b4230691e509ec6be473">rawAddress</a> = line.substr(addressStart, i - addressStart);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                    result.<a class="code" href="classmixal_1_1_parsed_result.html#a8c6a40c133c0f4c7dcd3f1bb58eed949">address</a>.<a class="code" href="classmixal_1_1_expression.html#af6c7444ad740893fd776a762cd250591">parse</a>(result.<a class="code" href="classmixal_1_1_parsed_result.html#aec712ad93d88b4230691e509ec6be473">rawAddress</a>, lineSymbol);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="classmixal_1_1_expression_error.html">ExpressionError</a>&amp; e) {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(addressStart + e.<a class="code" href="classmixal_1_1_expression_error.html#aac1e23f98753b27d45d734af06eef960">index</a>(), e.<a class="code" href="classmixal_1_1_expression_error.html#a9a9e596d44159a2a14300794097fbda8">what</a>());</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                result.evaluateAddress(emptyDict);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="classmixal_1_1_expression.html#a6802d71c466cfe0421f9ec79f17c1050">Expression::isValidChar</a>(ch)) {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing address: &quot;</span> + std::string(1, ch));</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordflow">case</span> ParseState::BEFORE_INDEX:</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classmixal_1_1_expression.html#a63c384503ba1baa08e032bfcc20c476e">Expression::isValidFirst</a>(ch)) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                state = ParseState::INDEX;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                indexStart = i;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;No index found after comma&quot;</span>);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while finding index: &quot;</span> + std::string(1, ch));</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">case</span> ParseState::INDEX:</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span> || ch == <span class="charliteral">&#39;(&#39;</span> || ch == END_CHAR) {</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                    state = ParseState::BEFORE_COMMENT;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;(&#39;</span>) {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                    state = ParseState::FIELD_OPEN;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                    state = ParseState::END;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                }</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#a8b523e82acd8f527e60d65f2e57e314b">rawIndex</a> = line.substr(indexStart, i - indexStart);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    result.<a class="code" href="classmixal_1_1_parsed_result.html#a1f2cff68b66f246a4ca229354a40bf74">index</a>.<a class="code" href="classmixal_1_1_expression.html#af6c7444ad740893fd776a762cd250591">parse</a>(result.<a class="code" href="classmixal_1_1_parsed_result.html#a8b523e82acd8f527e60d65f2e57e314b">rawIndex</a>, lineSymbol);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="classmixal_1_1_expression_error.html">ExpressionError</a>&amp; e) {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(addressStart + e.<a class="code" href="classmixal_1_1_expression_error.html#aac1e23f98753b27d45d734af06eef960">index</a>(), e.<a class="code" href="classmixal_1_1_expression_error.html#a9a9e596d44159a2a14300794097fbda8">what</a>());</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                }</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                result.evaluateIndex(emptyDict);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="classmixal_1_1_expression.html#a6802d71c466cfe0421f9ec79f17c1050">Expression::isValidChar</a>(ch)) {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing index: &quot;</span> + std::string(1, ch));</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            }</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">case</span> ParseState::FIELD_OPEN:</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classmixal_1_1_expression.html#a63c384503ba1baa08e032bfcc20c476e">Expression::isValidFirst</a>(ch)) {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                state = ParseState::FIELD;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                fieldStart = i;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered &quot;</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                                    <span class="stringliteral">&quot;while parsing modification: &quot;</span> + std::string(1, ch));</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            }</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <span class="keywordflow">case</span> ParseState::FIELD:</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39;)&#39;</span>) {</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                state = ParseState::FIELD_CLOSE;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#ae0b5ba090214783a80d5a6d574ca9b44">rawField</a> = line.substr(fieldStart, i - fieldStart);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                    result.<a class="code" href="classmixal_1_1_parsed_result.html#a323910590bfeaea484d802c6165a621c">field</a>.<a class="code" href="classmixal_1_1_expression.html#af6c7444ad740893fd776a762cd250591">parse</a>(result.<a class="code" href="classmixal_1_1_parsed_result.html#ae0b5ba090214783a80d5a6d574ca9b44">rawField</a>, lineSymbol);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="classmixal_1_1_expression_error.html">ExpressionError</a>&amp; e) {</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(addressStart + e.<a class="code" href="classmixal_1_1_expression_error.html#aac1e23f98753b27d45d734af06eef960">index</a>(), e.<a class="code" href="classmixal_1_1_expression_error.html#a9a9e596d44159a2a14300794097fbda8">what</a>());</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                result.evaluateField(emptyDict);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="classmixal_1_1_expression.html#a6802d71c466cfe0421f9ec79f17c1050">Expression::isValidChar</a>(ch)) {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing index: &quot;</span> + std::string(1, ch));</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            }</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keywordflow">case</span> ParseState::FIELD_CLOSE:</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span> || ch == END_CHAR) {</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                    state = ParseState::BEFORE_COMMENT;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                    state = ParseState::END;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classmixal_1_1_parse_error.html">ParseError</a>(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing field: &quot;</span> + std::string(1, ch));</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            }</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">case</span> ParseState::BEFORE_COMMENT:</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                state = ParseState::END;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch != <span class="charliteral">&#39; &#39;</span>) {</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                state = ParseState::COMMENT;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                commentStart = i;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            }</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">case</span> ParseState::COMMENT:</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                state = ParseState::END;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                result.<a class="code" href="classmixal_1_1_parsed_result.html#a1185c930c4a9ab8c461a1912fd906f8c">comment</a> = line.substr(commentStart, i - commentStart);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            }</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">case</span> ParseState::END:</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            assert(<span class="keyword">false</span>);  <span class="comment">// This line can not be reached.</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        }</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    }</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordflow">if</span> (result.<a class="code" href="classmixal_1_1_parsed_result.html#ae0b5ba090214783a80d5a6d574ca9b44">rawField</a>.empty()) {</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keywordflow">if</span> (result.<a class="code" href="classmixal_1_1_parsed_result.html#ab85a4e86360a6db816b15c6427f57d3a">word</a>.<a class="code" href="structmixal_1_1_computer_word.html#a37f138b3872786205a255ae325851ea8">operation</a>() == Instructions::MOVE) {</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            <span class="comment">// The default field value for MOVE is 1, but it is not mandatory.</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            defaultField = 1;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (result.<a class="code" href="classmixal_1_1_parsed_result.html#ab85a4e86360a6db816b15c6427f57d3a">word</a>.<a class="code" href="structmixal_1_1_computer_word.html#a37f138b3872786205a255ae325851ea8">operation</a>() == Instructions::NOP) {</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <span class="comment">// The whole word is `+0`, but it is not mandatory.</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            defaultField = 0;</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        }</div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    assert(state == ParseState::END);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;}</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;};  <span class="comment">// namespace mixal</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">if</span> (defaultField &gt;= 0) {</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        result.<a class="code" href="classmixal_1_1_parsed_result.html#ab85a4e86360a6db816b15c6427f57d3a">word</a>.<a class="code" href="structmixal_1_1_computer_word.html#a47c3f28f2ac02403577a487be40b6ad6">setField</a>(defaultField);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    }</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    assert(state == ParseState::END);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;}</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;};  <span class="comment">// namespace mixal</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructmixal_1_1_computer_word_html_a47c3f28f2ac02403577a487be40b6ad6"><div class="ttname"><a href="structmixal_1_1_computer_word.html#a47c3f28f2ac02403577a487be40b6ad6">mixal::ComputerWord::setField</a></div><div class="ttdeci">void setField(uint8_t field)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00157">memory.h:157</a></div></div>
 <div class="ttc" id="aparser_8h_html_a4ad850ed6deb17f4357b07a25542e611"><div class="ttname"><a href="parser_8h.html#a4ad850ed6deb17f4357b07a25542e611">mixal::ParsedType</a></div><div class="ttdeci">ParsedType</div><div class="ttdef"><b>Definition:</b> <a href="parser_8h_source.html#l00020">parser.h:20</a></div></div>
