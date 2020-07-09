@@ -96,7 +96,7 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifdef __DEBUG__</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, ParseState c) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;std::ostream&amp; <a class="code" href="expression_8h.html#a8645e3341ae73666ae05a2de230621b8">operator&lt;&lt;</a>(std::ostream&amp; os, ParseState c) {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">switch</span> (c) {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">case</span> ParseState::START: os &lt;&lt; <span class="stringliteral">&quot;START&quot;</span>; <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">case</span> ParseState::LOC: os &lt;&lt; <span class="stringliteral">&quot;LOC&quot;</span>; <span class="keywordflow">break</span>;</div>
@@ -117,7 +117,7 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif  // __DEBUG__</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, ParsedType c) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;std::ostream&amp; <a class="code" href="expression_8h.html#a8645e3341ae73666ae05a2de230621b8">operator&lt;&lt;</a>(std::ostream&amp; os, ParsedType c) {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">switch</span> (c) {</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">case</span> ParsedType::EMPTY: os &lt;&lt; <span class="stringliteral">&quot;EMPTY&quot;</span>; <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">case</span> ParsedType::INSTRUCTION: os &lt;&lt; <span class="stringliteral">&quot;INSTRUCTION&quot;</span>; <span class="keywordflow">break</span>;</div>
@@ -140,14 +140,14 @@ $(function() {
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">bool</span> ParsedResult::evaluateAddress(<span class="keyword">const</span> std::unordered_map&lt;std::string, AtomicValue&gt;&amp; constants, int32_t index) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (!address.evaluated() &amp;&amp; !address.evaluate(constants)) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (!address.<a class="code" href="classmixal_1_1_expression.html#a2deb4fcd9c67bc0ad2500f11c08e316e">evaluated</a>() &amp;&amp; !address.<a class="code" href="classmixal_1_1_expression.html#a83a91b263c2b8f1b1203d64121e9798f">evaluate</a>(constants)) {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    int32_t value = address.result().value;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (parsedType == ParsedType::INSTRUCTION &amp;&amp; !address.literalConstant() &amp;&amp; std::abs(value) &gt;= 4096) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    int32_t value = address.<a class="code" href="classmixal_1_1_expression.html#a5eab6696a72654b0d157991c69dfbb31">result</a>().value;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (parsedType == ParsedType::INSTRUCTION &amp;&amp; !address.<a class="code" href="classmixal_1_1_expression.html#a046cd8b23af62bcc95907911425a2d7b">literalConstant</a>() &amp;&amp; std::abs(value) &gt;= 4096) {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">throw</span> ParseError(index, <span class="stringliteral">&quot;Address can not be represented in 2 bytes: &quot;</span> + std::to_string(value));</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    word.<a class="code" href="structmixal_1_1_computer_word.html#add5024a97f3c2bb1a980a0c52d12fbc1">setAddress</a>(address.result().negative, <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(std::abs(value)));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    word.<a class="code" href="structmixal_1_1_computer_word.html#add5024a97f3c2bb1a980a0c52d12fbc1">setAddress</a>(address.<a class="code" href="classmixal_1_1_expression.html#a5eab6696a72654b0d157991c69dfbb31">result</a>().negative, <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(std::abs(value)));</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
@@ -164,10 +164,10 @@ $(function() {
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">bool</span> ParsedResult::evaluateField(<span class="keyword">const</span> std::unordered_map&lt;std::string, AtomicValue&gt;&amp; constants, int32_t index) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (!field.evaluated() &amp;&amp; !field.evaluate(constants)) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (!field.<a class="code" href="classmixal_1_1_expression.html#a2deb4fcd9c67bc0ad2500f11c08e316e">evaluated</a>() &amp;&amp; !field.<a class="code" href="classmixal_1_1_expression.html#a83a91b263c2b8f1b1203d64121e9798f">evaluate</a>(constants)) {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    int32_t value = field.result().value;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    int32_t value = field.<a class="code" href="classmixal_1_1_expression.html#a5eab6696a72654b0d157991c69dfbb31">result</a>().value;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    int32_t defaultField = Instructions::getDefaultField(operation);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (defaultField &gt;= 0 &amp;&amp; value != defaultField) {</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">throw</span> ParseError(index, <span class="stringliteral">&quot;The given field value does not match the default one: &quot;</span> +</div>
@@ -181,19 +181,19 @@ $(function() {
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">bool</span> ParsedResult::evaluated()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (rawAddress.length() &gt; 0 &amp;&amp; !address.evaluated()) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (rawAddress.length() &gt; 0 &amp;&amp; !address.<a class="code" href="classmixal_1_1_expression.html#a2deb4fcd9c67bc0ad2500f11c08e316e">evaluated</a>()) {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (rawIndex.length() &gt; 0 &amp;&amp; !index.evaluated()) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (rawField.length() &gt; 0 &amp;&amp; !field.evaluated()) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (rawField.length() &gt; 0 &amp;&amp; !field.<a class="code" href="classmixal_1_1_expression.html#a2deb4fcd9c67bc0ad2500f11c08e316e">evaluated</a>()) {</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;std::ostream&amp; operator&lt;&lt;(std::ostream&amp; out, <span class="keyword">const</span> ParsedResult&amp; result) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;std::ostream&amp; <a class="code" href="expression_8h.html#a8645e3341ae73666ae05a2de230621b8">operator&lt;&lt;</a>(std::ostream&amp; out, <span class="keyword">const</span> ParsedResult&amp; result) {</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">if</span> (result.location.evaluated()) {</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        out &lt;&lt; result.location.result().value &lt;&lt; <span class="charliteral">&#39;\t&#39;</span>;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    } <span class="keywordflow">else</span> {</div>
@@ -306,7 +306,7 @@ $(function() {
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                            result.rawAddress[shift] = line[++i];</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                        }</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                        int32_t charsValue = ComputerWord(result.rawAddress).value();</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                        result.address = Expression::getConstExpression(AtomicValue(charsValue));</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                        result.address = <a class="code" href="classmixal_1_1_expression.html#ab746ee4027b058ab611652db7c4c10dd">Expression::getConstExpression</a>(AtomicValue(charsValue));</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                        <span class="keywordflow">if</span> (i &lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(line.size())) {</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                            state = ParseState::BEFORE_COMMENT;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                        } <span class="keywordflow">else</span> {</div>
@@ -323,7 +323,7 @@ $(function() {
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                state = ParseState::END;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Expression::isValidFirst(ch)) {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classmixal_1_1_expression.html#a63c384503ba1baa08e032bfcc20c476e">Expression::isValidFirst</a>(ch)) {</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                state = ParseState::ADDRESS;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                addressStart = i;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -348,12 +348,12 @@ $(function() {
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                    <span class="keywordflow">throw</span> ParseError(addressStart + e.index(), e.what());</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                }</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                result.evaluateAddress(emptyDict);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!Expression::isValidChar(ch)) {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="classmixal_1_1_expression.html#a6802d71c466cfe0421f9ec79f17c1050">Expression::isValidChar</a>(ch)) {</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                <span class="keywordflow">throw</span> ParseError(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing address&quot;</span>);</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            }</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">case</span> ParseState::BEFORE_INDEX:</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="keywordflow">if</span> (Expression::isValidFirst(ch)) {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classmixal_1_1_expression.html#a63c384503ba1baa08e032bfcc20c476e">Expression::isValidFirst</a>(ch)) {</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                state = ParseState::INDEX;</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                indexStart = i;</div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ch == END_CHAR) {</div>
@@ -378,12 +378,12 @@ $(function() {
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                    <span class="keywordflow">throw</span> ParseError(addressStart + e.index(), e.what());</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                }</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                result.evaluateIndex(emptyDict);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!Expression::isValidChar(ch)) {</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="classmixal_1_1_expression.html#a6802d71c466cfe0421f9ec79f17c1050">Expression::isValidChar</a>(ch)) {</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <span class="keywordflow">throw</span> ParseError(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing index&quot;</span>);</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            }</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">case</span> ParseState::FIELD_OPEN:</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <span class="keywordflow">if</span> (Expression::isValidFirst(ch)) {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classmixal_1_1_expression.html#a63c384503ba1baa08e032bfcc20c476e">Expression::isValidFirst</a>(ch)) {</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                state = ParseState::FIELD;</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                fieldStart = i;</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            } <span class="keywordflow">else</span> {</div>
@@ -400,7 +400,7 @@ $(function() {
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                    <span class="keywordflow">throw</span> ParseError(addressStart + e.index(), e.what());</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                }</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                result.evaluateField(emptyDict);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!Expression::isValidChar(ch)) {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code" href="classmixal_1_1_expression.html#a6802d71c466cfe0421f9ec79f17c1050">Expression::isValidChar</a>(ch)) {</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                <span class="keywordflow">throw</span> ParseError(i, <span class="stringliteral">&quot;Unexpected character encountered while parsing index&quot;</span>);</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            }</div>
 <div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <span class="keywordflow">break</span>;</div>
@@ -449,9 +449,17 @@ $(function() {
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;};  <span class="comment">// namespace mixal</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructmixal_1_1_computer_word_html_a47c3f28f2ac02403577a487be40b6ad6"><div class="ttname"><a href="structmixal_1_1_computer_word.html#a47c3f28f2ac02403577a487be40b6ad6">mixal::ComputerWord::setField</a></div><div class="ttdeci">void setField(uint8_t field)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00152">memory.h:152</a></div></div>
-<div class="ttc" id="astructmixal_1_1_computer_word_html_a6b13c088e04058db7a7ed3b19ebac1f7"><div class="ttname"><a href="structmixal_1_1_computer_word.html#a6b13c088e04058db7a7ed3b19ebac1f7">mixal::ComputerWord::setIndex</a></div><div class="ttdeci">void setIndex(uint8_t index)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00150">memory.h:150</a></div></div>
+<div class="ttc" id="astructmixal_1_1_computer_word_html_a47c3f28f2ac02403577a487be40b6ad6"><div class="ttname"><a href="structmixal_1_1_computer_word.html#a47c3f28f2ac02403577a487be40b6ad6">mixal::ComputerWord::setField</a></div><div class="ttdeci">void setField(uint8_t field)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00157">memory.h:157</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_expression_html_a63c384503ba1baa08e032bfcc20c476e"><div class="ttname"><a href="classmixal_1_1_expression.html#a63c384503ba1baa08e032bfcc20c476e">mixal::Expression::isValidFirst</a></div><div class="ttdeci">static bool isValidFirst(char ch)</div><div class="ttdef"><b>Definition:</b> <a href="expression_8cpp_source.html#l00046">expression.cpp:46</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_expression_html_a6802d71c466cfe0421f9ec79f17c1050"><div class="ttname"><a href="classmixal_1_1_expression.html#a6802d71c466cfe0421f9ec79f17c1050">mixal::Expression::isValidChar</a></div><div class="ttdeci">static bool isValidChar(char ch)</div><div class="ttdef"><b>Definition:</b> <a href="expression_8cpp_source.html#l00050">expression.cpp:50</a></div></div>
+<div class="ttc" id="astructmixal_1_1_computer_word_html_a6b13c088e04058db7a7ed3b19ebac1f7"><div class="ttname"><a href="structmixal_1_1_computer_word.html#a6b13c088e04058db7a7ed3b19ebac1f7">mixal::ComputerWord::setIndex</a></div><div class="ttdeci">void setIndex(uint8_t index)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8h_source.html#l00155">memory.h:155</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_expression_html_a2deb4fcd9c67bc0ad2500f11c08e316e"><div class="ttname"><a href="classmixal_1_1_expression.html#a2deb4fcd9c67bc0ad2500f11c08e316e">mixal::Expression::evaluated</a></div><div class="ttdeci">bool evaluated() const</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00146">expression.h:146</a></div></div>
 <div class="ttc" id="astructmixal_1_1_computer_word_html_add5024a97f3c2bb1a980a0c52d12fbc1"><div class="ttname"><a href="structmixal_1_1_computer_word.html#add5024a97f3c2bb1a980a0c52d12fbc1">mixal::ComputerWord::setAddress</a></div><div class="ttdeci">void setAddress(int16_t address)</div><div class="ttdef"><b>Definition:</b> <a href="memory_8cpp_source.html#l00110">memory.cpp:110</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_expression_html_a83a91b263c2b8f1b1203d64121e9798f"><div class="ttname"><a href="classmixal_1_1_expression.html#a83a91b263c2b8f1b1203d64121e9798f">mixal::Expression::evaluate</a></div><div class="ttdeci">bool evaluate(const std::unordered_map&lt; std::string, AtomicValue &gt; &amp;constants)</div><div class="ttdef"><b>Definition:</b> <a href="expression_8cpp_source.html#l00233">expression.cpp:233</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_expression_html_ab746ee4027b058ab611652db7c4c10dd"><div class="ttname"><a href="classmixal_1_1_expression.html#ab746ee4027b058ab611652db7c4c10dd">mixal::Expression::getConstExpression</a></div><div class="ttdeci">static Expression getConstExpression(const AtomicValue &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="expression_8cpp_source.html#l00023">expression.cpp:23</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_expression_html_a046cd8b23af62bcc95907911425a2d7b"><div class="ttname"><a href="classmixal_1_1_expression.html#a046cd8b23af62bcc95907911425a2d7b">mixal::Expression::literalConstant</a></div><div class="ttdeci">bool literalConstant() const</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00151">expression.h:151</a></div></div>
+<div class="ttc" id="aexpression_8h_html_a8645e3341ae73666ae05a2de230621b8"><div class="ttname"><a href="expression_8h.html#a8645e3341ae73666ae05a2de230621b8">mixal::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;out, Operation operation)</div><div class="ttdef"><b>Definition:</b> <a href="expression_8cpp_source.html#l00335">expression.cpp:335</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_expression_html_a5eab6696a72654b0d157991c69dfbb31"><div class="ttname"><a href="classmixal_1_1_expression.html#a5eab6696a72654b0d157991c69dfbb31">mixal::Expression::result</a></div><div class="ttdeci">const AtomicValue &amp; result() const</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00148">expression.h:148</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

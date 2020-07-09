@@ -72,6 +72,8 @@ $(function() {
 <div class="title">mixal::ParseError Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="errors_8h_source.html">errors.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for mixal::ParseError:</div>
 <div class="dyncontent">
@@ -81,23 +83,124 @@ Inheritance diagram for mixal::ParseError:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acb1c4fa15c6610bf6b6097b7a2ef5fad"><td class="memItemLeft" align="right" valign="top"><a id="acb1c4fa15c6610bf6b6097b7a2ef5fad"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ParseError</b> (int index, const std::string &amp;message)</td></tr>
+<tr class="memitem:acb1c4fa15c6610bf6b6097b7a2ef5fad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_parse_error.html#acb1c4fa15c6610bf6b6097b7a2ef5fad">ParseError</a> (int <a class="el" href="classmixal_1_1_parse_error.html#a720e34be3426027c8ca42214764cc5fc">index</a>, const std::string &amp;message)</td></tr>
 <tr class="separator:acb1c4fa15c6610bf6b6097b7a2ef5fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a720e34be3426027c8ca42214764cc5fc"><td class="memItemLeft" align="right" valign="top"><a id="a720e34be3426027c8ca42214764cc5fc"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>index</b> () const</td></tr>
+<tr class="memitem:a720e34be3426027c8ca42214764cc5fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_parse_error.html#a720e34be3426027c8ca42214764cc5fc">index</a> () const</td></tr>
 <tr class="separator:a720e34be3426027c8ca42214764cc5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac498ebd929b6e554ef6a250685963edd"><td class="memItemLeft" align="right" valign="top"><a id="ac498ebd929b6e554ef6a250685963edd"></a>
-const char *&#160;</td><td class="memItemRight" valign="bottom"><b>what</b> () const noexcept override</td></tr>
+<tr class="memitem:ac498ebd929b6e554ef6a250685963edd"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_parse_error.html#ac498ebd929b6e554ef6a250685963edd">what</a> () const noexcept override</td></tr>
 <tr class="separator:ac498ebd929b6e554ef6a250685963edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00023">23</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>Errors encountered while parsing codes. </p>
+
+<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00033">33</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="acb1c4fa15c6610bf6b6097b7a2ef5fad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb1c4fa15c6610bf6b6097b7a2ef5fad">&#9670;&nbsp;</a></span>ParseError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mixal::ParseError::ParseError </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Initialize error with offset and message. </p>
+
+<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00036">36</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;: _index(<a class="code" href="classmixal_1_1_parse_error.html#a720e34be3426027c8ca42214764cc5fc">index</a>), _message(message) {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a720e34be3426027c8ca42214764cc5fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a720e34be3426027c8ca42214764cc5fc">&#9670;&nbsp;</a></span>index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mixal::ParseError::index </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The offset in the string of code. </p>
+
+<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00039">39</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{ <span class="keywordflow">return</span> _index; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac498ebd929b6e554ef6a250685963edd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac498ebd929b6e554ef6a250685963edd">&#9670;&nbsp;</a></span>what()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* mixal::ParseError::what </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The error information. </p>
+
+<p class="definition">Definition at line <a class="el" href="errors_8h_source.html#l00042">42</a> of file <a class="el" href="errors_8h_source.html">errors.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                               {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> _message.c_str();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="errors_8h_source.html">errors.h</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassmixal_1_1_parse_error_html_a720e34be3426027c8ca42214764cc5fc"><div class="ttname"><a href="classmixal_1_1_parse_error.html#a720e34be3426027c8ca42214764cc5fc">mixal::ParseError::index</a></div><div class="ttdeci">int index() const</div><div class="ttdef"><b>Definition:</b> <a href="errors_8h_source.html#l00039">errors.h:39</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
