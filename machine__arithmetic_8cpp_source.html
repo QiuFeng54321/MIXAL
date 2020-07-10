@@ -77,7 +77,7 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> Machine::executeADD(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    int32_t valueA = <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>.<a class="code" href="structmixal_1_1_computer_word.html#aa3cda0a7e9ba193793b0177245d4f7bd">value</a>();</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    ComputerWord word;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    copyToRegister5(instruction, <a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[address], &amp;word);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    int32_t valueM = word.value();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    int32_t result = valueA + valueM;</div>
@@ -87,7 +87,7 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> Machine::executeSUB(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    int32_t valueA = <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>.<a class="code" href="structmixal_1_1_computer_word.html#aa3cda0a7e9ba193793b0177245d4f7bd">value</a>();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ComputerWord word;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    copyToRegister5(instruction, <a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[address], &amp;word);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    word.negative = !word.negative;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    int32_t valueM = word.value();</div>
@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> Machine::executeMUL(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    int32_t valueA = <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>.<a class="code" href="structmixal_1_1_computer_word.html#aa3cda0a7e9ba193793b0177245d4f7bd">value</a>();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    ComputerWord word;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    copyToRegister5(instruction, <a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[address], &amp;word);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    int32_t valueM = word.value();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    int64_t result = <span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(valueA) * <span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>(valueM);</div>
@@ -114,7 +114,7 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        dividend = -dividend;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ComputerWord word;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    copyToRegister5(instruction, <a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[address], &amp;word);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    int32_t divisor = word.value();</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (divisor == 0) {</div>
