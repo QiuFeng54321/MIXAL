@@ -69,41 +69,41 @@ $(function() {
 <div class="title">machine_conversion.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<a href="machine__conversion_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="machine_8h.html">machine.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span>mixal {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keywordtype">void</span> Machine::executeNUM() {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    int64_t num = 0;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 5; ++i) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        num = num * 10 + <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>[i] % 10;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 5; ++i) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        num = num * 10 + <a class="code" href="classmixal_1_1_machine.html#a778a9301b59e65a55caa4b35a8ff4cf1">rX</a>[i] % 10;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">bool</span> negative = <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>.negative;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (num &gt;= (1 &lt;&lt; 30)) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classmixal_1_1_machine.html#a96fc0807f321a39a15635c1198f2f730">overflow</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        num %= (1 &lt;&lt; 30);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>mixal {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> Machine::executeNUM() {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    int64_t num = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 5; ++i) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        num = num * 10 + <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>[i] % 10;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= 5; ++i) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        num = num * 10 + <a class="code" href="classmixal_1_1_machine.html#a778a9301b59e65a55caa4b35a8ff4cf1">rX</a>[i] % 10;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>.<a class="code" href="structmixal_1_1_computer_word.html#aa46ca35446d33dd83f848a51ad26e0eb">set</a>(num);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>.negative = negative;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> Machine::executeCHAR() {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    int32_t num = std::abs(<a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>.<a class="code" href="structmixal_1_1_computer_word.html#aa3cda0a7e9ba193793b0177245d4f7bd">value</a>());</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 5; i &gt;= 1; --i) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classmixal_1_1_machine.html#a778a9301b59e65a55caa4b35a8ff4cf1">rX</a>[i] = 30 + num % 10;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        num /= 10;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 5; i &gt;= 1; --i) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>[i] = 30 + num % 10;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        num /= 10;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};  <span class="comment">// namespace mixal</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> negative = <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>.negative;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (num &gt;= (1 &lt;&lt; 30)) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classmixal_1_1_machine.html#a96fc0807f321a39a15635c1198f2f730">overflow</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        num %= (1 &lt;&lt; 30);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>.<a class="code" href="structmixal_1_1_computer_word.html#aa46ca35446d33dd83f848a51ad26e0eb">set</a>(num);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>.negative = negative;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> Machine::executeCHAR() {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    int32_t num = std::abs(<a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>.<a class="code" href="structmixal_1_1_computer_word.html#aa3cda0a7e9ba193793b0177245d4f7bd">value</a>());</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 5; i &gt;= 1; --i) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classmixal_1_1_machine.html#a778a9301b59e65a55caa4b35a8ff4cf1">rX</a>[i] = 30 + num % 10;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        num /= 10;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 5; i &gt;= 1; --i) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>[i] = 30 + num % 10;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        num /= 10;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};  <span class="comment">// namespace mixal</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassmixal_1_1_machine_html_a7607ec9f767850918f9500dde30f8a8f"><div class="ttname"><a href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">mixal::Machine::rA</a></div><div class="ttdeci">Register5 rA</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00032">machine.h:32</a></div></div>
 <div class="ttc" id="amachine_8h_html"><div class="ttname"><a href="machine_8h.html">machine.h</a></div><div class="ttdoc">The virtual machine.</div></div>
