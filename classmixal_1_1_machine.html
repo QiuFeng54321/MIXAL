@@ -892,30 +892,38 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    }</div>
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="comment">// Load constants to memory</span></div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; it : constants) {</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        <a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[std::get&lt;1&gt;(it).result().value].<a class="code" href="structmixal_1_1_computer_word.html#aa46ca35446d33dd83f848a51ad26e0eb">set</a>(std::get&lt;2&gt;(it).result().value);</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    }</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="comment">// Load results to memory</span></div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    _lineOffset = -1;</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; result : results) {</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        <span class="keywordflow">if</span> (result.parsedType == ParsedType::INSTRUCTION) {</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;            result.evaluate(evaluated);</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;            <span class="keywordflow">if</span> (_lineOffset == -1) {</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                _lineOffset = result.location.result().value;</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;            }</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;            <a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[result.location.result().value].<a class="code" href="structmixal_1_1_computer_word.html#aa46ca35446d33dd83f848a51ad26e0eb">set</a>(result.word.negative,</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                                                       result.word.address(),</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                                                       result.word.index(),</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                                                       result.word.field(),</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                                                       result.word.operation());</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;        }</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    }</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    <span class="keywordflow">if</span> (endIndex != -1) {</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        results[endIndex].address.evaluate(evaluated);</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;        _lineOffset = results[endIndex].address.result().value;</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_lineOffset == -1) {</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        _lineOffset = 0;</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    }</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;}</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        int32_t location = std::get&lt;1&gt;(it).result().value;</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <span class="keywordflow">if</span> (location &lt; 0 || location &gt;= <a class="code" href="classmixal_1_1_machine.html#ae242d8944bf6f3372b5c30a90e898828">NUM_MEMORY</a>) {</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            <span class="keywordflow">throw</span> RuntimeError(location, <span class="stringliteral">&quot;Location of the code is invalid: &quot;</span> + std::to_string(location));</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        }</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        <a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[location].<a class="code" href="structmixal_1_1_computer_word.html#aa46ca35446d33dd83f848a51ad26e0eb">set</a>(std::get&lt;2&gt;(it).result().value);</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    }</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    <span class="comment">// Load results to memory</span></div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    _lineOffset = -1;</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; result : results) {</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        <span class="keywordflow">if</span> (result.parsedType == ParsedType::INSTRUCTION) {</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;            result.evaluate(evaluated);</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;            int32_t location = result.location.result().value;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;            <span class="keywordflow">if</span> (location &lt; 0 || location &gt;= <a class="code" href="classmixal_1_1_machine.html#ae242d8944bf6f3372b5c30a90e898828">NUM_MEMORY</a>) {</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                <span class="keywordflow">throw</span> RuntimeError(location, <span class="stringliteral">&quot;Location of the code is invalid: &quot;</span> + std::to_string(location));</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;            }</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;            <span class="keywordflow">if</span> (_lineOffset == -1) {</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                _lineOffset = location;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            }</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            <a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[location].<a class="code" href="structmixal_1_1_computer_word.html#aa46ca35446d33dd83f848a51ad26e0eb">set</a>(result.word.negative,</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                                 result.word.address(),</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                                 result.word.index(),</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                                 result.word.field(),</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                                 result.word.operation());</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        }</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    }</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordflow">if</span> (endIndex != -1) {</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        results[endIndex].address.evaluate(evaluated);</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        _lineOffset = results[endIndex].address.result().value;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_lineOffset == -1) {</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        _lineOffset = 0;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    }</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="expression_8cpp_source.html#l00038">mixal::Expression::getConstOffsetExpression()</a>, <a class="el" href="parser_8cpp_source.html#l00143">mixal::Parser::parseLine()</a>, and <a class="el" href="machine_8cpp_source.html#l00036">reset()</a>.</p>
 
