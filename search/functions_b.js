@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['pageoffsetat_200',['pageOffsetAt',['../classmixal_1_1_i_o_device_line_printer.html#ae3d3c646ff07460c97a1508cf6f6b007',1,'mixal::IODeviceLinePrinter']]],
-  ['pagesize_201',['pageSize',['../classmixal_1_1_i_o_device_line_printer.html#a3957a775cc389efdc11b67883db8b1b8',1,'mixal::IODeviceLinePrinter']]],
-  ['parse_202',['parse',['../classmixal_1_1_expression.html#af6c7444ad740893fd776a762cd250591',1,'mixal::Expression']]],
-  ['parsedresult_203',['ParsedResult',['../classmixal_1_1_parsed_result.html#a3bf14e8972f5600bba51fe783be9d110',1,'mixal::ParsedResult']]],
-  ['parseerror_204',['ParseError',['../classmixal_1_1_parse_error.html#acb1c4fa15c6610bf6b6097b7a2ef5fad',1,'mixal::ParseError']]],
-  ['parseline_205',['parseLine',['../classmixal_1_1_parser.html#a403ed79d8d9e792410775250fc058b98',1,'mixal::Parser']]]
+  ['operation_228',['operation',['../structmixal_1_1_computer_word.html#a37f138b3872786205a255ae325851ea8',1,'mixal::ComputerWord']]],
+  ['operations_229',['operations',['../classmixal_1_1_expression.html#af3aedc0760c5ec822b67e53c23d6349d',1,'mixal::Expression']]],
+  ['operator_21_3d_230',['operator!=',['../structmixal_1_1_atomic.html#a3adbdf015d0bd7637fa16613f9b3af0b',1,'mixal::Atomic::operator!=()'],['../classmixal_1_1_expression.html#a17eb82ecd39c52e439e0670a079e1a23',1,'mixal::Expression::operator!=()']]],
+  ['operator_3c_3c_231',['operator&lt;&lt;',['../expression_8h.html#a8645e3341ae73666ae05a2de230621b8',1,'mixal::operator&lt;&lt;(std::ostream &amp;out, Operation operation)'],['../flags_8h.html#a6512dd774d288dd83b305ef03bace178',1,'mixal::operator&lt;&lt;(std::ostream &amp;os, ComparisonIndicator c)'],['../parser_8h.html#afe9f59f75fe752d71688ad956575b561',1,'mixal::operator&lt;&lt;(std::ostream &amp;os, ParsedType c)'],['../expression_8cpp.html#a16c9de8abc72dd2785e0590227c15729',1,'mixal::operator&lt;&lt;(std::ostream &amp;out, const Expression &amp;expression)'],['../parser_8cpp.html#ac5e4b3e1e2115f0951e612fef196b150',1,'mixal::operator&lt;&lt;(std::ostream &amp;out, const ParsedResult &amp;result)']]],
+  ['operator_3d_232',['operator=',['../structmixal_1_1_atomic_value.html#a7732f8f54e43356e7e499e72f0247ed2',1,'mixal::AtomicValue']]],
+  ['operator_3d_3d_233',['operator==',['../structmixal_1_1_atomic.html#a3198dd9d4cc4f7cc37a5b8c6046b5ef0',1,'mixal::Atomic::operator==()'],['../classmixal_1_1_expression.html#a2f8582daedc984be01d4bcc1e99fac28',1,'mixal::Expression::operator==()'],['../structmixal_1_1_computer_word.html#ad086603e089bebb909aa7670236ac39c',1,'mixal::ComputerWord::operator==()']]],
+  ['operator_5b_5d_234',['operator[]',['../structmixal_1_1_computer_word.html#ae90a4cac4cca9a48dbab5cb7d7b6f033',1,'mixal::ComputerWord::operator[](int index) const'],['../structmixal_1_1_computer_word.html#a5a0043e6026b3652ccfec9312fb37f32',1,'mixal::ComputerWord::operator[](int index)'],['../structmixal_1_1_register2.html#aad0c0384d1bfecf927ef8432f7d87210',1,'mixal::Register2::operator[]()']]]
 ];

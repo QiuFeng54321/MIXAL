@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operation_238',['operation',['../classmixal_1_1_parsed_result.html#a7d54bf07cad4ef4a897a56d0c644f306',1,'mixal::ParsedResult']]]
+  ['memory_277',['memory',['../classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75',1,'mixal::Machine']]]
 ];

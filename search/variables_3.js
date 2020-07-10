@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['field_233',['field',['../classmixal_1_1_parsed_result.html#a323910590bfeaea484d802c6165a621c',1,'mixal::ParsedResult']]]
+  ['devices_272',['devices',['../classmixal_1_1_machine.html#adea39a2ef1a7cce490ffa74894819709',1,'mixal::Machine']]]
 ];

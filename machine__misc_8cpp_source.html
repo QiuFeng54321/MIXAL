@@ -70,7 +70,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;machine.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="machine_8h.html">machine.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span>mixal {</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
@@ -79,10 +79,10 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    int32_t shift = (address + 10000) % 5;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">if</span> (shift) {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt;= (5 - shift); ++i) {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            rA[i] = rA[i + shift];</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>[i] = <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>[i + shift];</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        }</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 6 - shift; i &lt;=5; ++i) {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            rA[i] = 0;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>[i] = 0;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
@@ -92,10 +92,10 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    int32_t shift = (address + 10000) % 5;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> (shift) {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 5; i &gt; shift; --i) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            rA[i] = rA[i - shift];</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>[i] = <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>[i - shift];</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = shift; i &gt; 0; --i) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            rA[i] = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">rA</a>[i] = 0;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
@@ -166,26 +166,31 @@ $(function() {
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">void</span> Machine::executeMOVE(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    int32_t originAddress = getIndexedAddress(instruction);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    int32_t targetAddress = rI1.<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    int32_t targetAddress = <a class="code" href="classmixal_1_1_machine.html#ab0b77c393319ea3f03938c7249214895">rI1</a>.<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a>();</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    uint8_t amount = instruction.field();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">for</span> (uint8_t i = 0; i &lt; amount; ++i) {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        int32_t target = targetAddress + i;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        int32_t origin = originAddress + i;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> (target &lt; 0 || target &gt;= NUM_MEMORY) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> (target &lt; 0 || target &gt;= <a class="code" href="classmixal_1_1_machine.html#ae242d8944bf6f3372b5c30a90e898828">NUM_MEMORY</a>) {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> (origin &lt; 0 || origin &gt;= NUM_MEMORY) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> (origin &lt; 0 || origin &gt;= <a class="code" href="classmixal_1_1_machine.html#ae242d8944bf6f3372b5c30a90e898828">NUM_MEMORY</a>) {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        memory[target] = memory[origin];</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[target] = <a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[origin];</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    rI1.<a class="code" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">set</a>(targetAddress + amount);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="classmixal_1_1_machine.html#ab0b77c393319ea3f03938c7249214895">rI1</a>.<a class="code" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">set</a>(targetAddress + amount);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;};  <span class="comment">// namespace mixal</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassmixal_1_1_machine_html_a7607ec9f767850918f9500dde30f8a8f"><div class="ttname"><a href="classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f">mixal::Machine::rA</a></div><div class="ttdeci">Register5 rA</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00032">machine.h:32</a></div></div>
 <div class="ttc" id="astructmixal_1_1_register2_html_af6f71bb35b12183b27e67b802aeabc1b"><div class="ttname"><a href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">mixal::Register2::set</a></div><div class="ttdeci">void set(int16_t value)</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00028">registers.cpp:28</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_machine_html_ae242d8944bf6f3372b5c30a90e898828"><div class="ttname"><a href="classmixal_1_1_machine.html#ae242d8944bf6f3372b5c30a90e898828">mixal::Machine::NUM_MEMORY</a></div><div class="ttdeci">static const int NUM_MEMORY</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00029">machine.h:29</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_machine_html_ab0b77c393319ea3f03938c7249214895"><div class="ttname"><a href="classmixal_1_1_machine.html#ab0b77c393319ea3f03938c7249214895">mixal::Machine::rI1</a></div><div class="ttdeci">Register2 rI1</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00033">machine.h:33</a></div></div>
 <div class="ttc" id="astructmixal_1_1_register2_html_a377d94ea727118abf129d7f8f86f647b"><div class="ttname"><a href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">mixal::Register2::value</a></div><div class="ttdeci">int16_t value() const</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00023">registers.cpp:23</a></div></div>
+<div class="ttc" id="amachine_8h_html"><div class="ttname"><a href="machine_8h.html">machine.h</a></div><div class="ttdoc">The virtual machine.</div></div>
+<div class="ttc" id="aclassmixal_1_1_machine_html_a79e8c6656dab8e404c888b07a366be75"><div class="ttname"><a href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">mixal::Machine::memory</a></div><div class="ttdeci">ComputerWord memory[NUM_MEMORY]</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00038">machine.h:38</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

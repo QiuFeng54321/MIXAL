@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['word_246',['word',['../classmixal_1_1_parsed_result.html#ab85a4e86360a6db816b15c6427f57d3a',1,'mixal::ParsedResult']]]
+  ['symbol_293',['symbol',['../structmixal_1_1_atomic.html#a089de9a302dc64f1422b3b9ed6ae6526',1,'mixal::Atomic']]]
 ];
