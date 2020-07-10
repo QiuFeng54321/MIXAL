@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operation_209',['Operation',['../expression_8h.html#aad3ed9e582931de131d911172843381d',1,'mixal']]]
+  ['iodevicestatus_251',['IODeviceStatus',['../io_8h.html#a40548194ba53f38caa8bab16a4d2c6ef',1,'mixal']]],
+  ['iodevicetype_252',['IODeviceType',['../io_8h.html#a2fb73a996fc29c1bbbd3a32fb7d2b6c6',1,'mixal']]]
 ];

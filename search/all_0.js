@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['address_0',['address',['../classmixal_1_1_parsed_result.html#a8c6a40c133c0f4c7dcd3f1bb58eed949',1,'mixal::ParsedResult::address()'],['../structmixal_1_1_computer_word.html#ad8eb54c65381ee73235fd1ce5452dae2',1,'mixal::ComputerWord::address()']]],
-  ['addressvalue_1',['addressValue',['../structmixal_1_1_computer_word.html#adf17edeb3a67a2269887303d12d8d307',1,'mixal::ComputerWord']]],
-  ['atomic_2',['Atomic',['../structmixal_1_1_atomic.html',1,'mixal::Atomic'],['../structmixal_1_1_atomic.html#a93243ec27b3ccad6a4d026fa381490ce',1,'mixal::Atomic::Atomic(AtomicType _type=AtomicType::INTEGER, bool _negative=false)'],['../structmixal_1_1_atomic.html#afd96a8334464330927b898d9b3318bfa',1,'mixal::Atomic::Atomic(AtomicType _type, int32_t _value, bool _negative=false)'],['../structmixal_1_1_atomic.html#ae4ab4c9f5f5f97daaab59250727236b5',1,'mixal::Atomic::Atomic(AtomicType _type, const std::string &amp;_value, bool _negative=false)'],['../structmixal_1_1_atomic.html#a84d8900ccf239312c08156658c88be00',1,'mixal::Atomic::Atomic(const Atomic &amp;atomic)']]],
-  ['atomics_3',['atomics',['../classmixal_1_1_expression.html#aaea57b5e3fe3f40e9bbeb921e6521581',1,'mixal::Expression']]],
-  ['atomictype_4',['AtomicType',['../expression_8h.html#aa13232db539ed5ddffea54a7f61a9d80',1,'mixal']]],
-  ['atomicvalue_5',['AtomicValue',['../structmixal_1_1_atomic_value.html',1,'mixal::AtomicValue'],['../structmixal_1_1_atomic_value.html#a902a8e9f104997ae8fbb5a1d2becae0a',1,'mixal::AtomicValue::AtomicValue()'],['../structmixal_1_1_atomic_value.html#a34ec59264ddc26d9340bcaed868cc665',1,'mixal::AtomicValue::AtomicValue(int32_t _value)'],['../structmixal_1_1_atomic_value.html#a35e7c5f53f1631bcd85b181be6363af1',1,'mixal::AtomicValue::AtomicValue(const AtomicValue &amp;atomicValue)']]]
+  ['_5fallowread_0',['_allowRead',['../classmixal_1_1_i_o_device.html#a01c16cc8993b441d8dde698ced915a46',1,'mixal::IODevice']]],
+  ['_5fallowwrite_1',['_allowWrite',['../classmixal_1_1_i_o_device.html#a64c9cee45be88e9e6d587a3de72ea57f',1,'mixal::IODevice']]],
+  ['_5fblocksize_2',['_blockSize',['../classmixal_1_1_i_o_device.html#a4468edd46bf9c8d75b5639fe8429d7fe',1,'mixal::IODevice']]],
+  ['_5freadyrate_3',['_readyRate',['../classmixal_1_1_i_o_device.html#a5a583f8a3a566fcf2fa8b8e478e215b6',1,'mixal::IODevice']]],
+  ['_5ftimestamp_4',['_timestamp',['../classmixal_1_1_i_o_device.html#a3d41f8c8fc1cad833040b4a53d181b95',1,'mixal::IODevice']]],
+  ['_5ftype_5',['_type',['../classmixal_1_1_i_o_device.html#ab47f04d7b695ab4171162baf62537f89',1,'mixal::IODevice']]]
 ];

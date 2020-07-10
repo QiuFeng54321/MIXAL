@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['char_5fcodes_11',['CHAR_CODES',['../memory_8h.html#adaeb7aa8e58d1ab6ba110bc9da8a4ffa',1,'mixal']]],
-  ['char_5fcodes_5fnum_12',['CHAR_CODES_NUM',['../memory_8h.html#a116950adcfe8befda56ff9aaaf40159d',1,'mixal']]],
-  ['comment_13',['comment',['../classmixal_1_1_parsed_result.html#a1185c930c4a9ab8c461a1912fd906f8c',1,'mixal::ParsedResult']]],
-  ['comparisonindicator_14',['ComparisonIndicator',['../flags_8h.html#ac9b67f517d47cf62b0de5e5a9fec66f7',1,'mixal']]],
-  ['computerword_15',['ComputerWord',['../structmixal_1_1_computer_word.html',1,'mixal::ComputerWord'],['../structmixal_1_1_computer_word.html#ab77632d2a3141eb4edc3617c57f8cd1c',1,'mixal::ComputerWord::ComputerWord()'],['../structmixal_1_1_computer_word.html#ad0499bad51e1892b2c61d7389280ef54',1,'mixal::ComputerWord::ComputerWord(int32_t value)'],['../structmixal_1_1_computer_word.html#abc038373017916a33d61dce14dc2678a',1,'mixal::ComputerWord::ComputerWord(const std::string &amp;chars)'],['../structmixal_1_1_computer_word.html#a255cbdfc7e76fa74743d5d45fcf8a405',1,'mixal::ComputerWord::ComputerWord(bool _negative, uint8_t _byte1, uint8_t _byte2, uint8_t _byte3, uint8_t _byte4, uint8_t _byte5)'],['../structmixal_1_1_computer_word.html#a8dee2181ec45f1fee3733da8c40dc042',1,'mixal::ComputerWord::ComputerWord(bool _negative, uint16_t bytes12, uint8_t _byte3, uint8_t _byte4, uint8_t _byte5)']]]
+  ['blocksize_14',['blockSize',['../classmixal_1_1_i_o_device.html#abac6c5f411277fabd87eb1c083c320a7',1,'mixal::IODevice']]],
+  ['bytes12_15',['bytes12',['../structmixal_1_1_computer_word.html#adafce19ba39b278241caab3987650df3',1,'mixal::ComputerWord::bytes12()'],['../structmixal_1_1_register2.html#a45e5c37a23474d9e2a7c38c28ac18c6d',1,'mixal::Register2::bytes12()']]],
+  ['bytes2_16',['bytes2',['../structmixal_1_1_computer_word.html#a91d6e74b495409215eb7326ccead243a',1,'mixal::ComputerWord']]],
+  ['bytes23_17',['bytes23',['../structmixal_1_1_computer_word.html#ad7c98e89e5405e6dce88c4d21c08fab2',1,'mixal::ComputerWord']]],
+  ['bytes34_18',['bytes34',['../structmixal_1_1_computer_word.html#aad76d7f47e478753432a831ca0495771',1,'mixal::ComputerWord']]],
+  ['bytes45_19',['bytes45',['../structmixal_1_1_computer_word.html#a01349b2b6dd293b59995f9fa6d9574f9',1,'mixal::ComputerWord']]]
 ];

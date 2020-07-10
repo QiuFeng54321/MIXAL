@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operation_196',['operation',['../classmixal_1_1_parsed_result.html#a7d54bf07cad4ef4a897a56d0c644f306',1,'mixal::ParsedResult']]]
+  ['negative_237',['negative',['../structmixal_1_1_atomic.html#a03af48bc0a24c2298032460755a9c07d',1,'mixal::Atomic']]]
 ];

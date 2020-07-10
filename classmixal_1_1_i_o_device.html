@@ -74,6 +74,8 @@ $(function() {
 <div class="title">mixal::IODevice Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="io_8h_source.html">io.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for mixal::IODevice:</div>
 <div class="dyncontent">
@@ -95,75 +97,642 @@ Inheritance diagram for mixal::IODevice:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a34de8f74a75077b57877c844f51f1bb6"><td class="memItemLeft" align="right" valign="top"><a id="a34de8f74a75077b57877c844f51f1bb6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>IODevice</b> (int32_t blockSize, bool allowRead, bool allowWrite)</td></tr>
+<tr class="memitem:a34de8f74a75077b57877c844f51f1bb6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a34de8f74a75077b57877c844f51f1bb6">IODevice</a> (int32_t <a class="el" href="classmixal_1_1_i_o_device.html#abac6c5f411277fabd87eb1c083c320a7">blockSize</a>, bool <a class="el" href="classmixal_1_1_i_o_device.html#a8f4337b0f6b8afda5831ed1c62edf0e2">allowRead</a>, bool <a class="el" href="classmixal_1_1_i_o_device.html#a278f08e8e2032bff0252f2942debf6bc">allowWrite</a>)</td></tr>
 <tr class="separator:a34de8f74a75077b57877c844f51f1bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c3f7557cfc661f66522c88612ba7567"><td class="memItemLeft" align="right" valign="top"><a id="a1c3f7557cfc661f66522c88612ba7567"></a>
-IODeviceType&#160;</td><td class="memItemRight" valign="bottom"><b>type</b> () const</td></tr>
+<tr class="memitem:a1c3f7557cfc661f66522c88612ba7567"><td class="memItemLeft" align="right" valign="top"><a class="el" href="io_8h.html#a2fb73a996fc29c1bbbd3a32fb7d2b6c6">IODeviceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a1c3f7557cfc661f66522c88612ba7567">type</a> () const</td></tr>
 <tr class="separator:a1c3f7557cfc661f66522c88612ba7567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abac6c5f411277fabd87eb1c083c320a7"><td class="memItemLeft" align="right" valign="top"><a id="abac6c5f411277fabd87eb1c083c320a7"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>blockSize</b> () const</td></tr>
+<tr class="memitem:abac6c5f411277fabd87eb1c083c320a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#abac6c5f411277fabd87eb1c083c320a7">blockSize</a> () const</td></tr>
 <tr class="separator:abac6c5f411277fabd87eb1c083c320a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f4337b0f6b8afda5831ed1c62edf0e2"><td class="memItemLeft" align="right" valign="top"><a id="a8f4337b0f6b8afda5831ed1c62edf0e2"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>allowRead</b> () const</td></tr>
+<tr class="memitem:a8f4337b0f6b8afda5831ed1c62edf0e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a8f4337b0f6b8afda5831ed1c62edf0e2">allowRead</a> () const</td></tr>
 <tr class="separator:a8f4337b0f6b8afda5831ed1c62edf0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a278f08e8e2032bff0252f2942debf6bc"><td class="memItemLeft" align="right" valign="top"><a id="a278f08e8e2032bff0252f2942debf6bc"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>allowWrite</b> () const</td></tr>
+<tr class="memitem:a278f08e8e2032bff0252f2942debf6bc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a278f08e8e2032bff0252f2942debf6bc">allowWrite</a> () const</td></tr>
 <tr class="separator:a278f08e8e2032bff0252f2942debf6bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9539e095260adc3bf5f5c574b91769a"><td class="memItemLeft" align="right" valign="top"><a id="ab9539e095260adc3bf5f5c574b91769a"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>ready</b> (int32_t elapsed)</td></tr>
+<tr class="memitem:ab9539e095260adc3bf5f5c574b91769a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#ab9539e095260adc3bf5f5c574b91769a">ready</a> (int32_t elapsed)</td></tr>
 <tr class="separator:ab9539e095260adc3bf5f5c574b91769a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a853c6755710dd8e88ccd18059696ae4d"><td class="memItemLeft" align="right" valign="top"><a id="a853c6755710dd8e88ccd18059696ae4d"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>control</b> (int32_t)</td></tr>
+<tr class="memitem:a853c6755710dd8e88ccd18059696ae4d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a853c6755710dd8e88ccd18059696ae4d">control</a> (int32_t)</td></tr>
 <tr class="separator:a853c6755710dd8e88ccd18059696ae4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc955da27348c9f9b09a5cfd6b08fc85"><td class="memItemLeft" align="right" valign="top"><a id="abc955da27348c9f9b09a5cfd6b08fc85"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (<a class="el" href="structmixal_1_1_computer_word.html">ComputerWord</a> *memory, int32_t address)=0</td></tr>
+<tr class="memitem:abc955da27348c9f9b09a5cfd6b08fc85"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#abc955da27348c9f9b09a5cfd6b08fc85">read</a> (<a class="el" href="structmixal_1_1_computer_word.html">ComputerWord</a> *memory, int32_t address)=0</td></tr>
 <tr class="separator:abc955da27348c9f9b09a5cfd6b08fc85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52630fef38832ec2aab2a42add614283"><td class="memItemLeft" align="right" valign="top"><a id="a52630fef38832ec2aab2a42add614283"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const <a class="el" href="structmixal_1_1_computer_word.html">ComputerWord</a> *memory, int32_t address)=0</td></tr>
+<tr class="memitem:a52630fef38832ec2aab2a42add614283"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a52630fef38832ec2aab2a42add614283">write</a> (const <a class="el" href="structmixal_1_1_computer_word.html">ComputerWord</a> *memory, int32_t address)=0</td></tr>
 <tr class="separator:a52630fef38832ec2aab2a42add614283"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad66daa7ddc21a336760ed9f9190121f4"><td class="memItemLeft" align="right" valign="top"><a id="ad66daa7ddc21a336760ed9f9190121f4"></a>
-virtual <a class="el" href="structmixal_1_1_computer_word.html">ComputerWord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>wordAt</b> (int32_t index)=0</td></tr>
+<tr class="memitem:ad66daa7ddc21a336760ed9f9190121f4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structmixal_1_1_computer_word.html">ComputerWord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#ad66daa7ddc21a336760ed9f9190121f4">wordAt</a> (int32_t index)=0</td></tr>
 <tr class="separator:ad66daa7ddc21a336760ed9f9190121f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a528b4ce53f0f43b7c62a3e2ff724a49c"><td class="memItemLeft" align="right" valign="top"><a id="a528b4ce53f0f43b7c62a3e2ff724a49c"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>doRead</b> ()=0</td></tr>
+<tr class="memitem:a528b4ce53f0f43b7c62a3e2ff724a49c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a528b4ce53f0f43b7c62a3e2ff724a49c">doRead</a> ()=0</td></tr>
 <tr class="separator:a528b4ce53f0f43b7c62a3e2ff724a49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2032fb52bdc6d9c3463aefbb51f6db71"><td class="memItemLeft" align="right" valign="top"><a id="a2032fb52bdc6d9c3463aefbb51f6db71"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>doWrite</b> ()=0</td></tr>
+<tr class="memitem:a2032fb52bdc6d9c3463aefbb51f6db71"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a2032fb52bdc6d9c3463aefbb51f6db71">doWrite</a> ()=0</td></tr>
 <tr class="separator:a2032fb52bdc6d9c3463aefbb51f6db71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ab47f04d7b695ab4171162baf62537f89"><td class="memItemLeft" align="right" valign="top"><a id="ab47f04d7b695ab4171162baf62537f89"></a>
-IODeviceType&#160;</td><td class="memItemRight" valign="bottom"><b>_type</b></td></tr>
+<tr class="memitem:ab47f04d7b695ab4171162baf62537f89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="io_8h.html#a2fb73a996fc29c1bbbd3a32fb7d2b6c6">IODeviceType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#ab47f04d7b695ab4171162baf62537f89">_type</a></td></tr>
 <tr class="separator:ab47f04d7b695ab4171162baf62537f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4468edd46bf9c8d75b5639fe8429d7fe"><td class="memItemLeft" align="right" valign="top"><a id="a4468edd46bf9c8d75b5639fe8429d7fe"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>_blockSize</b></td></tr>
+<tr class="memitem:a4468edd46bf9c8d75b5639fe8429d7fe"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a4468edd46bf9c8d75b5639fe8429d7fe">_blockSize</a></td></tr>
 <tr class="separator:a4468edd46bf9c8d75b5639fe8429d7fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01c16cc8993b441d8dde698ced915a46"><td class="memItemLeft" align="right" valign="top"><a id="a01c16cc8993b441d8dde698ced915a46"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_allowRead</b></td></tr>
+<tr class="memitem:a01c16cc8993b441d8dde698ced915a46"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a01c16cc8993b441d8dde698ced915a46">_allowRead</a></td></tr>
 <tr class="separator:a01c16cc8993b441d8dde698ced915a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64c9cee45be88e9e6d587a3de72ea57f"><td class="memItemLeft" align="right" valign="top"><a id="a64c9cee45be88e9e6d587a3de72ea57f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>_allowWrite</b></td></tr>
+<tr class="memitem:a64c9cee45be88e9e6d587a3de72ea57f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a64c9cee45be88e9e6d587a3de72ea57f">_allowWrite</a></td></tr>
 <tr class="separator:a64c9cee45be88e9e6d587a3de72ea57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d41f8c8fc1cad833040b4a53d181b95"><td class="memItemLeft" align="right" valign="top"><a id="a3d41f8c8fc1cad833040b4a53d181b95"></a>
-int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>_timestamp</b></td></tr>
+<tr class="memitem:a3d41f8c8fc1cad833040b4a53d181b95"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a3d41f8c8fc1cad833040b4a53d181b95">_timestamp</a></td></tr>
 <tr class="separator:a3d41f8c8fc1cad833040b4a53d181b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a583f8a3a566fcf2fa8b8e478e215b6"><td class="memItemLeft" align="right" valign="top"><a id="a5a583f8a3a566fcf2fa8b8e478e215b6"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>_readyRate</b></td></tr>
+<tr class="memitem:a5a583f8a3a566fcf2fa8b8e478e215b6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_i_o_device.html#a5a583f8a3a566fcf2fa8b8e478e215b6">_readyRate</a></td></tr>
 <tr class="separator:a5a583f8a3a566fcf2fa8b8e478e215b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00027">27</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>The IO device.</p>
+<p>Once read or write, the device will not be ready immediately. The reading or writing operation is saved, the actual reading or writing is performed only when the device is explicitly being queried. </p>
+
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00040">40</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a34de8f74a75077b57877c844f51f1bb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34de8f74a75077b57877c844f51f1bb6">&#9670;&nbsp;</a></span>IODevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mixal::IODevice::IODevice </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>blockSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allowRead</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allowWrite</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize an IO device.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blockSize</td><td>The number of bytes in one reading or writing. </td></tr>
+    <tr><td class="paramname">allowRead</td><td>Whether the device can be read. </td></tr>
+    <tr><td class="paramname">allowWrite</td><td>Whether the device can be wrote. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="io_8cpp_source.html#l00010">10</a> of file <a class="el" href="io_8cpp_source.html">io.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                                                     : <a class="code" href="classmixal_1_1_i_o_device.html#ab47f04d7b695ab4171162baf62537f89">_type</a>(IODeviceType::TAPE),</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="classmixal_1_1_i_o_device.html#a4468edd46bf9c8d75b5639fe8429d7fe">_blockSize</a>(<a class="code" href="classmixal_1_1_i_o_device.html#abac6c5f411277fabd87eb1c083c320a7">blockSize</a>), <a class="code" href="classmixal_1_1_i_o_device.html#a01c16cc8993b441d8dde698ced915a46">_allowRead</a>(<a class="code" href="classmixal_1_1_i_o_device.html#a8f4337b0f6b8afda5831ed1c62edf0e2">allowRead</a>), <a class="code" href="classmixal_1_1_i_o_device.html#a64c9cee45be88e9e6d587a3de72ea57f">_allowWrite</a>(<a class="code" href="classmixal_1_1_i_o_device.html#a278f08e8e2032bff0252f2942debf6bc">allowWrite</a>),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classmixal_1_1_i_o_device.html#a3d41f8c8fc1cad833040b4a53d181b95">_timestamp</a>(), <a class="code" href="classmixal_1_1_i_o_device.html#a5a583f8a3a566fcf2fa8b8e478e215b6">_readyRate</a>(1.0) {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8f4337b0f6b8afda5831ed1c62edf0e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f4337b0f6b8afda5831ed1c62edf0e2">&#9670;&nbsp;</a></span>allowRead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mixal::IODevice::allowRead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Whether the device can be read. </p>
+
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00056">56</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classmixal_1_1_i_o_device.html#a01c16cc8993b441d8dde698ced915a46">_allowRead</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="io_8h_source.html#l00075">_allowRead</a>.</p>
+
+</div>
+</div>
+<a id="a278f08e8e2032bff0252f2942debf6bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a278f08e8e2032bff0252f2942debf6bc">&#9670;&nbsp;</a></span>allowWrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mixal::IODevice::allowWrite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Whether the device can be wrote. </p>
+
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00058">58</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classmixal_1_1_i_o_device.html#a64c9cee45be88e9e6d587a3de72ea57f">_allowWrite</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="io_8h_source.html#l00076">_allowWrite</a>.</p>
+
+</div>
+</div>
+<a id="abac6c5f411277fabd87eb1c083c320a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abac6c5f411277fabd87eb1c083c320a7">&#9670;&nbsp;</a></span>blockSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mixal::IODevice::blockSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The number of bytes in one reading or writing. </p>
+
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00054">54</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classmixal_1_1_i_o_device.html#a4468edd46bf9c8d75b5639fe8429d7fe">_blockSize</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="io_8h_source.html#l00074">_blockSize</a>.</p>
+
+</div>
+</div>
+<a id="a853c6755710dd8e88ccd18059696ae4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a853c6755710dd8e88ccd18059696ae4d">&#9670;&nbsp;</a></span>control()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mixal::IODevice::control </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Special control of the device. </p>
+
+<p>Reimplemented in <a class="el" href="classmixal_1_1_i_o_device_paper_tape.html#a1b188dfc84e4eaa9e08ad8a491e814e5">mixal::IODevicePaperTape</a>, <a class="el" href="classmixal_1_1_i_o_device_line_printer.html#a7eddbc0fd032ecadbca1fb10611d0545">mixal::IODeviceLinePrinter</a>, <a class="el" href="classmixal_1_1_i_o_device_disk.html#aefe87d17cad64794de159c31b03f32a9">mixal::IODeviceDisk</a>, and <a class="el" href="classmixal_1_1_i_o_device_tape.html#a28feac40e70dcceda3ed5d3113c1ecf5">mixal::IODeviceTape</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00063">63</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a528b4ce53f0f43b7c62a3e2ff724a49c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a528b4ce53f0f43b7c62a3e2ff724a49c">&#9670;&nbsp;</a></span>doRead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mixal::IODevice::doRead </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Perform the actual reading. </p>
+
+<p>Implemented in <a class="el" href="classmixal_1_1_i_o_device_storage.html#ae761284d2d4ba093bdc959829d5451f6">mixal::IODeviceStorage</a>.</p>
+
+</div>
+</div>
+<a id="a2032fb52bdc6d9c3463aefbb51f6db71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2032fb52bdc6d9c3463aefbb51f6db71">&#9670;&nbsp;</a></span>doWrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mixal::IODevice::doWrite </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Perform the actual writing. </p>
+
+<p>Implemented in <a class="el" href="classmixal_1_1_i_o_device_storage.html#a434be6e770109cf0854e1ede5c272295">mixal::IODeviceStorage</a>.</p>
+
+</div>
+</div>
+<a id="abc955da27348c9f9b09a5cfd6b08fc85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc955da27348c9f9b09a5cfd6b08fc85">&#9670;&nbsp;</a></span>read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mixal::IODevice::read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmixal_1_1_computer_word.html">ComputerWord</a> *&#160;</td>
+          <td class="paramname"><em>memory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Read one block from the device. </p>
+
+<p>Implemented in <a class="el" href="classmixal_1_1_i_o_device_storage.html#ad361231ed8548e844ccbbc904c2dee51">mixal::IODeviceStorage</a>.</p>
+
+</div>
+</div>
+<a id="ab9539e095260adc3bf5f5c574b91769a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9539e095260adc3bf5f5c574b91769a">&#9670;&nbsp;</a></span>ready()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mixal::IODevice::ready </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>elapsed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Whether the device is ready for reading or writing. </p>
+
+<p>Reimplemented in <a class="el" href="classmixal_1_1_i_o_device_storage.html#a667228febb5ae3bece8ce8a83017ad6e">mixal::IODeviceStorage</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="io_8cpp_source.html#l00014">14</a> of file <a class="el" href="io_8cpp_source.html">io.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                      {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    int32_t elapsed = std::max(0, timestamp - <a class="code" href="classmixal_1_1_i_o_device.html#a3d41f8c8fc1cad833040b4a53d181b95">_timestamp</a>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classmixal_1_1_i_o_device.html#a3d41f8c8fc1cad833040b4a53d181b95">_timestamp</a> = timestamp;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">double</span> r = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(rand()) / RAND_MAX;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">double</span> successRate = 1.0 - pow(1.0 - <a class="code" href="classmixal_1_1_i_o_device.html#a5a583f8a3a566fcf2fa8b8e478e215b6">_readyRate</a>, elapsed);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> r &lt;= successRate;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="io_8h_source.html#l00078">_readyRate</a>, and <a class="el" href="io_8h_source.html#l00077">_timestamp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="io_8cpp_source.html#l00026">mixal::IODeviceStorage::ready()</a>.</p>
+
+</div>
+</div>
+<a id="a1c3f7557cfc661f66522c88612ba7567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c3f7557cfc661f66522c88612ba7567">&#9670;&nbsp;</a></span>type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="io_8h.html#a2fb73a996fc29c1bbbd3a32fb7d2b6c6">IODeviceType</a> mixal::IODevice::type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get the type of the IO device. </p>
+
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00052">52</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classmixal_1_1_i_o_device.html#ab47f04d7b695ab4171162baf62537f89">_type</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="io_8h_source.html#l00073">_type</a>.</p>
+
+</div>
+</div>
+<a id="ad66daa7ddc21a336760ed9f9190121f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad66daa7ddc21a336760ed9f9190121f4">&#9670;&nbsp;</a></span>wordAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structmixal_1_1_computer_word.html">ComputerWord</a>&amp; mixal::IODevice::wordAt </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get a word from the storage of the device. </p>
+
+<p>Implemented in <a class="el" href="classmixal_1_1_i_o_device_storage.html#a523311f77f95558eddbe6653c36e8edc">mixal::IODeviceStorage</a>.</p>
+
+</div>
+</div>
+<a id="a52630fef38832ec2aab2a42add614283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52630fef38832ec2aab2a42add614283">&#9670;&nbsp;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void mixal::IODevice::write </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmixal_1_1_computer_word.html">ComputerWord</a> *&#160;</td>
+          <td class="paramname"><em>memory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>address</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Write one block to the device. </p>
+
+<p>Implemented in <a class="el" href="classmixal_1_1_i_o_device_storage.html#a159409dd7b3c904d3724560c0f4b3dd8">mixal::IODeviceStorage</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a01c16cc8993b441d8dde698ced915a46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01c16cc8993b441d8dde698ced915a46">&#9670;&nbsp;</a></span>_allowRead</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mixal::IODevice::_allowRead</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Whether the device can be read. </p>
+
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00075">75</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="io_8h_source.html#l00056">allowRead()</a>.</p>
+
+</div>
+</div>
+<a id="a64c9cee45be88e9e6d587a3de72ea57f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64c9cee45be88e9e6d587a3de72ea57f">&#9670;&nbsp;</a></span>_allowWrite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mixal::IODevice::_allowWrite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Whether the device can be wrote. </p>
+
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00076">76</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="io_8h_source.html#l00058">allowWrite()</a>.</p>
+
+</div>
+</div>
+<a id="a4468edd46bf9c8d75b5639fe8429d7fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4468edd46bf9c8d75b5639fe8429d7fe">&#9670;&nbsp;</a></span>_blockSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t mixal::IODevice::_blockSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The number of bytes in one reading or writing. </p>
+
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00074">74</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="io_8h_source.html#l00054">blockSize()</a>, <a class="el" href="io_8cpp_source.html#l00075">mixal::IODeviceTape::control()</a>, <a class="el" href="io_8cpp_source.html#l00140">mixal::IODeviceLinePrinter::control()</a>, <a class="el" href="io_8cpp_source.html#l00056">mixal::IODeviceStorage::doRead()</a>, <a class="el" href="io_8cpp_source.html#l00063">mixal::IODeviceStorage::doWrite()</a>, <a class="el" href="io_8cpp_source.html#l00148">mixal::IODeviceLinePrinter::line()</a>, and <a class="el" href="io_8cpp_source.html#l00144">mixal::IODeviceLinePrinter::pageOffsetAt()</a>.</p>
+
+</div>
+</div>
+<a id="a5a583f8a3a566fcf2fa8b8e478e215b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a583f8a3a566fcf2fa8b8e478e215b6">&#9670;&nbsp;</a></span>_readyRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double mixal::IODevice::_readyRate</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The rate that the device could be ready in one unit time. </p>
+
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00078">78</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="io_8cpp_source.html#l00014">ready()</a>.</p>
+
+</div>
+</div>
+<a id="a3d41f8c8fc1cad833040b4a53d181b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d41f8c8fc1cad833040b4a53d181b95">&#9670;&nbsp;</a></span>_timestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t mixal::IODevice::_timestamp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The latest time that the device being triggered. </p>
+
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00077">77</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="io_8cpp_source.html#l00014">ready()</a>.</p>
+
+</div>
+</div>
+<a id="ab47f04d7b695ab4171162baf62537f89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab47f04d7b695ab4171162baf62537f89">&#9670;&nbsp;</a></span>_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="io_8h.html#a2fb73a996fc29c1bbbd3a32fb7d2b6c6">IODeviceType</a> mixal::IODevice::_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The type of the IO device. </p>
+
+<p class="definition">Definition at line <a class="el" href="io_8h_source.html#l00073">73</a> of file <a class="el" href="io_8h_source.html">io.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="io_8h_source.html#l00052">type()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="io_8h_source.html">io.h</a></li>
 <li>src/<a class="el" href="io_8cpp_source.html">io.cpp</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclassmixal_1_1_i_o_device_html_abac6c5f411277fabd87eb1c083c320a7"><div class="ttname"><a href="classmixal_1_1_i_o_device.html#abac6c5f411277fabd87eb1c083c320a7">mixal::IODevice::blockSize</a></div><div class="ttdeci">int blockSize() const</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00054">io.h:54</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_i_o_device_html_a278f08e8e2032bff0252f2942debf6bc"><div class="ttname"><a href="classmixal_1_1_i_o_device.html#a278f08e8e2032bff0252f2942debf6bc">mixal::IODevice::allowWrite</a></div><div class="ttdeci">bool allowWrite() const</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00058">io.h:58</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_i_o_device_html_a64c9cee45be88e9e6d587a3de72ea57f"><div class="ttname"><a href="classmixal_1_1_i_o_device.html#a64c9cee45be88e9e6d587a3de72ea57f">mixal::IODevice::_allowWrite</a></div><div class="ttdeci">bool _allowWrite</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00076">io.h:76</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_i_o_device_html_a4468edd46bf9c8d75b5639fe8429d7fe"><div class="ttname"><a href="classmixal_1_1_i_o_device.html#a4468edd46bf9c8d75b5639fe8429d7fe">mixal::IODevice::_blockSize</a></div><div class="ttdeci">int32_t _blockSize</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00074">io.h:74</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_i_o_device_html_a3d41f8c8fc1cad833040b4a53d181b95"><div class="ttname"><a href="classmixal_1_1_i_o_device.html#a3d41f8c8fc1cad833040b4a53d181b95">mixal::IODevice::_timestamp</a></div><div class="ttdeci">int32_t _timestamp</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00077">io.h:77</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_i_o_device_html_a5a583f8a3a566fcf2fa8b8e478e215b6"><div class="ttname"><a href="classmixal_1_1_i_o_device.html#a5a583f8a3a566fcf2fa8b8e478e215b6">mixal::IODevice::_readyRate</a></div><div class="ttdeci">double _readyRate</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00078">io.h:78</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_i_o_device_html_a8f4337b0f6b8afda5831ed1c62edf0e2"><div class="ttname"><a href="classmixal_1_1_i_o_device.html#a8f4337b0f6b8afda5831ed1c62edf0e2">mixal::IODevice::allowRead</a></div><div class="ttdeci">bool allowRead() const</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00056">io.h:56</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_i_o_device_html_a01c16cc8993b441d8dde698ced915a46"><div class="ttname"><a href="classmixal_1_1_i_o_device.html#a01c16cc8993b441d8dde698ced915a46">mixal::IODevice::_allowRead</a></div><div class="ttdeci">bool _allowRead</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00075">io.h:75</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_i_o_device_html_ab47f04d7b695ab4171162baf62537f89"><div class="ttname"><a href="classmixal_1_1_i_o_device.html#ab47f04d7b695ab4171162baf62537f89">mixal::IODevice::_type</a></div><div class="ttdeci">IODeviceType _type</div><div class="ttdef"><b>Definition:</b> <a href="io_8h_source.html#l00073">io.h:73</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
