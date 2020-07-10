@@ -206,9 +206,9 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">case</span> ParseState::OP:</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span> || ch == END_CHAR) {</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                result.operation = line.substr(operationStart, i - operationStart);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                int32_t operation = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(Instructions::getInstructionCode(result.operation));</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                int32_t operation = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classmixal_1_1_instructions.html#ae587fa5da53475c7a8881da404298a03">Instructions::getInstructionCode</a>(result.operation));</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <span class="keywordflow">if</span> (ch == <span class="charliteral">&#39; &#39;</span>) {</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    <span class="keywordflow">if</span> (Instructions::hasArguments(<span class="keyword">static_cast&lt;</span>Instructions::Code<span class="keyword">&gt;</span>(operation))) {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    <span class="keywordflow">if</span> (<a class="code" href="classmixal_1_1_instructions.html#acfad94269bc4745d9c837bf1788a8dd8">Instructions::hasArguments</a>(<span class="keyword">static_cast&lt;</span>Instructions::Code<span class="keyword">&gt;</span>(operation))) {</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                        state = ParseState::BEFORE_ADDRESS;</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                        state = ParseState::BEFORE_COMMENT;</div>
@@ -220,7 +220,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    <span class="keywordflow">throw</span> ParseError(i, <span class="stringliteral">&quot;Unknown operation: &quot;</span> + result.operation);</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (operation &lt;= Instructions::LAST) {</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                    result.word.setOperation(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(operation));</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    defaultField = Instructions::getDefaultField(result.operation);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    defaultField = <a class="code" href="classmixal_1_1_instructions.html#a2a0fe4c6863ec594a0b1937ccdd329aa">Instructions::getDefaultField</a>(result.operation);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    result.parsedType = ParsedType::PSEUDO;</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                    result.word.setOperation(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(operation - Instructions::PSEUDO));</div>
@@ -367,7 +367,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">case</span> ParseState::END:</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            assert(<span class="keyword">false</span>);  <span class="comment">// This line can not be reached.</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        }</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    }</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="keywordflow">if</span> (result.rawField.empty()) {</div>
@@ -397,7 +397,10 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <div class="ttc" id="aclassmixal_1_1_expression_html_a63c384503ba1baa08e032bfcc20c476e"><div class="ttname"><a href="classmixal_1_1_expression.html#a63c384503ba1baa08e032bfcc20c476e">mixal::Expression::isValidFirst</a></div><div class="ttdeci">static bool isValidFirst(char ch)</div><div class="ttdef"><b>Definition:</b> <a href="expression_8cpp_source.html#l00046">expression.cpp:46</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_expression_html_a6802d71c466cfe0421f9ec79f17c1050"><div class="ttname"><a href="classmixal_1_1_expression.html#a6802d71c466cfe0421f9ec79f17c1050">mixal::Expression::isValidChar</a></div><div class="ttdeci">static bool isValidChar(char ch)</div><div class="ttdef"><b>Definition:</b> <a href="expression_8cpp_source.html#l00050">expression.cpp:50</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_instructions_html_a2a0fe4c6863ec594a0b1937ccdd329aa"><div class="ttname"><a href="classmixal_1_1_instructions.html#a2a0fe4c6863ec594a0b1937ccdd329aa">mixal::Instructions::getDefaultField</a></div><div class="ttdeci">static int getDefaultField(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="instructions_8cpp_source.html#l01222">instructions.cpp:1222</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_expression_html_ab746ee4027b058ab611652db7c4c10dd"><div class="ttname"><a href="classmixal_1_1_expression.html#ab746ee4027b058ab611652db7c4c10dd">mixal::Expression::getConstExpression</a></div><div class="ttdeci">static Expression getConstExpression(const AtomicValue &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="expression_8cpp_source.html#l00023">expression.cpp:23</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_instructions_html_acfad94269bc4745d9c837bf1788a8dd8"><div class="ttname"><a href="classmixal_1_1_instructions.html#acfad94269bc4745d9c837bf1788a8dd8">mixal::Instructions::hasArguments</a></div><div class="ttdeci">static bool hasArguments(Instructions::Code code)</div><div class="ttdef"><b>Definition:</b> <a href="instructions_8cpp_source.html#l00005">instructions.cpp:5</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_instructions_html_ae587fa5da53475c7a8881da404298a03"><div class="ttname"><a href="classmixal_1_1_instructions.html#ae587fa5da53475c7a8881da404298a03">mixal::Instructions::getInstructionCode</a></div><div class="ttdeci">static Instructions::Code getInstructionCode(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="instructions_8cpp_source.html#l00009">instructions.cpp:9</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
