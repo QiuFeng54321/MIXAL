@@ -7,5 +7,5 @@ var searchData=
   ['operator_3d_107',['operator=',['../structmixal_1_1_atomic_value.html#a7732f8f54e43356e7e499e72f0247ed2',1,'mixal::AtomicValue']]],
   ['operator_3d_3d_108',['operator==',['../structmixal_1_1_atomic.html#a3198dd9d4cc4f7cc37a5b8c6046b5ef0',1,'mixal::Atomic::operator==()'],['../classmixal_1_1_expression.html#a2f8582daedc984be01d4bcc1e99fac28',1,'mixal::Expression::operator==()'],['../structmixal_1_1_computer_word.html#ad086603e089bebb909aa7670236ac39c',1,'mixal::ComputerWord::operator==()']]],
   ['operator_5b_5d_109',['operator[]',['../structmixal_1_1_computer_word.html#ae90a4cac4cca9a48dbab5cb7d7b6f033',1,'mixal::ComputerWord::operator[](int index) const'],['../structmixal_1_1_computer_word.html#a5a0043e6026b3652ccfec9312fb37f32',1,'mixal::ComputerWord::operator[](int index)'],['../structmixal_1_1_register2.html#aad0c0384d1bfecf927ef8432f7d87210',1,'mixal::Register2::operator[]()']]],
-  ['overflow_110',['overflow',['../classmixal_1_1_machine.html#a96fc0807f321a39a15635c1198f2f730',1,'mixal::Machine']]]
+  ['overflow_110',['overflow',['../classmixal_1_1_computer.html#a46582616af67c093a3c35657b0db9e9f',1,'mixal::Computer']]]
 ];

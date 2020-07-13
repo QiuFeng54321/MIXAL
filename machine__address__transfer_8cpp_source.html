@@ -74,21 +74,21 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>mixal {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> Machine::executeINC(<span class="keyword">const</span> InstructionWord&amp; instruction, Register5* reg) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> Computer::executeINC(<span class="keyword">const</span> InstructionWord&amp; instruction, Register5* reg) {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    int32_t value = reg-&gt;value();</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    int32_t address = getIndexedAddress(instruction);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    value += address;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    reg-&gt;set(checkRange(value));</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> Machine::executeDEC(<span class="keyword">const</span> InstructionWord&amp; instruction, Register5* reg) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> Computer::executeDEC(<span class="keyword">const</span> InstructionWord&amp; instruction, Register5* reg) {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    int32_t value = reg-&gt;value();</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    int32_t address = getIndexedAddress(instruction);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    value -= address;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    reg-&gt;set(checkRange(value));</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> Machine::executeENT(<span class="keyword">const</span> InstructionWord&amp; instruction, Register5* reg) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> Computer::executeENT(<span class="keyword">const</span> InstructionWord&amp; instruction, Register5* reg) {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    int32_t address = getIndexedAddress(instruction);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    reg-&gt;set(address);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (address == 0) {</div>
@@ -96,7 +96,7 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> Machine::executeENN(<span class="keyword">const</span> InstructionWord&amp; instruction, Register5* reg) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> Computer::executeENN(<span class="keyword">const</span> InstructionWord&amp; instruction, Register5* reg) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    int32_t address = getIndexedAddress(instruction);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    reg-&gt;set(-address);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (address == 0) {</div>
@@ -104,27 +104,27 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> Machine::executeINCi(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> Computer::executeINCi(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">int</span> registerIndex = instruction.operation() - Instructions::INC1 + 1;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">auto</span>&amp; rIi = <a class="code" href="classmixal_1_1_machine.html#a7746fede70f941faa72b22b59c4c9248">rI</a>(registerIndex);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">auto</span>&amp; rIi = <a class="code" href="classmixal_1_1_computer.html#ad7c9fb97faa9dea7c9c97ae633afc9d9">rI</a>(registerIndex);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    int16_t value = rIi.value();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    int16_t address = getIndexedAddress(instruction);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    value += address;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    rIi.set(checkRange(value, 2));</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> Machine::executeDECi(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> Computer::executeDECi(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">int</span> registerIndex = instruction.operation() - Instructions::INC1 + 1;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">auto</span>&amp; rIi = <a class="code" href="classmixal_1_1_machine.html#a7746fede70f941faa72b22b59c4c9248">rI</a>(registerIndex);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">auto</span>&amp; rIi = <a class="code" href="classmixal_1_1_computer.html#ad7c9fb97faa9dea7c9c97ae633afc9d9">rI</a>(registerIndex);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    int16_t value = rIi.value();</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    int16_t address = getIndexedAddress(instruction);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    value -= address;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    rIi.set(checkRange(value, 2));</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> Machine::executeENTi(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> Computer::executeENTi(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> registerIndex = instruction.operation() - Instructions::INC1 + 1;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">auto</span>&amp; rIi = <a class="code" href="classmixal_1_1_machine.html#a7746fede70f941faa72b22b59c4c9248">rI</a>(registerIndex);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">auto</span>&amp; rIi = <a class="code" href="classmixal_1_1_computer.html#ad7c9fb97faa9dea7c9c97ae633afc9d9">rI</a>(registerIndex);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    int16_t address = getIndexedAddress(instruction);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    rIi.set(checkRange(address, 2));</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (address == 0) {</div>
@@ -132,9 +132,9 @@ $(function() {
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">void</span> Machine::executeENNi(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">void</span> Computer::executeENNi(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">int</span> registerIndex = instruction.operation() - Instructions::INC1 + 1;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">auto</span>&amp; rIi = <a class="code" href="classmixal_1_1_machine.html#a7746fede70f941faa72b22b59c4c9248">rI</a>(registerIndex);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">auto</span>&amp; rIi = <a class="code" href="classmixal_1_1_computer.html#ad7c9fb97faa9dea7c9c97ae633afc9d9">rI</a>(registerIndex);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    int16_t address = getIndexedAddress(instruction);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    rIi.set(checkRange(-address, 2));</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (address == 0) {</div>
@@ -144,8 +144,8 @@ $(function() {
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};  <span class="comment">// namespace mixal</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassmixal_1_1_machine_html_a7746fede70f941faa72b22b59c4c9248"><div class="ttname"><a href="classmixal_1_1_machine.html#a7746fede70f941faa72b22b59c4c9248">mixal::Machine::rI</a></div><div class="ttdeci">Register2 &amp; rI(int index)</div><div class="ttdef"><b>Definition:</b> <a href="machine_8cpp_source.html#l00016">machine.cpp:16</a></div></div>
 <div class="ttc" id="amachine_8h_html"><div class="ttname"><a href="machine_8h.html">machine.h</a></div><div class="ttdoc">The virtual machine.</div></div>
+<div class="ttc" id="aclassmixal_1_1_computer_html_ad7c9fb97faa9dea7c9c97ae633afc9d9"><div class="ttname"><a href="classmixal_1_1_computer.html#ad7c9fb97faa9dea7c9c97ae633afc9d9">mixal::Computer::rI</a></div><div class="ttdeci">Register2 &amp; rI(int index)</div><div class="ttdef"><b>Definition:</b> <a href="machine_8cpp_source.html#l00016">machine.cpp:16</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

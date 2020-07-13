@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['machine_246',['Machine',['../classmixal_1_1_machine.html#a557aa47e18c4286d769ffdc93189f270',1,'mixal::Machine']]],
-  ['memoryat_247',['memoryAt',['../classmixal_1_1_machine.html#a9f20fec31b2420464e1e6f1a3d936444',1,'mixal::Machine::memoryAt(int16_t index) const'],['../classmixal_1_1_machine.html#aa1b1dff4b4a89d2a34a392ae07888224',1,'mixal::Machine::memoryAt(int16_t index)']]]
+  ['memoryat_247',['memoryAt',['../classmixal_1_1_computer.html#aa23a1a6cf5f82805c6694e8823a16904',1,'mixal::Computer::memoryAt(int16_t index) const'],['../classmixal_1_1_computer.html#a974731cf06728de9a67cc5ddb3b67775',1,'mixal::Computer::memoryAt(int16_t index)']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ra_122',['rA',['../classmixal_1_1_machine.html#a7607ec9f767850918f9500dde30f8a8f',1,'mixal::Machine']]],
+  ['ra_122',['rA',['../classmixal_1_1_computer.html#a2fd54cadb3bf5da2c35ab8c6048afdd9',1,'mixal::Computer']]],
   ['rawaddress_123',['rawAddress',['../classmixal_1_1_parsed_result.html#aec712ad93d88b4230691e509ec6be473',1,'mixal::ParsedResult']]],
   ['rawfield_124',['rawField',['../classmixal_1_1_parsed_result.html#ae0b5ba090214783a80d5a6d574ca9b44',1,'mixal::ParsedResult']]],
   ['rawindex_125',['rawIndex',['../classmixal_1_1_parsed_result.html#a8b523e82acd8f527e60d65f2e57e314b',1,'mixal::ParsedResult']]],
@@ -11,11 +11,11 @@ var searchData=
   ['register5_130',['Register5',['../registers_8h.html#a5c61853cf64404f5f85b4f1a9597038b',1,'mixal']]],
   ['registers_2eh_131',['registers.h',['../registers_8h.html',1,'']]],
   ['replacesymbol_132',['replaceSymbol',['../structmixal_1_1_atomic.html#a989a43042bde81f0c534e506373639d6',1,'mixal::Atomic::replaceSymbol()'],['../classmixal_1_1_expression.html#a981089bb59f57dab89006004893462b5',1,'mixal::Expression::replaceSymbol()']]],
-  ['reset_133',['reset',['../classmixal_1_1_expression.html#a348456cfa6f3f329e2b671b8212de272',1,'mixal::Expression::reset()'],['../classmixal_1_1_machine.html#a5c8005f5f2556ce3717d7173c3fc01a3',1,'mixal::Machine::reset()'],['../structmixal_1_1_computer_word.html#a7351409a811048c2f525cd1f0b55ecaa',1,'mixal::ComputerWord::reset()'],['../structmixal_1_1_register2.html#aede49eca1e015455d0750151172424d8',1,'mixal::Register2::reset()']]],
+  ['reset_133',['reset',['../classmixal_1_1_expression.html#a348456cfa6f3f329e2b671b8212de272',1,'mixal::Expression::reset()'],['../classmixal_1_1_computer.html#a66ab201ada148c16f4370c1525549215',1,'mixal::Computer::reset()'],['../structmixal_1_1_computer_word.html#a7351409a811048c2f525cd1f0b55ecaa',1,'mixal::ComputerWord::reset()'],['../structmixal_1_1_register2.html#aede49eca1e015455d0750151172424d8',1,'mixal::Register2::reset()']]],
   ['result_134',['result',['../classmixal_1_1_expression.html#a5eab6696a72654b0d157991c69dfbb31',1,'mixal::Expression']]],
-  ['ri_135',['rI',['../classmixal_1_1_machine.html#a7746fede70f941faa72b22b59c4c9248',1,'mixal::Machine']]],
-  ['ri1_136',['rI1',['../classmixal_1_1_machine.html#ab0b77c393319ea3f03938c7249214895',1,'mixal::Machine']]],
-  ['rj_137',['rJ',['../classmixal_1_1_machine.html#a1f53becd4aab474734edce21d18bd7dc',1,'mixal::Machine']]],
+  ['ri_135',['rI',['../classmixal_1_1_computer.html#ad7c9fb97faa9dea7c9c97ae633afc9d9',1,'mixal::Computer']]],
+  ['ri1_136',['rI1',['../classmixal_1_1_computer.html#a374316e34cf7ffdee6f1459f2de34cd4',1,'mixal::Computer']]],
+  ['rj_137',['rJ',['../classmixal_1_1_computer.html#a2824aa86e2fd16af339b73927f743cc6',1,'mixal::Computer']]],
   ['runtimeerror_138',['RuntimeError',['../classmixal_1_1_runtime_error.html',1,'mixal::RuntimeError'],['../classmixal_1_1_runtime_error.html#a693450fc5bc57cd97b820413a98e5378',1,'mixal::RuntimeError::RuntimeError()']]],
-  ['rx_139',['rX',['../classmixal_1_1_machine.html#a778a9301b59e65a55caa4b35a8ff4cf1',1,'mixal::Machine']]]
+  ['rx_139',['rX',['../classmixal_1_1_computer.html#a4a4830499085e84bd5c4bd394a5444e7',1,'mixal::Computer']]]
 ];

@@ -74,37 +74,37 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>mixal {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> Machine::executeST(<span class="keyword">const</span> InstructionWord&amp; instruction, Register5* reg) {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keywordtype">void</span> Computer::executeST(<span class="keyword">const</span> InstructionWord&amp; instruction, Register5* reg) {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    copyFromRegister5(instruction, *reg, &amp;<a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[address]);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    copyFromRegister5(instruction, *reg, &amp;<a class="code" href="classmixal_1_1_computer.html#a21cd060a1626202a9fd7141ef6a7b732">memory</a>[address]);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span> Machine::executeSTi(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span> Computer::executeSTi(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> registerIndex = instruction.operation() - Instructions::ST1 + 1;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">auto</span>&amp; rIi = <a class="code" href="classmixal_1_1_machine.html#a7746fede70f941faa72b22b59c4c9248">rI</a>(registerIndex);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">auto</span>&amp; rIi = <a class="code" href="classmixal_1_1_computer.html#ad7c9fb97faa9dea7c9c97ae633afc9d9">rI</a>(registerIndex);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    ComputerWord word(rIi.negative, 0, 0, 0, rIi[1], rIi[2]);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    copyFromRegister5(instruction, word, &amp;<a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[address]);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    copyFromRegister5(instruction, word, &amp;<a class="code" href="classmixal_1_1_computer.html#a21cd060a1626202a9fd7141ef6a7b732">memory</a>[address]);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> Machine::executeSTJ(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> Computer::executeSTJ(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ComputerWord word(0, 0, 0, 0, <a class="code" href="classmixal_1_1_machine.html#a1f53becd4aab474734edce21d18bd7dc">rJ</a>[1], <a class="code" href="classmixal_1_1_machine.html#a1f53becd4aab474734edce21d18bd7dc">rJ</a>[2]);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    copyFromRegister5(instruction, word, &amp;<a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[address]);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ComputerWord word(0, 0, 0, 0, <a class="code" href="classmixal_1_1_computer.html#a2824aa86e2fd16af339b73927f743cc6">rJ</a>[1], <a class="code" href="classmixal_1_1_computer.html#a2824aa86e2fd16af339b73927f743cc6">rJ</a>[2]);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    copyFromRegister5(instruction, word, &amp;<a class="code" href="classmixal_1_1_computer.html#a21cd060a1626202a9fd7141ef6a7b732">memory</a>[address]);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> Machine::executeSTZ(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> Computer::executeSTZ(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction, <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    ComputerWord word(0, 0, 0, 0, 0, 0);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    copyFromRegister5(instruction, word, &amp;<a class="code" href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">memory</a>[address]);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    copyFromRegister5(instruction, word, &amp;<a class="code" href="classmixal_1_1_computer.html#a21cd060a1626202a9fd7141ef6a7b732">memory</a>[address]);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};  <span class="comment">// namespace mixal</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassmixal_1_1_machine_html_a1f53becd4aab474734edce21d18bd7dc"><div class="ttname"><a href="classmixal_1_1_machine.html#a1f53becd4aab474734edce21d18bd7dc">mixal::Machine::rJ</a></div><div class="ttdeci">Register2 rJ</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00033">machine.h:33</a></div></div>
-<div class="ttc" id="aclassmixal_1_1_machine_html_a7746fede70f941faa72b22b59c4c9248"><div class="ttname"><a href="classmixal_1_1_machine.html#a7746fede70f941faa72b22b59c4c9248">mixal::Machine::rI</a></div><div class="ttdeci">Register2 &amp; rI(int index)</div><div class="ttdef"><b>Definition:</b> <a href="machine_8cpp_source.html#l00016">machine.cpp:16</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_computer_html_a21cd060a1626202a9fd7141ef6a7b732"><div class="ttname"><a href="classmixal_1_1_computer.html#a21cd060a1626202a9fd7141ef6a7b732">mixal::Computer::memory</a></div><div class="ttdeci">ComputerWord memory[NUM_MEMORY]</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00038">machine.h:38</a></div></div>
 <div class="ttc" id="amachine_8h_html"><div class="ttname"><a href="machine_8h.html">machine.h</a></div><div class="ttdoc">The virtual machine.</div></div>
-<div class="ttc" id="aclassmixal_1_1_machine_html_a79e8c6656dab8e404c888b07a366be75"><div class="ttname"><a href="classmixal_1_1_machine.html#a79e8c6656dab8e404c888b07a366be75">mixal::Machine::memory</a></div><div class="ttdeci">ComputerWord memory[NUM_MEMORY]</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00038">machine.h:38</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_computer_html_ad7c9fb97faa9dea7c9c97ae633afc9d9"><div class="ttname"><a href="classmixal_1_1_computer.html#ad7c9fb97faa9dea7c9c97ae633afc9d9">mixal::Computer::rI</a></div><div class="ttdeci">Register2 &amp; rI(int index)</div><div class="ttdef"><b>Definition:</b> <a href="machine_8cpp_source.html#l00016">machine.cpp:16</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_computer_html_a2824aa86e2fd16af339b73927f743cc6"><div class="ttname"><a href="classmixal_1_1_computer.html#a2824aa86e2fd16af339b73927f743cc6">mixal::Computer::rJ</a></div><div class="ttdeci">Register2 rJ</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00033">machine.h:33</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
