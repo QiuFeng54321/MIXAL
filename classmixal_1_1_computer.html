@@ -111,6 +111,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a012ebbc673a8f68cf83dcb835d4a3331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeba26c093b58b208acb6e392ec55b947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_computer.html#aeba26c093b58b208acb6e392ec55b947">executeSinglePesudo</a> (<a class="el" href="classmixal_1_1_parsed_result.html">ParsedResult</a> *instruction)</td></tr>
 <tr class="separator:aeba26c093b58b208acb6e392ec55b947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea600fcb1c8159b6a47f210d9a25d3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_computer.html#a0ea600fcb1c8159b6a47f210d9a25d3b">loadCode</a> (const std::string &amp;codes, bool addHalt=true)</td></tr>
+<tr class="separator:a0ea600fcb1c8159b6a47f210d9a25d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa226fcc71d5e36687fe1a02f3fe11525"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_computer.html#aa226fcc71d5e36687fe1a02f3fe11525">loadCodes</a> (const std::vector&lt; std::string &gt; &amp;codes, bool addHalt=true)</td></tr>
 <tr class="separator:aa226fcc71d5e36687fe1a02f3fe11525"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -713,6 +715,48 @@ Static Public Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a0ea600fcb1c8159b6a47f210d9a25d3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea600fcb1c8159b6a47f210d9a25d3b">&#9670;&nbsp;</a></span>loadCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mixal::Computer::loadCode </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>codes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>addHalt</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Parse and load codes to memory. </p>
+
+<p class="definition">Definition at line <a class="el" href="machine_8cpp_source.html#l00323">323</a> of file <a class="el" href="machine_8cpp_source.html">machine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                            {</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    std::vector&lt;std::string&gt; lines;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    std::string item;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    std::stringstream ss(codes);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">while</span> (std::getline(ss, item, <span class="charliteral">&#39;\n&#39;</span>)) {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        lines.emplace_back(item);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    }</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="classmixal_1_1_computer.html#aa226fcc71d5e36687fe1a02f3fe11525">loadCodes</a>(lines, addHalt);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="machine_8cpp_source.html#l00333">loadCodes()</a>.</p>
+
+</div>
+</div>
 <a id="aa226fcc71d5e36687fe1a02f3fe11525"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa226fcc71d5e36687fe1a02f3fe11525">&#9670;&nbsp;</a></span>loadCodes()</h2>
 
@@ -738,194 +782,195 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Reset and load codes to memory. </p>
+<p>Parse and load codes to memory. </p>
 
-<p class="definition">Definition at line <a class="el" href="machine_8cpp_source.html#l00323">323</a> of file <a class="el" href="machine_8cpp_source.html">machine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                                        {</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    this-&gt;<a class="code" href="classmixal_1_1_computer.html#a66ab201ada148c16f4370c1525549215">reset</a>();</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="comment">// Parse and save all the results and intermediate expressions</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    std::vector&lt;ParsedResult&gt; results(codes.size());</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    std::unordered_map&lt;std::string, AtomicValue&gt; evaluated;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    std::unordered_map&lt;std::string, Expression*&gt; expressions;</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    std::vector&lt;std::tuple&lt;std::string, Expression, Expression&gt;&gt; constants;  <span class="comment">// (name, address, value)</span></div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    std::string lineBase = getPesudoSymbolname();</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    evaluated[lineBase] = AtomicValue(0);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    int32_t lineOffset = 0, endIndex = -1;</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> codeIndex = 0; codeIndex &lt; codes.size(); ++codeIndex) {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keyword">auto</span> code = codes[codeIndex];</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keyword">auto</span>&amp; result = results[codeIndex];</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keyword">auto</span> lineSymbol = getPesudoSymbolname();</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        result = <a class="code" href="classmixal_1_1_parser.html#a403ed79d8d9e792410775250fc058b98">Parser::parseLine</a>(code, lineSymbol, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">if</span> (result.parsedType == ParsedType::PSEUDO) {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            int32_t operation = result.word.operation() + Instructions::PSEUDO;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            <span class="keywordflow">switch</span> (operation) {</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <span class="keywordflow">case</span> Instructions::EQU:</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                expressions[result.rawLocation] = &amp;result.address;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <span class="keywordflow">case</span> Instructions::ORIG:</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                lineBase = getPesudoSymbolname();</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                expressions[lineBase] = &amp;result.address;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                lineOffset = 0;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keywordflow">case</span> Instructions::CON:</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            <span class="keywordflow">case</span> Instructions::ALF:</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                <span class="keywordflow">if</span> (!result.rawLocation.empty()) {</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                    lineSymbol = result.rawLocation;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                }</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                constants.push_back(std::make_tuple(</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                    lineSymbol,</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                    <a class="code" href="classmixal_1_1_expression.html#a337a5b713a005ebd83665c96f8307826">Expression::getConstOffsetExpression</a>(lineBase, lineOffset++),</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                    result.address));</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <span class="keywordflow">case</span> Instructions::END:</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                endIndex = codeIndex;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (result.parsedType == ParsedType::INSTRUCTION) {</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <span class="keywordtype">bool</span> usedLineSymbol = !result.rawLocation.empty() ||</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                                (!result.rawAddress.empty() &amp;&amp; result.address.depends().count(lineSymbol)) ||</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                                (!result.rawIndex.empty() &amp;&amp; result.index.depends().count(lineSymbol)) ||</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                                (!result.rawField.empty() &amp;&amp; result.field.depends().count(lineSymbol));</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            result.location = <a class="code" href="classmixal_1_1_expression.html#a337a5b713a005ebd83665c96f8307826">Expression::getConstOffsetExpression</a>(lineBase, lineOffset);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;            <span class="keywordflow">if</span> (!result.rawLocation.empty()) {</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                <span class="keywordflow">if</span> (!(<a class="code" href="structmixal_1_1_atomic.html#a5ae6f866d34a45676277e6737d314b47">Atomic::isLocalSymbol</a>(result.rawLocation) &amp;&amp; result.rawLocation[1] == <span class="charliteral">&#39;H&#39;</span>)) {</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                    expressions[result.rawLocation] = &amp;result.location;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                }</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (usedLineSymbol) {</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                result.rawLocation = lineSymbol;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            }</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            expressions[lineSymbol] = &amp;result.location;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            ++lineOffset;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        }</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    }</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="comment">// Replace local symbols</span></div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    std::unordered_map&lt;std::string, std::string&gt; localSymbolMapping;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; result : results) {</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordflow">if</span> (!result.rawLocation.empty() &amp;&amp; <a class="code" href="structmixal_1_1_atomic.html#a5ae6f866d34a45676277e6737d314b47">Atomic::isLocalSymbol</a>(result.rawLocation) &amp;&amp; result.rawLocation[1] == <span class="charliteral">&#39;H&#39;</span>) {</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <span class="keyword">auto</span> lineSymbol = getPesudoSymbolname();</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            result.rawLocation[1] = <span class="charliteral">&#39;B&#39;</span>;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            localSymbolMapping[result.rawLocation] = lineSymbol;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            result.rawLocation[1] = <span class="charliteral">&#39;H&#39;</span>;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            expressions[lineSymbol] = &amp;result.location;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        }</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        result.address.replaceSymbol(localSymbolMapping);</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    }</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(results.size()) - 1; i &gt;= 0; --i) {</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keyword">auto</span>&amp; result = results[i];</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keywordflow">if</span> (!result.rawLocation.empty() &amp;&amp; <a class="code" href="structmixal_1_1_atomic.html#a5ae6f866d34a45676277e6737d314b47">Atomic::isLocalSymbol</a>(result.rawLocation) &amp;&amp; result.rawLocation[1] == <span class="charliteral">&#39;H&#39;</span>) {</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="keyword">auto</span> lineSymbol = getPesudoSymbolname();</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            result.rawLocation[1] = <span class="charliteral">&#39;F&#39;</span>;</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            localSymbolMapping[result.rawLocation] = lineSymbol;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            result.rawLocation[1] = <span class="charliteral">&#39;H&#39;</span>;</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            expressions[lineSymbol] = &amp;result.location;</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        }</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        result.address.replaceSymbol(localSymbolMapping);</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    }</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="comment">// Add halt</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keywordflow">if</span> (addHalt) {</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keyword">auto</span> lineSymbol = getPesudoSymbolname();</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <span class="keyword">auto</span> haltCommand = <a class="code" href="classmixal_1_1_parser.html#a403ed79d8d9e792410775250fc058b98">Parser::parseLine</a>(<span class="stringliteral">&quot;HLT&quot;</span>, lineSymbol, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        constants.push_back(std::make_tuple(</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            lineSymbol,</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;             <a class="code" href="classmixal_1_1_expression.html#a337a5b713a005ebd83665c96f8307826">Expression::getConstOffsetExpression</a>(lineBase, lineOffset++),</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;             <a class="code" href="classmixal_1_1_expression.html#ab746ee4027b058ab611652db7c4c10dd">Expression::getConstExpression</a>(AtomicValue(haltCommand.word.value()))));</div>
+<p class="definition">Definition at line <a class="el" href="machine_8cpp_source.html#l00333">333</a> of file <a class="el" href="machine_8cpp_source.html">machine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                                                                        {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="comment">// Parse and save all the results and intermediate expressions</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    std::vector&lt;ParsedResult&gt; results(codes.size());</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    std::unordered_map&lt;std::string, AtomicValue&gt; evaluated;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    std::unordered_map&lt;std::string, Expression*&gt; expressions;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    std::vector&lt;std::tuple&lt;std::string, Expression, Expression&gt;&gt; constants;  <span class="comment">// (name, address, value)</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    std::string lineBase = getPesudoSymbolname();</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    evaluated[lineBase] = AtomicValue(0);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    int32_t lineOffset = 0, endIndex = -1;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> codeIndex = 0; codeIndex &lt; codes.size(); ++codeIndex) {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keyword">auto</span> code = codes[codeIndex];</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keyword">auto</span>&amp; result = results[codeIndex];</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keyword">auto</span> lineSymbol = getPesudoSymbolname();</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        result = <a class="code" href="classmixal_1_1_parser.html#a403ed79d8d9e792410775250fc058b98">Parser::parseLine</a>(code, lineSymbol, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">if</span> (result.parsedType == ParsedType::PSEUDO) {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            int32_t operation = result.word.operation() + Instructions::PSEUDO;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            <span class="keywordflow">switch</span> (operation) {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            <span class="keywordflow">case</span> Instructions::EQU:</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                expressions[result.rawLocation] = &amp;result.address;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            <span class="keywordflow">case</span> Instructions::ORIG:</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                lineBase = getPesudoSymbolname();</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                expressions[lineBase] = &amp;result.address;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                lineOffset = 0;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            <span class="keywordflow">case</span> Instructions::CON:</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <span class="keywordflow">case</span> Instructions::ALF:</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                <span class="keywordflow">if</span> (!result.rawLocation.empty()) {</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                    lineSymbol = result.rawLocation;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                }</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                constants.push_back(std::make_tuple(</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                    lineSymbol,</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                    <a class="code" href="classmixal_1_1_expression.html#a337a5b713a005ebd83665c96f8307826">Expression::getConstOffsetExpression</a>(lineBase, lineOffset++),</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                    result.address));</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            <span class="keywordflow">case</span> Instructions::END:</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                endIndex = codeIndex;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (result.parsedType == ParsedType::INSTRUCTION) {</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            <span class="keywordtype">bool</span> usedLineSymbol = !result.rawLocation.empty() ||</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                                (!result.rawAddress.empty() &amp;&amp; result.address.depends().count(lineSymbol)) ||</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                                (!result.rawIndex.empty() &amp;&amp; result.index.depends().count(lineSymbol)) ||</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                                (!result.rawField.empty() &amp;&amp; result.field.depends().count(lineSymbol));</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;            result.location = <a class="code" href="classmixal_1_1_expression.html#a337a5b713a005ebd83665c96f8307826">Expression::getConstOffsetExpression</a>(lineBase, lineOffset);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <span class="keywordflow">if</span> (!result.rawLocation.empty()) {</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                <span class="keywordflow">if</span> (!(<a class="code" href="structmixal_1_1_atomic.html#a5ae6f866d34a45676277e6737d314b47">Atomic::isLocalSymbol</a>(result.rawLocation) &amp;&amp; result.rawLocation[1] == <span class="charliteral">&#39;H&#39;</span>)) {</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;                    expressions[result.rawLocation] = &amp;result.location;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;                }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (usedLineSymbol) {</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                result.rawLocation = lineSymbol;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            }</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            expressions[lineSymbol] = &amp;result.location;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            ++lineOffset;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        }</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    }</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="comment">// Replace local symbols</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    std::unordered_map&lt;std::string, std::string&gt; localSymbolMapping;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; result : results) {</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">if</span> (!result.rawLocation.empty() &amp;&amp; <a class="code" href="structmixal_1_1_atomic.html#a5ae6f866d34a45676277e6737d314b47">Atomic::isLocalSymbol</a>(result.rawLocation) &amp;&amp; result.rawLocation[1] == <span class="charliteral">&#39;H&#39;</span>) {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <span class="keyword">auto</span> lineSymbol = getPesudoSymbolname();</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            result.rawLocation[1] = <span class="charliteral">&#39;B&#39;</span>;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            localSymbolMapping[result.rawLocation] = lineSymbol;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            result.rawLocation[1] = <span class="charliteral">&#39;H&#39;</span>;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            expressions[lineSymbol] = &amp;result.location;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        }</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        result.address.replaceSymbol(localSymbolMapping);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    }</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(results.size()) - 1; i &gt;= 0; --i) {</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        <span class="keyword">auto</span>&amp; result = results[i];</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <span class="keywordflow">if</span> (!result.rawLocation.empty() &amp;&amp; <a class="code" href="structmixal_1_1_atomic.html#a5ae6f866d34a45676277e6737d314b47">Atomic::isLocalSymbol</a>(result.rawLocation) &amp;&amp; result.rawLocation[1] == <span class="charliteral">&#39;H&#39;</span>) {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            <span class="keyword">auto</span> lineSymbol = getPesudoSymbolname();</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            result.rawLocation[1] = <span class="charliteral">&#39;F&#39;</span>;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;            localSymbolMapping[result.rawLocation] = lineSymbol;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            result.rawLocation[1] = <span class="charliteral">&#39;H&#39;</span>;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;            expressions[lineSymbol] = &amp;result.location;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        }</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        result.address.replaceSymbol(localSymbolMapping);</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    }</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="comment">// Add expressions and literal constants</span></div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; result : results) {</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keywordflow">if</span> (!result.rawAddress.empty()) {</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            <span class="keywordflow">if</span> (result.address.literalConstant()) {</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                <span class="keyword">auto</span> lineSymbol = getPesudoSymbolname();</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                constants.push_back(std::make_tuple(</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                    lineSymbol,</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                    <a class="code" href="classmixal_1_1_expression.html#a337a5b713a005ebd83665c96f8307826">Expression::getConstOffsetExpression</a>(lineBase, lineOffset++),</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;                    result.address));</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;                result.address = <a class="code" href="classmixal_1_1_expression.html#ab746ee4027b058ab611652db7c4c10dd">Expression::getConstExpression</a>(lineSymbol);</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            }</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;            expressions[getPesudoSymbolname()] = &amp;result.address;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        }</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="keywordflow">if</span> (!result.rawIndex.empty()) {</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            expressions[getPesudoSymbolname()] = &amp;result.index;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        }</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keywordflow">if</span> (!result.rawField.empty()) {</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            expressions[getPesudoSymbolname()] = &amp;result.field;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        }</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    }</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordflow">if</span> (endIndex != -1) {</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        <span class="keyword">auto</span> lineSymbol = results[endIndex].rawLocation.empty() ? getPesudoSymbolname() : results[endIndex].rawLocation;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        constants.push_back(std::make_tuple(</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            lineSymbol,</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;            <a class="code" href="classmixal_1_1_expression.html#a337a5b713a005ebd83665c96f8307826">Expression::getConstOffsetExpression</a>(lineBase, lineOffset++),</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            results[endIndex].address));</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    }</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="comment">// Add collected constants to expressions</span></div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; it : constants) {</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        expressions[std::get&lt;0&gt;(it)] = &amp;std::get&lt;1&gt;(it);</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        expressions[getPesudoSymbolname()] = &amp;std::get&lt;2&gt;(it);</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    }</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="comment">// Try to solve all the expressions</span></div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    std::unordered_map&lt;std::string, int&gt; dependNums;</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    std::unordered_map&lt;std::string, std::unordered_set&lt;std::string&gt;&gt; solves;</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    std::set&lt;std::pair&lt;int, std::string&gt;&gt; tasks;</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; it : expressions) {</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        dependNums[it.first] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(it.second-&gt;depends().size());</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; depend : it.second-&gt;depends()) {</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            solves[depend].insert(it.first);</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="keywordflow">if</span> (evaluated.find(depend) != evaluated.end()) {</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                --dependNums[it.first];</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            }</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        }</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        tasks.insert({dependNums[it.first], it.first});</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    }</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    <span class="keywordflow">while</span> (!tasks.empty()) {</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        <span class="keyword">auto</span>&amp; symbol = tasks.begin()-&gt;second;</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        <span class="keyword">auto</span>&amp; expression = expressions[symbol];</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        <span class="keywordflow">if</span> (tasks.begin()-&gt;first != 0 || !expression-&gt;evaluate(evaluated)) {</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;            <span class="keywordflow">throw</span> RuntimeError(0, <span class="stringliteral">&quot;Unresolved symbol found while trying to calcuate: &quot;</span> +</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                                  tasks.begin()-&gt;second);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="comment">// Add halt</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordflow">if</span> (addHalt) {</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        <span class="keyword">auto</span> lineSymbol = getPesudoSymbolname();</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <span class="keyword">auto</span> haltCommand = <a class="code" href="classmixal_1_1_parser.html#a403ed79d8d9e792410775250fc058b98">Parser::parseLine</a>(<span class="stringliteral">&quot;HLT&quot;</span>, lineSymbol, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        constants.push_back(std::make_tuple(</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;            lineSymbol,</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;             <a class="code" href="classmixal_1_1_expression.html#a337a5b713a005ebd83665c96f8307826">Expression::getConstOffsetExpression</a>(lineBase, lineOffset++),</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;             <a class="code" href="classmixal_1_1_expression.html#ab746ee4027b058ab611652db7c4c10dd">Expression::getConstExpression</a>(AtomicValue(haltCommand.word.value()))));</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    }</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="comment">// Add expressions and literal constants</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; result : results) {</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keywordflow">if</span> (!result.rawAddress.empty()) {</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            <span class="keywordflow">if</span> (result.address.literalConstant()) {</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;                <span class="keyword">auto</span> lineSymbol = getPesudoSymbolname();</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;                constants.push_back(std::make_tuple(</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                    lineSymbol,</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                    <a class="code" href="classmixal_1_1_expression.html#a337a5b713a005ebd83665c96f8307826">Expression::getConstOffsetExpression</a>(lineBase, lineOffset++),</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;                    result.address));</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;                result.address = <a class="code" href="classmixal_1_1_expression.html#ab746ee4027b058ab611652db7c4c10dd">Expression::getConstExpression</a>(lineSymbol);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            }</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            expressions[getPesudoSymbolname()] = &amp;result.address;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        }</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordflow">if</span> (!result.rawIndex.empty()) {</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            expressions[getPesudoSymbolname()] = &amp;result.index;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        }</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        <span class="keywordflow">if</span> (!result.rawField.empty()) {</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;            expressions[getPesudoSymbolname()] = &amp;result.field;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        }</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    }</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="keywordflow">if</span> (endIndex != -1) {</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="keyword">auto</span> lineSymbol = results[endIndex].rawLocation.empty() ? getPesudoSymbolname() : results[endIndex].rawLocation;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        constants.push_back(std::make_tuple(</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            lineSymbol,</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            <a class="code" href="classmixal_1_1_expression.html#a337a5b713a005ebd83665c96f8307826">Expression::getConstOffsetExpression</a>(lineBase, lineOffset++),</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            results[endIndex].address));</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    }</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <span class="comment">// Add collected constants to expressions</span></div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; it : constants) {</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        expressions[std::get&lt;0&gt;(it)] = &amp;std::get&lt;1&gt;(it);</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        expressions[getPesudoSymbolname()] = &amp;std::get&lt;2&gt;(it);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    }</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    <span class="comment">// Try to solve all the expressions</span></div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    std::unordered_map&lt;std::string, int&gt; dependNums;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    std::unordered_map&lt;std::string, std::unordered_set&lt;std::string&gt;&gt; solves;</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    std::set&lt;std::pair&lt;int, std::string&gt;&gt; tasks;</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; it : expressions) {</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        dependNums[it.first] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(it.second-&gt;depends().size());</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; depend : it.second-&gt;depends()) {</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            solves[depend].insert(it.first);</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            <span class="keywordflow">if</span> (evaluated.find(depend) != evaluated.end()) {</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                --dependNums[it.first];</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;            }</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        }</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        evaluated[symbol] = expression-&gt;result();</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        tasks.erase({0, symbol});</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; solve : solves[symbol]) {</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            tasks.erase({dependNums[solve], solve});</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            tasks.insert({--dependNums[solve], solve});</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        }</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    }</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="comment">// Load constants to memory</span></div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; it : constants) {</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        int32_t location = std::get&lt;1&gt;(it).result().value;</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <span class="keywordflow">if</span> (location &lt; 0 || location &gt;= <a class="code" href="classmixal_1_1_computer.html#ae80600a020c136ce88282a17e9ea827b">NUM_MEMORY</a>) {</div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            <span class="keywordflow">throw</span> RuntimeError(location, <span class="stringliteral">&quot;Location of the code is invalid: &quot;</span> + std::to_string(location));</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        }</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        <a class="code" href="classmixal_1_1_computer.html#a21cd060a1626202a9fd7141ef6a7b732">memory</a>[location].<a class="code" href="structmixal_1_1_computer_word.html#aa46ca35446d33dd83f848a51ad26e0eb">set</a>(std::get&lt;2&gt;(it).result().value);</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    }</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    <span class="comment">// Load results to memory</span></div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    _lineOffset = -1;</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; result : results) {</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        <span class="keywordflow">if</span> (result.parsedType == ParsedType::INSTRUCTION) {</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;            result.evaluate(evaluated);</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;            int32_t location = result.location.result().value;</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;            <span class="keywordflow">if</span> (location &lt; 0 || location &gt;= <a class="code" href="classmixal_1_1_computer.html#ae80600a020c136ce88282a17e9ea827b">NUM_MEMORY</a>) {</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                <span class="keywordflow">throw</span> RuntimeError(location, <span class="stringliteral">&quot;Location of the code is invalid: &quot;</span> + std::to_string(location));</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;            }</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;            <span class="keywordflow">if</span> (_lineOffset == -1) {</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;                _lineOffset = location;</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;            }</div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;            <a class="code" href="classmixal_1_1_computer.html#a21cd060a1626202a9fd7141ef6a7b732">memory</a>[location].<a class="code" href="structmixal_1_1_computer_word.html#aa46ca35446d33dd83f848a51ad26e0eb">set</a>(result.word.negative,</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;                                 result.word.address(),</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;                                 result.word.index(),</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                                 result.word.field(),</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                                 result.word.operation());</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        }</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    }</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordflow">if</span> (endIndex != -1) {</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        results[endIndex].address.evaluate(evaluated);</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;        _lineOffset = results[endIndex].address.result().value;</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_lineOffset == -1) {</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;        _lineOffset = 0;</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    }</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;}</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        tasks.insert({dependNums[it.first], it.first});</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    }</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="keywordflow">while</span> (!tasks.empty()) {</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        <span class="keyword">auto</span>&amp; symbol = tasks.begin()-&gt;second;</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;        <span class="keyword">auto</span>&amp; expression = expressions[symbol];</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        <span class="keywordflow">if</span> (tasks.begin()-&gt;first != 0 || !expression-&gt;evaluate(evaluated)) {</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;            <span class="keywordflow">throw</span> RuntimeError(0, <span class="stringliteral">&quot;Unresolved symbol found while trying to calcuate: &quot;</span> +</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                                  tasks.begin()-&gt;second);</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        }</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        evaluated[symbol] = expression-&gt;result();</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        tasks.erase({0, symbol});</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; solve : solves[symbol]) {</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            tasks.erase({dependNums[solve], solve});</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;            tasks.insert({--dependNums[solve], solve});</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        }</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    }</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <span class="comment">// Load constants to memory</span></div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; it : constants) {</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        int32_t location = std::get&lt;1&gt;(it).result().value;</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;        <span class="keywordflow">if</span> (location &lt; 0 || location &gt;= <a class="code" href="classmixal_1_1_computer.html#ae80600a020c136ce88282a17e9ea827b">NUM_MEMORY</a>) {</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;            <span class="keywordflow">throw</span> RuntimeError(location, <span class="stringliteral">&quot;Location of the code is invalid: &quot;</span> + std::to_string(location));</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;        }</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        <a class="code" href="classmixal_1_1_computer.html#a21cd060a1626202a9fd7141ef6a7b732">memory</a>[location].<a class="code" href="structmixal_1_1_computer_word.html#aa46ca35446d33dd83f848a51ad26e0eb">set</a>(std::get&lt;2&gt;(it).result().value);</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    }</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="comment">// Load results to memory</span></div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    _lineOffset = -1;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; result : results) {</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;        <span class="keywordflow">if</span> (result.parsedType == ParsedType::INSTRUCTION) {</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;            result.evaluate(evaluated);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;            int32_t location = result.location.result().value;</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            <span class="keywordflow">if</span> (location &lt; 0 || location &gt;= <a class="code" href="classmixal_1_1_computer.html#ae80600a020c136ce88282a17e9ea827b">NUM_MEMORY</a>) {</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                <span class="keywordflow">throw</span> RuntimeError(location, <span class="stringliteral">&quot;Location of the code is invalid: &quot;</span> + std::to_string(location));</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;            }</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;            <span class="keywordflow">if</span> (_lineOffset == -1) {</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;                _lineOffset = location;</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;            }</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;            <a class="code" href="classmixal_1_1_computer.html#a21cd060a1626202a9fd7141ef6a7b732">memory</a>[location].<a class="code" href="structmixal_1_1_computer_word.html#aa46ca35446d33dd83f848a51ad26e0eb">set</a>(result.word.negative,</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                                 result.word.address(),</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                                 result.word.index(),</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;                                 result.word.field(),</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                                 result.word.operation());</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;        }</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    }</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keywordflow">if</span> (endIndex != -1) {</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        results[endIndex].address.evaluate(evaluated);</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        _lineOffset = results[endIndex].address.result().value;</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_lineOffset == -1) {</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        _lineOffset = 0;</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    }</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="expression_8cpp_source.html#l00038">mixal::Expression::getConstOffsetExpression()</a>, <a class="el" href="parser_8cpp_source.html#l00143">mixal::Parser::parseLine()</a>, and <a class="el" href="machine_8cpp_source.html#l00036">reset()</a>.</p>
+<p class="reference">References <a class="el" href="expression_8cpp_source.html#l00038">mixal::Expression::getConstOffsetExpression()</a>, and <a class="el" href="parser_8cpp_source.html#l00143">mixal::Parser::parseLine()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="machine_8cpp_source.html#l00323">loadCode()</a>.</p>
 
 </div>
 </div>
@@ -1020,8 +1065,6 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="machine_8h_source.html#l00036">comparison</a>, <a class="el" href="machine_8h_source.html#l00028">NUM_INDEX_REGISTER</a>, <a class="el" href="machine_8h_source.html#l00035">overflow</a>, <a class="el" href="machine_8h_source.html#l00032">rA</a>, <a class="el" href="registers_8h_source.html#l00039">mixal::Register2::reset()</a>, <a class="el" href="memory_8h_source.html#l00058">mixal::ComputerWord::reset()</a>, <a class="el" href="machine_8cpp_source.html#l00016">rI()</a>, <a class="el" href="machine_8h_source.html#l00033">rJ</a>, and <a class="el" href="machine_8h_source.html#l00032">rX</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="machine_8cpp_source.html#l00323">loadCodes()</a>.</p>
 
 </div>
 </div>
@@ -1370,9 +1413,9 @@ Static Public Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="aclassmixal_1_1_computer_html_adae3bf5e3b637b88e16bfc1a4895ebf2"><div class="ttname"><a href="classmixal_1_1_computer.html#adae3bf5e3b637b88e16bfc1a4895ebf2">mixal::Computer::NUM_INDEX_REGISTER</a></div><div class="ttdeci">static const int NUM_INDEX_REGISTER</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00028">machine.h:28</a></div></div>
-<div class="ttc" id="aclassmixal_1_1_computer_html_a66ab201ada148c16f4370c1525549215"><div class="ttname"><a href="classmixal_1_1_computer.html#a66ab201ada148c16f4370c1525549215">mixal::Computer::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition:</b> <a href="machine_8cpp_source.html#l00036">machine.cpp:36</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_computer_html_aced047a306278b2444b4b484e672a3da"><div class="ttname"><a href="classmixal_1_1_computer.html#aced047a306278b2444b4b484e672a3da">mixal::Computer::executeSingle</a></div><div class="ttdeci">void executeSingle()</div><div class="ttdef"><b>Definition:</b> <a href="machine_8cpp_source.html#l00063">machine.cpp:63</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_expression_html_a337a5b713a005ebd83665c96f8307826"><div class="ttname"><a href="classmixal_1_1_expression.html#a337a5b713a005ebd83665c96f8307826">mixal::Expression::getConstOffsetExpression</a></div><div class="ttdeci">static Expression getConstOffsetExpression(const std::string &amp;symbol, int32_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="expression_8cpp_source.html#l00038">expression.cpp:38</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_computer_html_aa226fcc71d5e36687fe1a02f3fe11525"><div class="ttname"><a href="classmixal_1_1_computer.html#aa226fcc71d5e36687fe1a02f3fe11525">mixal::Computer::loadCodes</a></div><div class="ttdeci">void loadCodes(const std::vector&lt; std::string &gt; &amp;codes, bool addHalt=true)</div><div class="ttdef"><b>Definition:</b> <a href="machine_8cpp_source.html#l00333">machine.cpp:333</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_computer_html_a374316e34cf7ffdee6f1459f2de34cd4"><div class="ttname"><a href="classmixal_1_1_computer.html#a374316e34cf7ffdee6f1459f2de34cd4">mixal::Computer::rI1</a></div><div class="ttdeci">Register2 rI1</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00033">machine.h:33</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_parser_html_a403ed79d8d9e792410775250fc058b98"><div class="ttname"><a href="classmixal_1_1_parser.html#a403ed79d8d9e792410775250fc058b98">mixal::Parser::parseLine</a></div><div class="ttdeci">static ParsedResult parseLine(const std::string &amp;line, const std::string &amp;lineSymbol, bool hasLocation=true)</div><div class="ttdef"><b>Definition:</b> <a href="parser_8cpp_source.html#l00143">parser.cpp:143</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_computer_html_ae80600a020c136ce88282a17e9ea827b"><div class="ttname"><a href="classmixal_1_1_computer.html#ae80600a020c136ce88282a17e9ea827b">mixal::Computer::NUM_MEMORY</a></div><div class="ttdeci">static const int NUM_MEMORY</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00029">machine.h:29</a></div></div>
