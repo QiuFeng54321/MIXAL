@@ -603,69 +603,81 @@ $(function() {
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;}</div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160; </div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;<span class="keywordtype">void</span> Computer::copyToRegister5(<span class="keyword">const</span> InstructionWord&amp; instruction, <span class="keyword">const</span> ComputerWord&amp; word, Register5* reg) {</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <span class="keywordtype">int</span> start = instruction.field() / 8;</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <span class="keywordtype">int</span> stop = instruction.field() % 8;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    int32_t start = instruction.field() / 8;</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    int32_t stop = instruction.field() % 8;</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    reg-&gt;reset();</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordflow">if</span> (start == 0) {</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        reg-&gt;negative = word.negative;</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        ++start;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordflow">if</span> (start &gt; stop || stop &gt; 5) {</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <span class="keywordflow">throw</span> RuntimeError(_lineOffset, <span class="stringliteral">&quot;Invalid field value: (&quot;</span></div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;                                        + std::to_string(start) + <span class="stringliteral">&quot;:&quot;</span> + std::to_string(stop) + <span class="stringliteral">&quot;)&quot;</span>);</div>
 <div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    }</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = stop, j = 5; i &gt;= start; --i, --j) {</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        reg-&gt;set(j, word[i]);</div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    }</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;}</div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160; </div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;<span class="keywordtype">void</span> Computer::copyFromRegister5(<span class="keyword">const</span> InstructionWord&amp; instruction, <span class="keyword">const</span> Register5&amp; reg, ComputerWord* word) {</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <span class="keywordtype">int</span> start = instruction.field() / 8;</div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="keywordtype">int</span> stop = instruction.field() % 8;</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <span class="keywordflow">if</span> (start == 0) {</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;        word-&gt;negative = reg.negative;</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;        ++start;</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    }</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = stop, j = 5; i &gt;= start; --i, --j) {</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        word-&gt;set(i, reg[j]);</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    }</div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;}</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;<span class="keywordtype">void</span> Computer::copyToRegister2(<span class="keyword">const</span> InstructionWord&amp; instruction, <span class="keyword">const</span> ComputerWord&amp; word, Register2* reg) {</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="keywordtype">int</span> start = instruction.field() / 8;</div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="keywordtype">int</span> stop = instruction.field() % 8;</div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    reg-&gt;reset();</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="keywordflow">if</span> (start == 0) {</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;        reg-&gt;negative = word.negative;</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        ++start;</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    }</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = stop, j = 2; i &gt;= start &amp;&amp; j &gt; 0; --i, --j) {</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        reg-&gt;set(j, word[i]);</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    }</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;}</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160; </div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;int32_t Computer::checkRange(int32_t value, <span class="keywordtype">int</span> bytes) {</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    int32_t range = 1 &lt;&lt; (6 * bytes);</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="keywordflow">if</span> (std::abs(value) &gt;= range) {</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        <span class="keywordflow">if</span> (bytes == 5) {</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;            <a class="code" href="classmixal_1_1_computer.html#a46582616af67c093a3c35657b0db9e9f">overflow</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;        }</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;        value %= range;</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    }</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;}</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160; </div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;uint8_t Computer::getAX(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    assert(1 &lt;= index &amp;&amp; index &lt;= 10);</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <span class="keywordflow">return</span> index &lt;= 5 ? <a class="code" href="classmixal_1_1_computer.html#a2fd54cadb3bf5da2c35ab8c6048afdd9">rA</a>[index] : <a class="code" href="classmixal_1_1_computer.html#a4a4830499085e84bd5c4bd394a5444e7">rX</a>[index - 5];</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;}</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;<span class="keywordtype">void</span> Computer::setAX(<span class="keywordtype">int</span> index, uint8_t value) {</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    assert(1 &lt;= index &amp;&amp; index &lt;= 10);</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="keywordflow">if</span> (index &lt;= 5) {</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        <a class="code" href="classmixal_1_1_computer.html#a2fd54cadb3bf5da2c35ab8c6048afdd9">rA</a>[index] = value;</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        <a class="code" href="classmixal_1_1_computer.html#a4a4830499085e84bd5c4bd394a5444e7">rX</a>[index - 5] = value;</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    }</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;}</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160; </div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;};  <span class="comment">// namespace mixal</span></div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <span class="keywordflow">if</span> (start == 0) {</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;        reg-&gt;negative = word.negative;</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        ++start;</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    }</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <span class="keywordflow">for</span> (int32_t i = stop, j = 5; i &gt;= start; --i, --j) {</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;        reg-&gt;set(j, word[i]);</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    }</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;}</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160; </div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;<span class="keywordtype">void</span> Computer::copyFromRegister5(<span class="keyword">const</span> InstructionWord&amp; instruction, <span class="keyword">const</span> Register5&amp; reg, ComputerWord* word) {</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    int32_t start = instruction.field() / 8;</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    int32_t stop = instruction.field() % 8;</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="keywordflow">if</span> (start &gt; stop || stop &gt; 5) {</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;        <span class="keywordflow">throw</span> RuntimeError(_lineOffset, <span class="stringliteral">&quot;Invalid field value: (&quot;</span></div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                                        + std::to_string(start) + <span class="stringliteral">&quot;:&quot;</span> + std::to_string(stop) + <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    }</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="keywordflow">if</span> (start == 0) {</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;        word-&gt;negative = reg.negative;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;        ++start;</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    }</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="keywordflow">for</span> (int32_t i = stop, j = 5; i &gt;= start; --i, --j) {</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        word-&gt;set(i, reg[j]);</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    }</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;}</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;<span class="keywordtype">void</span> Computer::copyToRegister2(<span class="keyword">const</span> InstructionWord&amp; instruction, <span class="keyword">const</span> ComputerWord&amp; word, Register2* reg) {</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    int32_t start = instruction.field() / 8;</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    int32_t stop = instruction.field() % 8;</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <span class="keywordflow">if</span> (start &gt; stop || stop &gt; 5) {</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        <span class="keywordflow">throw</span> RuntimeError(_lineOffset, <span class="stringliteral">&quot;Invalid field value: (&quot;</span></div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                                        + std::to_string(start) + <span class="stringliteral">&quot;:&quot;</span> + std::to_string(stop) + <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    }</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    reg-&gt;reset();</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <span class="keywordflow">if</span> (start == 0) {</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        reg-&gt;negative = word.negative;</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;        ++start;</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    }</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="keywordflow">for</span> (int32_t i = stop, j = 2; i &gt;= start &amp;&amp; j &gt; 0; --i, --j) {</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;        reg-&gt;set(j, word[i]);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    }</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;}</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160; </div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;int32_t Computer::checkRange(int32_t value, <span class="keywordtype">int</span> bytes) {</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    int32_t range = 1 &lt;&lt; (6 * bytes);</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="keywordflow">if</span> (std::abs(value) &gt;= range) {</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        <span class="keywordflow">if</span> (bytes == 5) {</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;            <a class="code" href="classmixal_1_1_computer.html#a46582616af67c093a3c35657b0db9e9f">overflow</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;        }</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        value %= range;</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    }</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;}</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;uint8_t Computer::getAX(<span class="keywordtype">int</span> index)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    assert(1 &lt;= index &amp;&amp; index &lt;= 10);</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="keywordflow">return</span> index &lt;= 5 ? <a class="code" href="classmixal_1_1_computer.html#a2fd54cadb3bf5da2c35ab8c6048afdd9">rA</a>[index] : <a class="code" href="classmixal_1_1_computer.html#a4a4830499085e84bd5c4bd394a5444e7">rX</a>[index - 5];</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;}</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160; </div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;<span class="keywordtype">void</span> Computer::setAX(<span class="keywordtype">int</span> index, uint8_t value) {</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    assert(1 &lt;= index &amp;&amp; index &lt;= 10);</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="keywordflow">if</span> (index &lt;= 5) {</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;        <a class="code" href="classmixal_1_1_computer.html#a2fd54cadb3bf5da2c35ab8c6048afdd9">rA</a>[index] = value;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        <a class="code" href="classmixal_1_1_computer.html#a4a4830499085e84bd5c4bd394a5444e7">rX</a>[index - 5] = value;</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    }</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;}</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; </div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;};  <span class="comment">// namespace mixal</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassmixal_1_1_computer_html_adae3bf5e3b637b88e16bfc1a4895ebf2"><div class="ttname"><a href="classmixal_1_1_computer.html#adae3bf5e3b637b88e16bfc1a4895ebf2">mixal::Computer::NUM_INDEX_REGISTER</a></div><div class="ttdeci">static const int NUM_INDEX_REGISTER</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00028">machine.h:28</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_computer_html_a411f5055274ca825bbbed6bd57b9e206"><div class="ttname"><a href="classmixal_1_1_computer.html#a411f5055274ca825bbbed6bd57b9e206">mixal::Computer::Computer</a></div><div class="ttdeci">Computer()</div><div class="ttdef"><b>Definition:</b> <a href="machine_8cpp_source.html#l00011">machine.cpp:11</a></div></div>
