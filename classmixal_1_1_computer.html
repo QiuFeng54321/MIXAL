@@ -111,8 +111,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a012ebbc673a8f68cf83dcb835d4a3331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeba26c093b58b208acb6e392ec55b947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_computer.html#aeba26c093b58b208acb6e392ec55b947">executeSinglePesudo</a> (<a class="el" href="classmixal_1_1_parsed_result.html">ParsedResult</a> *instruction)</td></tr>
 <tr class="separator:aeba26c093b58b208acb6e392ec55b947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ea600fcb1c8159b6a47f210d9a25d3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_computer.html#a0ea600fcb1c8159b6a47f210d9a25d3b">loadCode</a> (const std::string &amp;codes, bool addHalt=true)</td></tr>
-<tr class="separator:a0ea600fcb1c8159b6a47f210d9a25d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c6e67fa403e29c866cf314317a9c12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_computer.html#a27c6e67fa403e29c866cf314317a9c12">loadCodes</a> (const std::string &amp;codes, bool addHalt=true)</td></tr>
+<tr class="separator:a27c6e67fa403e29c866cf314317a9c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa226fcc71d5e36687fe1a02f3fe11525"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmixal_1_1_computer.html#aa226fcc71d5e36687fe1a02f3fe11525">loadCodes</a> (const std::vector&lt; std::string &gt; &amp;codes, bool addHalt=true)</td></tr>
 <tr class="separator:aa226fcc71d5e36687fe1a02f3fe11525"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -715,14 +715,14 @@ Static Public Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a0ea600fcb1c8159b6a47f210d9a25d3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ea600fcb1c8159b6a47f210d9a25d3b">&#9670;&nbsp;</a></span>loadCode()</h2>
+<a id="a27c6e67fa403e29c866cf314317a9c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27c6e67fa403e29c866cf314317a9c12">&#9670;&nbsp;</a></span>loadCodes() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void mixal::Computer::loadCode </td>
+          <td class="memname">void mixal::Computer::loadCodes </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>codes</em>, </td>
@@ -743,22 +743,20 @@ Static Public Attributes</h2></td></tr>
 <p>Parse and load codes to memory. </p>
 
 <p class="definition">Definition at line <a class="el" href="machine_8cpp_source.html#l00323">323</a> of file <a class="el" href="machine_8cpp_source.html">machine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                            {</div>
+<div class="fragment"><div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                                                             {</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    std::vector&lt;std::string&gt; lines;</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    std::string item;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    std::stringstream ss(codes);</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordflow">while</span> (std::getline(ss, item, <span class="charliteral">&#39;\n&#39;</span>)) {</div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        lines.emplace_back(item);</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    }</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="classmixal_1_1_computer.html#aa226fcc71d5e36687fe1a02f3fe11525">loadCodes</a>(lines, addHalt);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="classmixal_1_1_computer.html#a27c6e67fa403e29c866cf314317a9c12">loadCodes</a>(lines, addHalt);</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="machine_8cpp_source.html#l00333">loadCodes()</a>.</p>
-
 </div>
 </div>
 <a id="aa226fcc71d5e36687fe1a02f3fe11525"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa226fcc71d5e36687fe1a02f3fe11525">&#9670;&nbsp;</a></span>loadCodes()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa226fcc71d5e36687fe1a02f3fe11525">&#9670;&nbsp;</a></span>loadCodes() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -969,8 +967,6 @@ Static Public Attributes</h2></td></tr>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="expression_8cpp_source.html#l00038">mixal::Expression::getConstOffsetExpression()</a>, and <a class="el" href="parser_8cpp_source.html#l00143">mixal::Parser::parseLine()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="machine_8cpp_source.html#l00323">loadCode()</a>.</p>
 
 </div>
 </div>
@@ -1413,9 +1409,9 @@ Static Public Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="aclassmixal_1_1_computer_html_adae3bf5e3b637b88e16bfc1a4895ebf2"><div class="ttname"><a href="classmixal_1_1_computer.html#adae3bf5e3b637b88e16bfc1a4895ebf2">mixal::Computer::NUM_INDEX_REGISTER</a></div><div class="ttdeci">static const int NUM_INDEX_REGISTER</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00028">machine.h:28</a></div></div>
+<div class="ttc" id="aclassmixal_1_1_computer_html_a27c6e67fa403e29c866cf314317a9c12"><div class="ttname"><a href="classmixal_1_1_computer.html#a27c6e67fa403e29c866cf314317a9c12">mixal::Computer::loadCodes</a></div><div class="ttdeci">void loadCodes(const std::string &amp;codes, bool addHalt=true)</div><div class="ttdef"><b>Definition:</b> <a href="machine_8cpp_source.html#l00323">machine.cpp:323</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_computer_html_aced047a306278b2444b4b484e672a3da"><div class="ttname"><a href="classmixal_1_1_computer.html#aced047a306278b2444b4b484e672a3da">mixal::Computer::executeSingle</a></div><div class="ttdeci">void executeSingle()</div><div class="ttdef"><b>Definition:</b> <a href="machine_8cpp_source.html#l00063">machine.cpp:63</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_expression_html_a337a5b713a005ebd83665c96f8307826"><div class="ttname"><a href="classmixal_1_1_expression.html#a337a5b713a005ebd83665c96f8307826">mixal::Expression::getConstOffsetExpression</a></div><div class="ttdeci">static Expression getConstOffsetExpression(const std::string &amp;symbol, int32_t offset)</div><div class="ttdef"><b>Definition:</b> <a href="expression_8cpp_source.html#l00038">expression.cpp:38</a></div></div>
-<div class="ttc" id="aclassmixal_1_1_computer_html_aa226fcc71d5e36687fe1a02f3fe11525"><div class="ttname"><a href="classmixal_1_1_computer.html#aa226fcc71d5e36687fe1a02f3fe11525">mixal::Computer::loadCodes</a></div><div class="ttdeci">void loadCodes(const std::vector&lt; std::string &gt; &amp;codes, bool addHalt=true)</div><div class="ttdef"><b>Definition:</b> <a href="machine_8cpp_source.html#l00333">machine.cpp:333</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_computer_html_a374316e34cf7ffdee6f1459f2de34cd4"><div class="ttname"><a href="classmixal_1_1_computer.html#a374316e34cf7ffdee6f1459f2de34cd4">mixal::Computer::rI1</a></div><div class="ttdeci">Register2 rI1</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00033">machine.h:33</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_parser_html_a403ed79d8d9e792410775250fc058b98"><div class="ttname"><a href="classmixal_1_1_parser.html#a403ed79d8d9e792410775250fc058b98">mixal::Parser::parseLine</a></div><div class="ttdeci">static ParsedResult parseLine(const std::string &amp;line, const std::string &amp;lineSymbol, bool hasLocation=true)</div><div class="ttdef"><b>Definition:</b> <a href="parser_8cpp_source.html#l00143">parser.cpp:143</a></div></div>
 <div class="ttc" id="aclassmixal_1_1_computer_html_ae80600a020c136ce88282a17e9ea827b"><div class="ttname"><a href="classmixal_1_1_computer.html#ae80600a020c136ce88282a17e9ea827b">mixal::Computer::NUM_MEMORY</a></div><div class="ttdeci">static const int NUM_MEMORY</div><div class="ttdef"><b>Definition:</b> <a href="machine_8h_source.html#l00029">machine.h:29</a></div></div>
