@@ -89,13 +89,13 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> Computer::executeSTJ(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ComputerWord word(0, 0, 0, 0, <a class="code" href="classmixal_1_1_computer.html#a2824aa86e2fd16af339b73927f743cc6">rJ</a>[1], <a class="code" href="classmixal_1_1_computer.html#a2824aa86e2fd16af339b73927f743cc6">rJ</a>[2]);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ComputerWord word(<span class="charliteral">&#39;+&#39;</span>, 0, 0, 0, <a class="code" href="classmixal_1_1_computer.html#a2824aa86e2fd16af339b73927f743cc6">rJ</a>[1], <a class="code" href="classmixal_1_1_computer.html#a2824aa86e2fd16af339b73927f743cc6">rJ</a>[2]);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    copyFromRegister5(instruction, word, &amp;<a class="code" href="classmixal_1_1_computer.html#a21cd060a1626202a9fd7141ef6a7b732">memory</a>[address]);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> Computer::executeSTZ(<span class="keyword">const</span> InstructionWord&amp; instruction) {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> address = getIndexedAddress(instruction, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    ComputerWord word(0, 0, 0, 0, 0, 0);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    ComputerWord word(<span class="charliteral">&#39;+&#39;</span>, 0, 0, 0, 0, 0);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    copyFromRegister5(instruction, word, &amp;<a class="code" href="classmixal_1_1_computer.html#a21cd060a1626202a9fd7141ef6a7b732">memory</a>[address]);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>

@@ -84,6 +84,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a70881e32e3c1ae1d086507ce26cdc2bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeec14ef28f8be2173a228fc83aa97655"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_register2.html#aeec14ef28f8be2173a228fc83aa97655">Register2</a> (bool _negative, uint8_t _byte1, uint8_t _byte2)</td></tr>
 <tr class="separator:aeec14ef28f8be2173a228fc83aa97655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a891314b5157d214bba914076e3bcb4b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_register2.html#a891314b5157d214bba914076e3bcb4b6">Register2</a> (char sign, uint8_t _byte1, uint8_t _byte2)</td></tr>
+<tr class="separator:a891314b5157d214bba914076e3bcb4b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aede49eca1e015455d0750151172424d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_register2.html#aede49eca1e015455d0750151172424d8">reset</a> ()</td></tr>
 <tr class="separator:aede49eca1e015455d0750151172424d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad0c0384d1bfecf927ef8432f7d87210"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_register2.html#aad0c0384d1bfecf927ef8432f7d87210">operator[]</a> (int index) const</td></tr>
@@ -98,6 +100,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae5d0c8c6cc9250f32b0110dbcb821c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3afcb74a5d37f4e531768477b4e09ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_register2.html#ad3afcb74a5d37f4e531768477b4e09ab">set</a> (bool negative, uint8_t byte1, uint8_t byte2)</td></tr>
 <tr class="separator:ad3afcb74a5d37f4e531768477b4e09ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea9b19659dc6b6b298a536dc490dcc81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmixal_1_1_register2.html#aea9b19659dc6b6b298a536dc490dcc81">set</a> (char sign, uint8_t byte1, uint8_t byte2)</td></tr>
+<tr class="separator:aea9b19659dc6b6b298a536dc490dcc81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -118,13 +122,10 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte2</b></td></tr
 <p class="definition">Definition at line <a class="el" href="registers_8h_source.html#l00023">23</a> of file <a class="el" href="registers_8h_source.html">registers.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a954d8728dff8779c4f9e71857d5cbced"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a954d8728dff8779c4f9e71857d5cbced">&#9670;&nbsp;</a></span>Register2() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a954d8728dff8779c4f9e71857d5cbced">&#9670;&nbsp;</a></span>Register2() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">mixal::Register2::Register2 </td>
@@ -133,21 +134,17 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte2</b></td></tr
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>Initialize the register with zeros. </p>
 
-<p class="definition">Definition at line <a class="el" href="registers_8h_source.html#l00029">29</a> of file <a class="el" href="registers_8h_source.html">registers.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;: negative(), byte1(), byte2() {}</div>
+<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00007">7</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                     : negative(), byte1(), byte2() {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a70881e32e3c1ae1d086507ce26cdc2bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70881e32e3c1ae1d086507ce26cdc2bc">&#9670;&nbsp;</a></span>Register2() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a70881e32e3c1ae1d086507ce26cdc2bc">&#9670;&nbsp;</a></span>Register2() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,28 +162,27 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte2</b></td></tr
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>Initialize the register with an integer value.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">set(int16_t)</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="registers_8h_source.html#l00034">34</a> of file <a class="el" href="registers_8h_source.html">registers.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;: negative(), byte1(), byte2() { <a class="code" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">set</a>(<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a>); }</div>
+<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00010">10</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                  : negative(), byte1(), byte2() {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">set</a>(<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="registers_8cpp_source.html#l00028">set()</a>, and <a class="el" href="registers_8cpp_source.html#l00023">value()</a>.</p>
+<p class="reference">References <a class="el" href="registers_8cpp_source.html#l00046">set()</a>, and <a class="el" href="registers_8cpp_source.html#l00041">value()</a>.</p>
 
 </div>
 </div>
 <a id="aeec14ef28f8be2173a228fc83aa97655"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeec14ef28f8be2173a228fc83aa97655">&#9670;&nbsp;</a></span>Register2() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aeec14ef28f8be2173a228fc83aa97655">&#9670;&nbsp;</a></span>Register2() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">mixal::Register2::Register2 </td>
@@ -212,16 +208,62 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte2</b></td></tr
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <p>Initialize the register with all the specific values. </p>
 
-<p class="definition">Definition at line <a class="el" href="registers_8h_source.html#l00036">36</a> of file <a class="el" href="registers_8h_source.html">registers.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;: negative(_negative), byte1(_byte1), byte2(_byte2) {}</div>
+<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00014">14</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                                   :</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    negative(_negative), byte1(_byte1), byte2(_byte2) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a891314b5157d214bba914076e3bcb4b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a891314b5157d214bba914076e3bcb4b6">&#9670;&nbsp;</a></span>Register2() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mixal::Register2::Register2 </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sign</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>_byte1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>_byte2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize the register with all the specific values.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>when the sign is neither '+' nor '-'. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00018">18</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                              :</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    negative(sign == <span class="charliteral">&#39;-&#39;</span>), byte1(_byte1), byte2(_byte2) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (sign != <span class="charliteral">&#39;+&#39;</span> &amp;&amp; sign != <span class="charliteral">&#39;-&#39;</span>) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid sign: &quot;</span> + std::string(1, sign));</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -242,14 +284,14 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte2</b></td></tr
 </div><div class="memdoc">
 <p>Get the absolution value of the register. </p>
 
-<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00017">17</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                  {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    int16_t high = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(byte1));</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    int16_t low = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(byte2));</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> high * 64 + low;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00035">35</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                                  {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    int16_t high = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(byte1));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    int16_t low = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(byte2));</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> high * 64 + low;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="registers_8cpp_source.html#l00023">value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="registers_8cpp_source.html#l00041">value()</a>.</p>
 
 </div>
 </div>
@@ -276,16 +318,16 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte2</b></td></tr
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00007">7</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                                             {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordflow">if</span> (index == 1) {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordflow">return</span> byte1;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    }</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">if</span> (index == 2) {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">return</span> byte2;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid index for a two bytes register: &quot;</span> + std::to_string(index));</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00025">25</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                             {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (index == 1) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> byte1;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (index == 2) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> byte2;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid index for a two bytes register: &quot;</span> + std::to_string(index));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -313,18 +355,18 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte2</b></td></tr
 </div><div class="memdoc">
 <p>Reset the values in the register to 0. </p>
 
-<p class="definition">Definition at line <a class="el" href="registers_8h_source.html#l00039">39</a> of file <a class="el" href="registers_8h_source.html">registers.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        negative = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        byte1 = byte2 = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="registers_8h_source.html#l00044">44</a> of file <a class="el" href="registers_8h_source.html">registers.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        negative = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        byte1 = byte2 = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
 </div><!-- fragment -->
 <p class="reference">Referenced by <a class="el" href="machine_8cpp_source.html#l00036">mixal::Computer::reset()</a>.</p>
 
 </div>
 </div>
 <a id="ad3afcb74a5d37f4e531768477b4e09ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3afcb74a5d37f4e531768477b4e09ab">&#9670;&nbsp;</a></span>set() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3afcb74a5d37f4e531768477b4e09ab">&#9670;&nbsp;</a></span>set() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -356,17 +398,68 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte2</b></td></tr
 </div><div class="memdoc">
 <p>Set all the values. </p>
 
-<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00049">49</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                               {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    this-&gt;negative = negative;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    this-&gt;byte1 = byte1;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    this-&gt;byte2 = byte2;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00067">67</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                               {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    this-&gt;negative = negative;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    this-&gt;byte1 = byte1;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    this-&gt;byte2 = byte2;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aea9b19659dc6b6b298a536dc490dcc81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea9b19659dc6b6b298a536dc490dcc81">&#9670;&nbsp;</a></span>set() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mixal::Register2::set </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sign</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>byte1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>byte2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set all the values.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>when the sign is neither '+' nor '-'. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00073">73</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                                           {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (sign != <span class="charliteral">&#39;+&#39;</span> &amp;&amp; sign != <span class="charliteral">&#39;-&#39;</span>) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid sign: &quot;</span> + std::string(1, sign));</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    this-&gt;negative = sign == <span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    this-&gt;byte1 = byte1;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    this-&gt;byte2 = byte2;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="ae5d0c8c6cc9250f32b0110dbcb821c8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5d0c8c6cc9250f32b0110dbcb821c8e">&#9670;&nbsp;</a></span>set() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d0c8c6cc9250f32b0110dbcb821c8e">&#9670;&nbsp;</a></span>set() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -404,21 +497,21 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte2</b></td></tr
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00039">39</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                         {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (index == 1) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        byte1 = val;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index == 2) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        byte2 = val;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid index for a two bytes register: &quot;</span> + std::to_string(index));</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00057">57</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                         {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (index == 1) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        byte1 = val;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (index == 2) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        byte2 = val;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Invalid index for a two bytes register: &quot;</span> + std::to_string(index));</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="af6f71bb35b12183b27e67b802aeabc1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6f71bb35b12183b27e67b802aeabc1b">&#9670;&nbsp;</a></span>set() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f71bb35b12183b27e67b802aeabc1b">&#9670;&nbsp;</a></span>set() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -436,21 +529,21 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte2</b></td></tr
 <p>The sign will be set only when the input is non-zero. Therefore to set the word to <code>-0</code> with this function, one can set it with a negative value first, then set it to 0.</p>
 <p>The least significant 12 bits will be saved to the word. Each byte contains 6 bits. The byte2 will contain the least significant 6 bits. </p>
 
-<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00028">28</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                 {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> &gt; 0) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        negative = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> &lt; 0) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        negative = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> = -<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    byte1 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> / (1 &lt;&lt; 6));</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    byte2 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> % (1 &lt;&lt; 6));</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00046">46</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                 {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> &gt; 0) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        negative = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> &lt; 0) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        negative = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> = -<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    byte1 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> / (1 &lt;&lt; 6));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    byte2 = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<a class="code" href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">value</a> % (1 &lt;&lt; 6));</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="registers_8cpp_source.html#l00023">value()</a>.</p>
+<p class="reference">References <a class="el" href="registers_8cpp_source.html#l00041">value()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="registers_8h_source.html#l00034">Register2()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="registers_8cpp_source.html#l00010">Register2()</a>.</p>
 
 </div>
 </div>
@@ -470,15 +563,15 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte2</b></td></tr
 </div><div class="memdoc">
 <p>Get the value represented by the register. </p>
 
-<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00023">23</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                               {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    int16_t val = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(<a class="code" href="structmixal_1_1_register2.html#a45e5c37a23474d9e2a7c38c28ac18c6d">bytes12</a>());</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> negative ? -val : val;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="registers_8cpp_source.html#l00041">41</a> of file <a class="el" href="registers_8cpp_source.html">registers.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                               {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    int16_t val = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(<a class="code" href="structmixal_1_1_register2.html#a45e5c37a23474d9e2a7c38c28ac18c6d">bytes12</a>());</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> negative ? -val : val;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="registers_8cpp_source.html#l00017">bytes12()</a>.</p>
+<p class="reference">References <a class="el" href="registers_8cpp_source.html#l00035">bytes12()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="registers_8h_source.html#l00034">Register2()</a>, and <a class="el" href="registers_8cpp_source.html#l00028">set()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="registers_8cpp_source.html#l00010">Register2()</a>, and <a class="el" href="registers_8cpp_source.html#l00046">set()</a>.</p>
 
 </div>
 </div>
@@ -487,9 +580,9 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>byte2</b></td></tr
 <li>src/<a class="el" href="registers_8cpp_source.html">registers.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="astructmixal_1_1_register2_html_af6f71bb35b12183b27e67b802aeabc1b"><div class="ttname"><a href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">mixal::Register2::set</a></div><div class="ttdeci">void set(int16_t value)</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00028">registers.cpp:28</a></div></div>
-<div class="ttc" id="astructmixal_1_1_register2_html_a45e5c37a23474d9e2a7c38c28ac18c6d"><div class="ttname"><a href="structmixal_1_1_register2.html#a45e5c37a23474d9e2a7c38c28ac18c6d">mixal::Register2::bytes12</a></div><div class="ttdeci">uint16_t bytes12() const</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00017">registers.cpp:17</a></div></div>
-<div class="ttc" id="astructmixal_1_1_register2_html_a377d94ea727118abf129d7f8f86f647b"><div class="ttname"><a href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">mixal::Register2::value</a></div><div class="ttdeci">int16_t value() const</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00023">registers.cpp:23</a></div></div>
+<div class="ttc" id="astructmixal_1_1_register2_html_af6f71bb35b12183b27e67b802aeabc1b"><div class="ttname"><a href="structmixal_1_1_register2.html#af6f71bb35b12183b27e67b802aeabc1b">mixal::Register2::set</a></div><div class="ttdeci">void set(int16_t value)</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00046">registers.cpp:46</a></div></div>
+<div class="ttc" id="astructmixal_1_1_register2_html_a45e5c37a23474d9e2a7c38c28ac18c6d"><div class="ttname"><a href="structmixal_1_1_register2.html#a45e5c37a23474d9e2a7c38c28ac18c6d">mixal::Register2::bytes12</a></div><div class="ttdeci">uint16_t bytes12() const</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00035">registers.cpp:35</a></div></div>
+<div class="ttc" id="astructmixal_1_1_register2_html_a377d94ea727118abf129d7f8f86f647b"><div class="ttname"><a href="structmixal_1_1_register2.html#a377d94ea727118abf129d7f8f86f647b">mixal::Register2::value</a></div><div class="ttdeci">int16_t value() const</div><div class="ttdef"><b>Definition:</b> <a href="registers_8cpp_source.html#l00041">registers.cpp:41</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
